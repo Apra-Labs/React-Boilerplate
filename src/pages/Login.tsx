@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import Button from "../components/Button";
+import Button from "../components/ButtonComponent";
 import Input from "../components/Input";
 import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from '../redux/hooks';
@@ -43,11 +43,11 @@ const Login: React.FC = () => {
 
     return (
         <div style={{ display: "flex", justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <form onSubmit={handleSubmit} style={{border: 1, borderStyle: 'solid', padding: 30, alignItems: 'center', display: "flex", justifyContent: 'center',flexDirection: 'column', borderRadius: 15}}>
+            <form onSubmit={handleSubmit} style={{border: 1, borderStyle: 'solid', padding: 30, alignItems: 'center', display: "flex", justifyContent: 'center',flexDirection: 'column', borderRadius: 15, backgroundColor: 'white'}}>
                 <h2 style={{ margin: 10 }}>Login</h2>
                 <Input type="email" placeholder="Email" onChange={handleEmail}/>
                 <Input type="password" placeholder="Password" onChange={handlePassword}/>
-                <Button title="Login" />
+                {/* <Button title="Login" /> */}
             </form>
         </div>
     )

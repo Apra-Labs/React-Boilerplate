@@ -1,10 +1,10 @@
-import Footer from "../components/Footer"
-import Navbar from "../components/Navbar"
+import Footer from "../components/Footer";
+import Navigation from "../containers/Navbar/Navigation";
 
 const Home: React.FC = () => {
     return(
         <div>
-            <Navbar />
+            <Navigation />
             <Footer />
         </div>
     )

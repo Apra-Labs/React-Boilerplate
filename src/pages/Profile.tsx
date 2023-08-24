@@ -30,7 +30,7 @@ const Profile: React.FC = () => {
         <div>
             {isLogin ?
                 <div style={{ display: 'flex', justifyContent: 'space-evenly', margin: 30 }}>
-                    <div style={{ border: 1, borderStyle: 'solid', height: 100, width: 200, display: 'flex' }}>
+                    <div style={{height: 100, width: 200, display: 'flex', backgroundColor: 'white', borderRadius: 10 }}>
                         <div style={{ margin: 10 }}>
                             <img src="" alt="profile image"></img>
                         </div>
@@ -39,7 +39,7 @@ const Profile: React.FC = () => {
                             <h3>{user.name}</h3>
                         </div>
                     </div>
-                    <div style={{ width: 700, height: 500, border: 1, borderStyle: 'solid', padding: 10 }}>
+                    <div style={{ width: 700, height: 500, padding: 10, borderRadius: 10, backgroundColor: 'white' }}>
                         <h3>Personal Information</h3>
                         <table>
                             <tbody>
@@ -50,8 +50,9 @@ const Profile: React.FC = () => {
                         </table>
                     </div>
                 </div> :
-                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh'}}>
-                    <button style={{ backgroundColor: '#068FFF', color: 'white', padding: 20, border: 0, borderRadius: 10, cursor: 'pointer'}} onClick={goToLogin}>Go to Login</button>
+                <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh', flexDirection: 'column'}}>
+                    <h3>Login first</h3>
+                    <button style={{ backgroundColor: '#068FFF', color: 'white', padding: 20, border: 0, borderRadius: 10, cursor: 'pointer', margin: 20}} onClick={goToLogin}>Go to Login</button>
                 </div>
             }
         </div>
