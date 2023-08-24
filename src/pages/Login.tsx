@@ -43,7 +43,7 @@ const Login: React.FC = () => {
 
     return (
         <div style={{ display: "flex", justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-            <form onSubmit={handleSubmit} style={{border: 1, borderStyle: 'solid', padding: 30, alignItems: 'center', display: "flex", justifyContent: 'center',flexDirection: 'column'}}>
+            <form onSubmit={handleSubmit} style={{border: 1, borderStyle: 'solid', padding: 30, alignItems: 'center', display: "flex", justifyContent: 'center',flexDirection: 'column', borderRadius: 15}}>
                 <h2 style={{ margin: 10 }}>Login</h2>
                 <Input type="email" placeholder="Email" onChange={handleEmail}/>
                 <Input type="password" placeholder="Password" onChange={handlePassword}/>
