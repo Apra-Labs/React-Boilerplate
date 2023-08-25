@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { useAppSelector } from '../redux/hooks';
 import { useNavigate } from 'react-router-dom';
 
-import TableRow from "../components/TableRow";
 
 const Profile: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -43,9 +42,6 @@ const Profile: React.FC = () => {
                         <h3>Personal Information</h3>
                         <table>
                             <tbody>
-                                <TableRow title="Name" value={user.name} />
-                                <TableRow title="Email" value={user.email} />
-                                <TableRow title="Phone Number" value={user.phoneNumber} />
                             </tbody>
                         </table>
                     </div>

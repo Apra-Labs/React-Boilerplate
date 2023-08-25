@@ -1,0 +1,5 @@
+/****** Coding Standard ******/
+
+1. Folder's name should be camelCase Ex: Home
+2. Component's name should be PascalCase Ex: ButtonComponent.tsx
+3. Utility files should be named in camelCase Ex: i18n.ts

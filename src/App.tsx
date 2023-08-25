@@ -1,8 +1,9 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Login from './pages/Login';
+import Home from './pages/home';
+import Login from './pages/login';
 import Profile from './pages/Profile';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
