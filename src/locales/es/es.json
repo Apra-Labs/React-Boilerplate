@@ -6,5 +6,8 @@
     "English": "inglés",
     "Spanish": "español",
     "Email": "Correo electrónico",
-    "Password": "Contraseña"
+    "Password": "Contraseña",
+    "PersonalInformation": "Informacion personal",
+    "PhoneNumber": "Número de teléfono",
+    "Address": "DIRECCIÓN"
 }

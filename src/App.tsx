@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
-import Login from './pages/login';
-import Profile from './pages/Profile';
+import Profile from './pages/profile';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
 	return (
@@ -12,10 +12,10 @@ function App() {
 			<Routes>
 				<Route>
 					<Route path='/' element={<Home />} />
-					<Route path='/login' element={<Login />} />
 					<Route path='/profile' element={<Profile />} />
 				</Route>
 			</Routes>
+			<ToastContainer />
 		</div>
 	);
 }

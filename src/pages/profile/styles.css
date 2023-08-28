@@ -1,0 +1,30 @@
+.profile {
+    border: 1px;
+    border-style: solid;
+    padding: 20px;
+    height: 100px;
+    margin: 10px;
+}
+
+.profileImage {
+    height: 50px;
+    width: 50px;
+    border-radius: 25px;
+    margin-right: 10px;
+}
+
+.socialMedia {
+    border: 1px;
+    border-style: solid;
+    padding: 20px;
+    height: 300px;
+    margin: 10px;
+}
+
+.personalInformation {
+    border: 1px;
+    border-style: solid;
+    padding: 20px;
+    height: 500px;
+    margin: 10px;
+}

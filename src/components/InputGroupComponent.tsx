@@ -5,6 +5,7 @@ interface InputGroupProps {
     placeholder: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     style?: React.CSSProperties;
+    value?: string;
 }
 
 const defaultProps: InputGroupProps = {
@@ -13,10 +14,10 @@ const defaultProps: InputGroupProps = {
     onChange: () => {}
 }
 
-const InputGroupComponent: React.FC<InputGroupProps> = ({type, placeholder, onChange, style}) => {
+const InputGroupComponent: React.FC<InputGroupProps> = ({type, placeholder, onChange, style, value}) => {
     return (
         <InputGroup style={style}>
-            <Form.Control type={type} placeholder={placeholder} onChange={onChange}/>
+            <Form.Control type={type} placeholder={placeholder} onChange={onChange} value={value} />
         </InputGroup>
     )
 }

@@ -6,5 +6,8 @@
     "English": "English",
     "Spanish": "Spanish",
     "Email": "Email",
-    "Password": "Password"
+    "Password": "Password",
+    "PersonalInformation": "Personal Information",
+    "PhoneNumber": "Phone Number",
+    "Address": "Address"
 }

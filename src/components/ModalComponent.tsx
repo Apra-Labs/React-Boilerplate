@@ -1,13 +1,14 @@
-import { Modal } from "react-bootstrap"
+import { Modal } from "react-bootstrap";
 
 interface ModalProps {
     show: boolean;
     onHide: () => void;
     title: string;
     body: string;
+    footer: string;
 }
 
-const ModalComponent: React.FC<ModalProps> = ({ show, onHide, title, body }) => {
+const ModalComponent: React.FC<ModalProps> = ({ show, onHide, title, body, footer}) => {
     return (
         <>
             <Modal show={show} onHide={onHide}>
@@ -15,6 +16,7 @@ const ModalComponent: React.FC<ModalProps> = ({ show, onHide, title, body }) => 
                     <Modal.Title>{title}</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>{body}</Modal.Body>
+                <Modal.Footer>{footer}</Modal.Footer>
             </Modal>
         </>
     )
