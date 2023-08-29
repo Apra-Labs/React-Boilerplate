@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -11,6 +11,8 @@ import { Modal } from 'react-bootstrap';
 import FloatingLabelComponent from '../components/FloatingLabelComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { login } from '../redux/reducers/authSlice';
+import ToggleSwitchComponent from '../components/ToggleSwitchComponent';
+import { setDark, setLight } from '../redux/reducers/themeSlice';
 
 const Navigation: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -77,6 +79,14 @@ const Navigation: React.FC = () => {
         }
     }
 
+    const changeTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
+        if (e.target.checked) {
+            dispatch(setDark());
+        } else {
+            dispatch(setLight());
+        }
+    }
+
     const user = {
         id: 1,
         name: "John",
@@ -87,7 +97,7 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <Navbar expand="lg" style={{ backgroundColor: '#A8DF8E' }}>
+            <Navbar expand="lg" style={{ backgroundColor: '#A8DF8E' }} data-bs-theme="light">
                 <Navbar.Brand as={Link} to={"/"} className='text-light'>{t("MyApplication")}</Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -99,6 +109,7 @@ const Navigation: React.FC = () => {
                         {isLogin &&
                             <Nav.Link as={Link} to={"/profile"} className='text-light'>{t("Profile")}</Nav.Link>
                         }
+                        <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{ marginTop: 10, color: "white" }} />
                         <NavDropdown
                             title={<span className='text-light'>{t("DisplayLanguage")}</span>}
                             id="navbarScrollingDropdown"
@@ -119,7 +130,7 @@ const Navigation: React.FC = () => {
                         <FloatingLabelComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ margin: 10 }} />
                     </Modal.Body>
                     <Modal.Footer className='text-center'>
-                        <ButtonComponent title={t("Login")} variant='primary' type='submit' style={{ marginRight: 200 }} />
+                        <ButtonComponent buttonLabel={t("Login")} type='submit' style={{ marginRight: 200 }} />
                     </Modal.Footer>
                 </form>
             </Modal>

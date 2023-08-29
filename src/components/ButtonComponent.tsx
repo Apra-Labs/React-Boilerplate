@@ -1,27 +1,18 @@
 import { Button } from "react-bootstrap";
 
 interface ButtonProps {
-    title: string;
-    variant: string;
-    style?: React.CSSProperties ;
+    buttonLabel: string;//change to button label 
+    variant?: string;//optional
+    style?: React.CSSProperties;
     type?: "button" | "submit" | "reset" | undefined;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
 }
 
-const defaultProps: ButtonProps = {
-    title: "Submit",
-    variant: "primary",
-    type: "button",
-    onClick: () => {}
-}
 
-const ButtonComponent: React.FC<ButtonProps> = ({ title, variant, style, onClick, type }) => {
+const ButtonComponent: React.FC<ButtonProps> = ({ buttonLabel, variant, style, onClick, type }) => {
     return (
-        <div className="text-center">
-            <Button variant={variant} style={style} onClick={onClick} type={type}>{title}</Button>
-        </div>
+        <Button variant={variant} style={style} onClick={onClick} type={type}>{buttonLabel}</Button>
     )
 }
 
-ButtonComponent.defaultProps = defaultProps;
 export default ButtonComponent;

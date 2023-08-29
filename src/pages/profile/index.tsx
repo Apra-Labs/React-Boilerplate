@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useAppSelector } from '../../redux/hooks';
-import { Container, Row, Col, InputGroup, Form } from 'react-bootstrap';
+import { Container, Row, Col} from 'react-bootstrap';
 import PersonalInformationComponent from './PersonalInformationComponent';
 import { useTranslation } from 'react-i18next';
 import './styles.css';

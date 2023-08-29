@@ -2,22 +2,24 @@ import { Card } from "react-bootstrap";
 
 interface CardProps {
     style: React.CSSProperties;
-    variant: string;
-    text: 'light' | 'dark'; 
-    header: string;
+    variant?: string;
+    header?: string;
     title: string;
-    subtitle: string;
-    desc?: string;
+    subtitle?: string;
+    message?: string;
+    imgSrc?: string;
 }
 
-const CardComponent:React.FC<CardProps> = ({style, variant, text, title, desc, header, subtitle}) => {
+const CardComponent: React.FC<CardProps> = ({ style, variant, title, message, header, subtitle, imgSrc }) => {
     return (
-        <Card bg={variant} style={style} text={text}>
-            <Card.Header>{header}</Card.Header>
+        <Card bg={variant} style={style} >
+            {imgSrc ? <Card.Img variant="top" src={imgSrc} /> :
+                <Card.Header>{header}</Card.Header>
+            }
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Subtitle>{subtitle}</Card.Subtitle>
-                <Card.Text>{desc}</Card.Text>
+                <Card.Text>{message}</Card.Text>
             </Card.Body>
         </Card>
     )
