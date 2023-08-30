@@ -1,7 +1,7 @@
 import { Card } from "react-bootstrap";
 
 interface CardProps {
-    style: React.CSSProperties;
+    style?: React.CSSProperties;
     variant?: string;
     header?: string;
     title: string;
@@ -10,12 +10,18 @@ interface CardProps {
     imgSrc?: string;
 }
 
+const defaultProps: CardProps = {
+    title: "Card",
+    message: "This is my card",
+    variant: "primary",
+    style: {height: 100, width: 200}
+}
+
 const CardComponent: React.FC<CardProps> = ({ style, variant, title, message, header, subtitle, imgSrc }) => {
     return (
-        <Card bg={variant} style={style} >
-            {imgSrc ? <Card.Img variant="top" src={imgSrc} /> :
-                <Card.Header>{header}</Card.Header>
-            }
+        <Card bg={variant} style={style} text={variant?.toLowerCase() === 'light' ? 'dark' : 'white'}>
+            <Card.Header>{header}</Card.Header>
+            {imgSrc && <Card.Img variant="top" src={imgSrc} /> }
             <Card.Body>
                 <Card.Title>{title}</Card.Title>
                 <Card.Subtitle>{subtitle}</Card.Subtitle>
@@ -25,4 +31,5 @@ const CardComponent: React.FC<CardProps> = ({ style, variant, title, message, he
     )
 }
 
+CardComponent.defaultProps = defaultProps;
 export default CardComponent;

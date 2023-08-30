@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { logOut } from '../redux/reducers/authSlice';
 import { toast } from 'react-toastify';
 import { Modal } from 'react-bootstrap';
-import FloatingLabelComponent from '../components/FloatingLabelComponent';
+import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { login } from '../redux/reducers/authSlice';
 import ToggleSwitchComponent from '../components/ToggleSwitchComponent';
@@ -109,9 +109,10 @@ const Navigation: React.FC = () => {
                         {isLogin &&
                             <Nav.Link as={Link} to={"/profile"} className='text-light'>{t("Profile")}</Nav.Link>
                         }
+                        <Nav.Link as={Link} to={"/components"} className='text-light'>{t("Components")}</Nav.Link>
                         <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{ marginTop: 10, color: "white" }} />
                         <NavDropdown
-                            title={<span className='text-light'>{t("DisplayLanguage")}</span>}
+                            title={<span className='text-light'>{t("ChangeLanguage")}</span>}
                             id="navbarScrollingDropdown"
                             onSelect={onSelectLang} >
                             <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
@@ -126,11 +127,11 @@ const Navigation: React.FC = () => {
                         <Modal.Title style={{ marginLeft: 200 }}>{t("Login")}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <FloatingLabelComponent label={t("Email")} type='email' placeholder={t("Email")} onChange={handleEmail} style={{ margin: 10 }} />
-                        <FloatingLabelComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ margin: 10 }} />
+                        <FloatingLabelInputComponent label={t("Email")} type='email' placeholder={t("Email")} onChange={handleEmail} style={{ margin: 10 }} />
+                        <FloatingLabelInputComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ margin: 10 }} />
                     </Modal.Body>
                     <Modal.Footer className='text-center'>
-                        <ButtonComponent buttonLabel={t("Login")} type='submit' style={{ marginRight: 200 }} />
+                        <ButtonComponent label={t("Login")} type='submit' style={{ marginRight: 200 }} />
                     </Modal.Footer>
                 </form>
             </Modal>

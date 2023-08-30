@@ -1,20 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from './pages/home';
-import Profile from './pages/profile';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
+import Main from './Main';
 
 function App() {
 	return (
 		<div>
-			<Routes>
-				<Route>
-					<Route path='/' element={<Home />} />
-					<Route path='/profile' element={<Profile />} />
-				</Route>
-			</Routes>
+			<Main />
 			<ToastContainer />
 		</div>
 	);
