@@ -19,7 +19,6 @@ const InputComponent: React.FC<InputGroupProps> = ({type, placeholder, onChange,
     return (
         <InputGroup style={style}>
             <Form.Control type={type} placeholder={placeholder} onChange={onChange} value={value} />
-            <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         </InputGroup>
     )
 }
