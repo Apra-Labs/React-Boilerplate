@@ -8,6 +8,8 @@ interface CardProps {
     subtitle?: string;
     message?: string;
     imgSrc?: string;
+    className?: string;
+    id?: string;
 }
 
 const defaultProps: CardProps = {
@@ -17,9 +19,9 @@ const defaultProps: CardProps = {
     style: {height: 100, width: 200}
 }
 
-const CardComponent: React.FC<CardProps> = ({ style, variant, title, message, header, subtitle, imgSrc }) => {
+const CardComponent: React.FC<CardProps> = ({ style, variant, title, message, header, subtitle, imgSrc, className, id }) => {
     return (
-        <Card bg={variant} style={style} text={variant?.toLowerCase() === 'light' ? 'dark' : 'white'}>
+        <Card bg={variant} style={style} text={variant?.toLowerCase() === 'light' ? 'dark' : 'white'} className={className} id={id}>
             <Card.Header>{header}</Card.Header>
             {imgSrc && <Card.Img variant="top" src={imgSrc} /> }
             <Card.Body>

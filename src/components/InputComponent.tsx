@@ -6,6 +6,8 @@ interface InputGroupProps {
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     style?: React.CSSProperties;
     value?: string;
+    className?: string;
+    id?: string;
     //add validation code 
 }
 
@@ -15,9 +17,9 @@ const defaultProps: InputGroupProps = {
     style: {width: 200}
 }
 
-const InputComponent: React.FC<InputGroupProps> = ({type, placeholder, onChange, style, value}) => {
+const InputComponent: React.FC<InputGroupProps> = ({type, placeholder, onChange, style, value, className, id}) => {
     return (
-        <InputGroup style={style}>
+        <InputGroup style={style} className={className} id={id}>
             <Form.Control type={type} placeholder={placeholder} onChange={onChange} value={value} />
         </InputGroup>
     )

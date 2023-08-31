@@ -12,6 +12,8 @@ interface DropDownProps {
     searchComponentStyle?: React.CSSProperties;
     searchInputStyle?: React.CSSProperties;
     placeholder?: string;
+    className?: string;
+    id?: string;
     //multi select options
 }
 
@@ -33,6 +35,8 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     searchComponentStyle,
     searchInputStyle,
     placeholder,
+    className,
+    id
 }) => {
     const [inputValue, setInputValue] = useState<string>("");
     const [filteredData, setFilteredData] = useState<{ key: string; value: string; }[] | undefined >(items);
@@ -57,7 +61,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     }
 
     return (
-        <Dropdown onSelect={onSelect} style={dropdownComponentStyle}>
+        <Dropdown onSelect={onSelect} style={dropdownComponentStyle} className={className} id={id}>
             <Dropdown.Toggle variant={variant}>{title}</Dropdown.Toggle>
             <Dropdown.Menu>
                 {enableSearch &&

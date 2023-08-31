@@ -7,6 +7,7 @@ interface ButtonProps {
     type?: "button" | "submit" | "reset" | undefined;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
     className?: string;
+    id?: string;
 }
 
 const defaultProps: ButtonProps = {
@@ -15,9 +16,9 @@ const defaultProps: ButtonProps = {
 }
 
 
-const ButtonComponent: React.FC<ButtonProps> = ({ label, variant, style, onClick, type, className }) => {
+const ButtonComponent: React.FC<ButtonProps> = ({ label, variant, style, onClick, type, className, id }) => {
     return (
-        <Button variant={variant} style={style} onClick={onClick} type={type} className={className}>{label}</Button>
+        <Button variant={variant} style={style} onClick={onClick} type={type} className={className} id={id}>{label}</Button>
     )
 }
 
