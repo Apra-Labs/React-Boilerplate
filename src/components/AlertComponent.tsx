@@ -1,24 +1,25 @@
 import { Alert } from "react-bootstrap";
 
 interface AlertProps {
+    message: string;
     variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     show?: boolean;
-    message: string;
     onClose?: () => void;
-    closeLabel?: string;
-    closeVariant?: "white" | undefined;
     style?: React.CSSProperties;
     className?: string;
     id?: string;
 }
 
-const AlertComponet: React.FC<AlertProps> = ({
+const defaultProps: Partial<AlertProps> = {
+    variant: "primary",
+    style: { width: "100%" }
+}
+
+const AlertComponent: React.FC<AlertProps> = ({
     variant,
     show,
     message,
     onClose,
-    closeLabel,
-    closeVariant,
     style,
     className,
     id
@@ -28,16 +29,15 @@ const AlertComponet: React.FC<AlertProps> = ({
             show={show}
             variant={variant}
             onClose={onClose}
-            closeLabel={closeLabel}
-            closeVariant={closeVariant}
-            dismissible 
+            dismissible
             style={style}
             className={className}
             id={id}
-            >
+        >
             {message}
         </Alert>
     )
 }
 
-export default AlertComponet;
+AlertComponent.defaultProps = defaultProps;
+export default AlertComponent;

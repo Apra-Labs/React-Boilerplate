@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
-import { Dropdown, InputGroup, Form } from "react-bootstrap"
+import { Dropdown, InputGroup, Form } from "react-bootstrap";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface DropDownProps {
-    variant?: string;
     title: string;
-    items?: { key: string; value: string; }[];
+    items: { key: string; value: string; }[];
+    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     onSelect?: (e: string | null) => void;
     enableSearch?: boolean;
     dropdownComponentStyle?: React.CSSProperties;
@@ -17,11 +19,13 @@ interface DropDownProps {
     //multi select options
 }
 
-const defaultProps: DropDownProps = {
-    title: "My Dropdown",
-    items: [{key: "Person 1", value: "1"}, {key: "Person 2", value: "2"}],
+const defaultProps: Partial<DropDownProps> = {
+    variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
+    dropdownComponentStyle: {margin: 10},
+    dropdownMenuStyle: {padding: 10},
+    searchInputStyle: {outline: "none", boxShadow: "none"}
 };
 
 
@@ -32,6 +36,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     onSelect,
     enableSearch,
     dropdownComponentStyle,
+    dropdownMenuStyle,
     searchComponentStyle,
     searchInputStyle,
     placeholder,
@@ -63,13 +68,17 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     return (
         <Dropdown onSelect={onSelect} style={dropdownComponentStyle} className={className} id={id}>
             <Dropdown.Toggle variant={variant}>{title}</Dropdown.Toggle>
-            <Dropdown.Menu>
+            <Dropdown.Menu style={dropdownMenuStyle}>
                 {enableSearch &&
                     <InputGroup style={searchComponentStyle}>
                         <Form.Control placeholder={placeholder} style={searchInputStyle} onChange={handleOnChange} value={inputValue} />
                         {(inputValue !== '') ?
-                            <InputGroup.Text onClick={clearInput} style={{ cursor: 'pointer' }}>X</InputGroup.Text>
-                            : <InputGroup.Text>🔍</InputGroup.Text>
+                            <InputGroup.Text onClick={clearInput} style={{ cursor: 'pointer' }}>
+                                <FontAwesomeIcon icon={faXmark} />
+                            </InputGroup.Text>
+                            : <InputGroup.Text>
+                                <FontAwesomeIcon icon={faMagnifyingGlass} />
+                            </InputGroup.Text>
                         }
                     </InputGroup>
                 }

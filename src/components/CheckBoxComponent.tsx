@@ -9,17 +9,41 @@ interface CheckBoxProps {
     disabled?: boolean;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     name?: string;
+    title?: string;
 }
 
-const CheckBoxComponent: React.FC<CheckBoxProps> = ({ label, className, id, style, value, disabled, onChange, name }) => {
+const defaultProps: Partial<CheckBoxProps> = {
+    style: { margin: 10 },
+    title: "This is a checkbox"
+}
+
+const CheckBoxComponent: React.FC<CheckBoxProps> = ({
+    label,
+    className,
+    id,
+    style,
+    value,
+    disabled,
+    onChange,
+    name,
+
+    title
+}) => {
     return (
-        <>
-            {disabled ?
-                <Form.Check type="checkbox" label={label} className={className} id={id} style={style} value={value} disabled onChange={onChange} name={name} />
-                : <Form.Check type="checkbox" label={label} className={className} id={id} style={style} value={value}  onChange={onChange} name={name} />
-            } 
-        </> 
+        <Form.Check
+            type="checkbox"
+            label={label}
+            className={className}
+            id={id}
+            style={style}
+            value={value}
+            onChange={onChange}
+            name={name}
+            title={title}
+            disabled={disabled}
+        />
     )
 }
 
+CheckBoxComponent.defaultProps = defaultProps;
 export default CheckBoxComponent;

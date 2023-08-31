@@ -2,7 +2,8 @@ import { Button } from "react-bootstrap";
 
 interface ButtonProps {
     label: string;
-    variant?: string;
+    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
+    title?: string;
     style?: React.CSSProperties;
     type?: "button" | "submit" | "reset" | undefined;
     onClick?: React.MouseEventHandler<HTMLButtonElement>;
@@ -10,15 +11,34 @@ interface ButtonProps {
     id?: string;
 }
 
-const defaultProps: ButtonProps = {
-    label: "Click",
+const defaultProps: Partial<ButtonProps> = {
     type: "button",
+    variant: "primary",
+    title: "This is a button",
 }
 
-
-const ButtonComponent: React.FC<ButtonProps> = ({ label, variant, style, onClick, type, className, id }) => {
+const ButtonComponent: React.FC<ButtonProps> = ({
+    label,
+    variant,
+    style,
+    onClick,
+    type,
+    className,
+    id,
+    title
+}) => {
     return (
-        <Button variant={variant} style={style} onClick={onClick} type={type} className={className} id={id}>{label}</Button>
+        <Button
+            variant={variant}
+            style={style}
+            onClick={onClick}
+            type={type}
+            className={className}
+            id={id}
+            title={title}
+        >
+            {label}
+        </Button>
     )
 }
 

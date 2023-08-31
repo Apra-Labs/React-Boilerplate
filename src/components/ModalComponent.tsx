@@ -7,20 +7,34 @@ interface ModalProps {
     body: JSX.Element | string;
     footer?: JSX.Element;
     dialogClassName?: string;
+    centered?: boolean;
+    style?: React.CSSProperties;
 }
 
-const ModalComponent: React.FC<ModalProps> = ({ show, onHide, title, body, footer, dialogClassName}) => {
+const defaultProps: Partial<ModalProps> = {
+    style: { color: 'black' }
+}
+
+const ModalComponent: React.FC<ModalProps> = ({
+    show,
+    onHide,
+    title,
+    body,
+    footer,
+    dialogClassName,
+    centered,
+    style
+}) => {
     return (
-        <>
-            <Modal show={show} onHide={onHide} dialogClassName={dialogClassName}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{title}</Modal.Title>
-                </Modal.Header>
-                <Modal.Body>{body}</Modal.Body>
-                <Modal.Footer>{footer}</Modal.Footer>
-            </Modal>
-        </>
+        <Modal show={show} onHide={onHide} dialogClassName={dialogClassName} centered={centered} style={style}>
+            <Modal.Header closeButton>
+                <Modal.Title>{title}</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>{body}</Modal.Body>
+            <Modal.Footer>{footer}</Modal.Footer>
+        </Modal>
     )
 }
 
+ModalComponent.defaultProps = defaultProps;
 export default ModalComponent;

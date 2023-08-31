@@ -9,17 +9,39 @@ interface RadioProps {
     disabled?: boolean;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     name?: string;
+    title?: string;
 }
 
-const RadioComponent: React.FC<RadioProps> = ({ label, className, id, style, value, disabled, onChange, name }) => {
+const defaultProps: Partial<RadioProps> = {
+    style: { margin: 10 }
+}
+
+const RadioComponent: React.FC<RadioProps> = ({
+    label,
+    className,
+    id,
+    style,
+    value,
+    disabled,
+    onChange,
+    name,
+    title
+}) => {
     return (
-        <>
-            {disabled ?
-                <Form.Check type="radio" label={label} className={className} id={id} style={style} value={value} disabled onChange={onChange} name={name} />
-                : <Form.Check type="radio" label={label} className={className} id={id} style={style} value={value}  onChange={onChange} name={name} />
-            } 
-        </> 
+        <Form.Check
+            type="radio"
+            label={label}
+            className={className}
+            id={id}
+            style={style}
+            value={value}
+            onChange={onChange}
+            name={name}
+            title={title}
+            disabled={disabled}
+        />
     )
 }
 
+RadioComponent.defaultProps = defaultProps;
 export default RadioComponent;

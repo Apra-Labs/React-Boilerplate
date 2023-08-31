@@ -10,14 +10,22 @@ interface FloatingLabelInputProps {
     id?: string;
 }
 
-const defaultProps: FloatingLabelInputProps = {
-    label: "text",
+const defaultProps: Partial<FloatingLabelInputProps> = {
     type: "text",
     placeholder: "placeholder",
-    style: {width: 200, height: 100}
+    style: {width: 200, height: 100
+    }
 }
 
-const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({label, type, placeholder, onChange, style, className, id}) => {
+const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
+    label, 
+    type, 
+    placeholder, 
+    onChange, 
+    style, 
+    className, 
+    id
+}) => {
     return (
         <FloatingLabel style={style} label={label} className={className} id={id}>
             <Form.Control type={type} placeholder={placeholder} onChange={onChange}/>
