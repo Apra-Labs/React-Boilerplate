@@ -21,7 +21,6 @@ const Main: React.FC = () => {
             <Route>
                 <Route path='/' element={<Home />} />
                 <Route path='/profile' element={<Profile />} />
-                <Route path='/uikit' element={<UiKit />} />
                 <Route path='/uikit/alert' element={<AlertExample />} />
                 <Route path='/uikit/button' element={<ButtonExample />} />
                 <Route path='/uikit/card' element={<CardExample />} />

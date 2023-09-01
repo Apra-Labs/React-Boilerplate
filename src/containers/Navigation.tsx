@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { logOut } from '../redux/reducers/authSlice';
 import { toast } from 'react-toastify';
-import { Modal } from 'react-bootstrap';
+import { Modal, Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { login } from '../redux/reducers/authSlice';
@@ -97,29 +97,36 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <Navbar expand="lg" style={{ backgroundColor: '#A8DF8E' }} data-bs-theme="light">
+            <Navbar expand="lg" style={{ backgroundColor: '#A8DF8E' }} data-bs-theme="light" fixed='top'>
                 <Navbar.Brand as={Link} to={"/"} className='text-light'>{t("MyApplication")}</Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" />
-                <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav className='ms-auto'>
-                        {!isLogin ?
-                            <Nav.Link className='text-light' onClick={handleShow}>{t("Login")}</Nav.Link> :
-                            <Nav.Link className='text-light' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
-                        }
-                        {isLogin &&
-                            <Nav.Link as={Link} to={"/profile"} className='text-light'>{t("Profile")}</Nav.Link>
-                        }
-                        <Nav.Link as={Link} to={"/uikit"} className='text-light'>{t("UiKit")}</Nav.Link>
-                        <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{ marginTop: 10, color: "white" }} />
-                        <NavDropdown
-                            title={<span className='text-light'>{t("ChangeLanguage")}</span>}
-                            id="navbarScrollingDropdown"
-                            onSelect={onSelectLang} >
-                            <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
-                            <NavDropdown.Item eventKey={"es"}>{t("Spanish")}</NavDropdown.Item>
-                        </NavDropdown>
-                    </Nav>
-                </Navbar.Collapse>
+                <Nav.Link as={Link} to={"/uikit/alert"} className='text-light'>{t("UiKit")}</Nav.Link>
+                <Navbar.Toggle aria-controls="navbar-offcanvas" />
+                <Navbar.Offcanvas id="navbar-offcanvas" style={{ backgroundColor: '#A8DF8E', left: 0, top: 0, right: 'auto' }}>
+                    <Offcanvas.Header closeButton style={{color: 'white'}}>
+                        <Offcanvas.Title>
+                            <Navbar.Brand as={Link} to={"/"} className='text-light'>{t("MyApplication")}</Navbar.Brand>
+                        </Offcanvas.Title>
+                    </Offcanvas.Header>
+                    <Offcanvas.Body>
+                        <Nav className='ms-auto'>
+                            {!isLogin ?
+                                <Nav.Link className='text-light' onClick={handleShow}>{t("Login")}</Nav.Link> :
+                                <Nav.Link className='text-light' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
+                            }
+                            {isLogin &&
+                                <Nav.Link as={Link} to={"/profile"} className='text-light'>{t("Profile")}</Nav.Link>
+                            }
+                            <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{ color: "white", marginTop: 8 }} />
+                            <NavDropdown
+                                title={<span className='text-light'>{t("ChangeLanguage")}</span>}
+                                id="navbarScrollingDropdown"
+                                onSelect={onSelectLang} >
+                                <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
+                                <NavDropdown.Item eventKey={"es"}>{t("Spanish")}</NavDropdown.Item>
+                            </NavDropdown>
+                        </Nav>
+                    </Offcanvas.Body>
+                </Navbar.Offcanvas>
             </Navbar>
             <Modal show={show} onHide={handleClose} centered>
                 <form onSubmit={handleSubmit}>

@@ -13,11 +13,15 @@
 }
 
 .links {
-    margin: 20px;
+    margin: 10px;
     color: black;
     display: block;
     text-decoration: none;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 15px;
+    border-radius: 5px;
 }
 
+.links:hover {
+    background-color: #D8D9DA;
+}
