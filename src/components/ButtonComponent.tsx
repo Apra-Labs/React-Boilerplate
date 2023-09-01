@@ -15,6 +15,7 @@ const defaultProps: Partial<ButtonProps> = {
     type: "button",
     variant: "primary",
     title: "This is a button",
+    style: {marginLeft: 300, marginTop: 50}
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({

@@ -13,7 +13,7 @@ interface RadioProps {
 }
 
 const defaultProps: Partial<RadioProps> = {
-    style: { margin: 10 }
+    style: { marginLeft: 300, marginTop: 50 }
 }
 
 const RadioComponent: React.FC<RadioProps> = ({

@@ -12,7 +12,7 @@ interface AlertProps {
 
 const defaultProps: Partial<AlertProps> = {
     variant: "primary",
-    style: { width: "100%" }
+    style: { width: "80%",  marginLeft: 300, marginTop: 50}
 }
 
 const AlertComponent: React.FC<AlertProps> = ({

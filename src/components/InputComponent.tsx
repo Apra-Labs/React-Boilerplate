@@ -15,7 +15,7 @@ interface InputGroupProps {
 const defaultProps: InputGroupProps = {
     type: "text",
     placeholder: "example",
-    style: { width: 200 },
+    style: { width: 200, marginTop: 50, marginLeft: 300 },
     title: "This is input"
 }
 

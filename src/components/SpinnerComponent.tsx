@@ -26,7 +26,7 @@ const defaultProps: Partial<SpinnerProps> = {
         alignItems: "center",
         opacity: 0.5
     },
-    style: { height: 50, width: 50 },
+    style: { height: 50, width: 50, marginTop: 50, marginLeft: 300 },
     variant: "primary",
 }
 
@@ -44,7 +44,7 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
         <>
             {fullPage ?
                 <div style={fullPageStyle}>
-                    <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} />
+                    <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id}/>
                 </div> :
                 <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} />
             }

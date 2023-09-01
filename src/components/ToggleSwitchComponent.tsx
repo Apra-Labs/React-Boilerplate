@@ -10,7 +10,7 @@ interface ToggleSwitchProps {
 }
 
 const defaultProps: Partial<ToggleSwitchProps> = {
-    style: { margin: 10 },
+    style: { marginLeft: 300, marginTop: 50 },
 }
 
 const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({

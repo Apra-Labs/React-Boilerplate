@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 interface DropDownProps {
-    title: string;
+    label: string;
     items: { key: string; value: string; }[];
     variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     onSelect?: (e: string | null) => void;
@@ -23,7 +23,7 @@ const defaultProps: Partial<DropDownProps> = {
     variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
-    dropdownComponentStyle: {margin: 10},
+    dropdownComponentStyle: {marginLeft: 300, marginTop: 50},
     dropdownMenuStyle: {padding: 10},
     searchInputStyle: {outline: "none", boxShadow: "none"}
 };
@@ -31,7 +31,7 @@ const defaultProps: Partial<DropDownProps> = {
 
 const DropDownComponent: React.FC<DropDownProps> = ({
     variant,
-    title,
+    label,
     items,
     onSelect,
     enableSearch,
@@ -67,7 +67,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
 
     return (
         <Dropdown onSelect={onSelect} style={dropdownComponentStyle} className={className} id={id}>
-            <Dropdown.Toggle variant={variant}>{title}</Dropdown.Toggle>
+            <Dropdown.Toggle variant={variant}>{label}</Dropdown.Toggle>
             <Dropdown.Menu style={dropdownMenuStyle}>
                 {enableSearch &&
                     <InputGroup style={searchComponentStyle}>

@@ -1,0 +1,23 @@
+.sideNav {
+    height: 90%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #F9F9F9;
+    border-right: 1px solid;
+    overflow-x: hidden;
+    padding-top: 20px;
+    margin-top: 55px;
+}
+
+.links {
+    margin: 20px;
+    color: black;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 20px;
+}
+

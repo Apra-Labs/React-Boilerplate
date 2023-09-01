@@ -13,7 +13,7 @@ interface ImageProps {
 }
 
 const defaultProps: Partial<ImageProps> = {
-    style: { height: 300, width: 300 },
+    style: { height: 300, width: 300, marginLeft: 300, marginTop: 50 },
     rounded: true,
 }
 

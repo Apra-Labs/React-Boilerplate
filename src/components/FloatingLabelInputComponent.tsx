@@ -13,8 +13,7 @@ interface FloatingLabelInputProps {
 const defaultProps: Partial<FloatingLabelInputProps> = {
     type: "text",
     placeholder: "placeholder",
-    style: {width: 200, height: 100
-    }
+    style: {width: 200, height: 100, marginTop: 50, marginLeft: 300}
 }
 
 const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({

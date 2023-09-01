@@ -13,7 +13,7 @@ interface CheckBoxProps {
 }
 
 const defaultProps: Partial<CheckBoxProps> = {
-    style: { margin: 10 },
+    style: { marginLeft: 300, marginTop: 50 },
     title: "This is a checkbox"
 }
 

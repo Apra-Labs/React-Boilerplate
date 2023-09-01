@@ -109,7 +109,7 @@ const Navigation: React.FC = () => {
                         {isLogin &&
                             <Nav.Link as={Link} to={"/profile"} className='text-light'>{t("Profile")}</Nav.Link>
                         }
-                        <Nav.Link as={Link} to={"/components"} className='text-light'>{t("Components")}</Nav.Link>
+                        <Nav.Link as={Link} to={"/uikit"} className='text-light'>{t("UiKit")}</Nav.Link>
                         <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{ marginTop: 10, color: "white" }} />
                         <NavDropdown
                             title={<span className='text-light'>{t("ChangeLanguage")}</span>}
