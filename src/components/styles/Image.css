@@ -1,0 +1,12 @@
+.imageClass {
+    height: 20rem;
+    width: 15rem;
+    margin-left: 20rem;
+    margin-top: 9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .imageClass {
+        margin-left: 10rem;
+    }
+}

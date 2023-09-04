@@ -1,4 +1,5 @@
 import { Card } from "react-bootstrap";
+import './styles/Card.css';
 
 interface CardProps {
     title: string;
@@ -17,7 +18,7 @@ const defaultProps: CardProps = {
     title: "Card",
     message: "This is my card",
     variant: "primary",
-    style: { height: 100, width: 200, marginLeft: 300, marginTop: 90 },
+    className: "cardClass",
     border: "dark"
 }
 

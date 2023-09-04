@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Dropdown, InputGroup, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
+import './styles/Dropdown.css';
 
 interface DropDownProps {
     label: string;
@@ -23,9 +24,9 @@ const defaultProps: Partial<DropDownProps> = {
     variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
-    dropdownComponentStyle: {marginLeft: 300, marginTop: 90},
     dropdownMenuStyle: {padding: 10},
-    searchInputStyle: {outline: "none", boxShadow: "none"}
+    searchInputStyle: {outline: "none", boxShadow: "none"},
+    className: "dropdownClass"
 };
 
 

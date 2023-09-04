@@ -1,5 +1,6 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+import './styles/ToggleSwitch.css';
 
 interface ToggleSwitchProps {
     label: string;
@@ -10,7 +11,7 @@ interface ToggleSwitchProps {
 }
 
 const defaultProps: Partial<ToggleSwitchProps> = {
-    style: { marginLeft: 300, marginTop: 90 },
+    className: "toggleSwitchClass"
 }
 
 const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({

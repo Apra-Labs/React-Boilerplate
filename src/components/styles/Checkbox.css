@@ -1,0 +1,10 @@
+.checkboxClass {
+    margin-left: 30rem;
+    margin-top: 9rem;
+}
+
+@media screen and (max-width: 768px) {
+    .checkboxClass {
+        margin-left: 10rem;
+    }
+}

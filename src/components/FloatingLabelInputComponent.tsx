@@ -1,4 +1,5 @@
 import { FloatingLabel, Form } from "react-bootstrap";
+import './styles/FloatingLabelInput.css';
 
 interface FloatingLabelInputProps {
     label: string;
@@ -13,7 +14,7 @@ interface FloatingLabelInputProps {
 const defaultProps: Partial<FloatingLabelInputProps> = {
     type: "text",
     placeholder: "placeholder",
-    style: {width: 200, height: 100, marginTop: 90, marginLeft: 300}
+    className: "floatingLabelInputClass"
 }
 
 const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({

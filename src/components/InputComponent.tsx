@@ -1,4 +1,5 @@
 import { InputGroup, Form } from "react-bootstrap";
+import './styles/Input.css';
 
 interface InputGroupProps {
     type?: string;
@@ -15,8 +16,8 @@ interface InputGroupProps {
 const defaultProps: InputGroupProps = {
     type: "text",
     placeholder: "example",
-    style: { width: 200, marginTop: 90, marginLeft: 300 },
-    title: "This is input"
+    title: "This is input",
+    className: "inputClass"
 }
 
 const InputComponent: React.FC<InputGroupProps> = ({

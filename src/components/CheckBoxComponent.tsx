@@ -1,4 +1,5 @@
 import { Form } from "react-bootstrap";
+import './styles/Checkbox.css';
 
 interface CheckBoxProps {
     label: string;
@@ -13,8 +14,8 @@ interface CheckBoxProps {
 }
 
 const defaultProps: Partial<CheckBoxProps> = {
-    style: { marginLeft: 300, marginTop: 90 },
-    title: "This is a checkbox"
+    title: "This is a checkbox",
+    className: "checkboxClass"
 }
 
 const CheckBoxComponent: React.FC<CheckBoxProps> = ({

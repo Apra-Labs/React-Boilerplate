@@ -1,4 +1,5 @@
 import { Form } from "react-bootstrap";
+import './styles/Radio.css';
 
 interface RadioProps {
     label: string;
@@ -13,7 +14,7 @@ interface RadioProps {
 }
 
 const defaultProps: Partial<RadioProps> = {
-    style: { marginLeft: 300, marginTop: 90 }
+    className: "radioClass"
 }
 
 const RadioComponent: React.FC<RadioProps> = ({

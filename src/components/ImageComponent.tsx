@@ -1,4 +1,5 @@
 import { Image } from "react-bootstrap";
+import './styles/Image.css';
 
 interface ImageProps {
     src: string;
@@ -13,8 +14,8 @@ interface ImageProps {
 }
 
 const defaultProps: Partial<ImageProps> = {
-    style: { height: 300, width: 300, marginLeft: 300, marginTop: 90 },
     rounded: true,
+    className: "imageClass"
 }
 
 const ImageComponent: React.FC<ImageProps> = ({

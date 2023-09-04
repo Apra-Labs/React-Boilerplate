@@ -1,4 +1,5 @@
 import { Spinner } from "react-bootstrap";
+import './styles/Spinner.css';
 
 interface SpinnerProps {
     animation: "border" | "grow";
@@ -26,8 +27,8 @@ const defaultProps: Partial<SpinnerProps> = {
         alignItems: "center",
         opacity: 0.5
     },
-    style: { height: 50, width: 50, marginTop: 90, marginLeft: 300 },
     variant: "primary",
+    className: "spinnerClass"
 }
 
 const SpinnerComponent: React.FC<SpinnerProps> = ({
