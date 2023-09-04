@@ -2,6 +2,14 @@
     display: none;
 }
 
+.navLink {
+    color: white;
+}
+
+.navLink:hover {
+    color: white;
+}
+
 @media screen and (max-width: 768px) {
     .sideLinks {
         display: flex;

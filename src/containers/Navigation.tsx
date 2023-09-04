@@ -114,15 +114,15 @@ const Navigation: React.FC = () => {
                             {location.pathname === "/" ?
                                 <>
                                     {!isLogin ?
-                                        <Nav.Link className='text-light' onClick={handleShow}>{t("Login")}</Nav.Link> :
-                                        <Nav.Link className='text-light' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
+                                        <Nav.Link className='text-white' onClick={handleShow}>{t("Login")}</Nav.Link> :
+                                        <Nav.Link className='navLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
                                     }
                                     {isLogin &&
-                                        <Nav.Link as={Link} to={"/profile"} className='text-light'>{t("Profile")}</Nav.Link>
+                                        <Nav.Link as={Link} to={"/profile"} className='navLink'>{t("Profile")}</Nav.Link>
                                     }
-                                    <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{ color: "white", marginTop: 8 }} />
+                                    <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{color: 'white', margin: '0.5rem'}}/>
                                     <NavDropdown
-                                        title={<span className='text-light'>{t("ChangeLanguage")}</span>}
+                                        title={<span className='navLink'>{t("ChangeLanguage")}</span>}
                                         id="navbarScrollingDropdown"
                                         onSelect={onSelectLang} >
                                         <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
@@ -130,18 +130,18 @@ const Navigation: React.FC = () => {
                                     </NavDropdown>
                                 </> :
                                 <div className='sideLinks'>
-                                    <Nav.Link as={Link} to={"/uikit/alert"} className='text-light'>{t("Alert")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/button"} className='text-light'>{t("Button")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/card"} className='text-light'>{t("Card")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/checkbox"} className='text-light'>{t("Checkbox")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/dropdown"} className='text-light'>{t("Dropdown")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/floatinglabelinput"} className='text-light'>{t("FloatingLabelInput")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/image"} className='text-light'>{t("Image")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/input"} className='text-light'>{t("Input")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/modal"} className='text-light'>{t("Modal")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/radio"} className='text-light'>{t("Radio")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/spinner"} className='text-light'>{t("Spinner")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/toggleswitch"} className='text-light'>{t("ToggleSwitch")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/alert"} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/button"} to={"/uikit/button"} className='navLink'>{t("Button")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/card"} to={"/uikit/card"} className='navLink'>{t("Card")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/checkbox"} to={"/uikit/checkbox"} className='navLink'>{t("Checkbox")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/dropdown"} to={"/uikit/dropdown"} className='navLink'>{t("Dropdown")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/floatinglabelinput"} to={"/uikit/floatinglabelinput"} className='navLink'>{t("FloatingLabelInput")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/image"} to={"/uikit/image"} className='navLink'>{t("Image")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/input"} to={"/uikit/input"} className='navLink'>{t("Input")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/modal"} to={"/uikit/modal"} className='navLink'>{t("Modal")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/radio"} to={"/uikit/radio"} className='navLink'>{t("Radio")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/spinner"} to={"/uikit/spinner"} className='navLink'>{t("Spinner")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/toggleswitch"} to={"/uikit/toggleswitch"} className='navLink'>{t("ToggleSwitch")}</Nav.Link>
                                 </div>
                             }
                         </Nav>
@@ -151,14 +151,14 @@ const Navigation: React.FC = () => {
             <Modal show={show} onHide={handleClose} centered>
                 <form onSubmit={handleSubmit}>
                     <Modal.Header closeButton>
-                        <Modal.Title style={{ marginLeft: 200 }}>{t("Login")}</Modal.Title>
+                        <Modal.Title style={{ marginLeft: '12rem' }}>{t("Login")}</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-                        <FloatingLabelInputComponent label={t("Email")} type='email' placeholder={t("Email")} onChange={handleEmail} style={{ margin: 10 }} />
-                        <FloatingLabelInputComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ margin: 10 }} />
+                        <FloatingLabelInputComponent label={t("Email")} type='email' placeholder={t("Email")} onChange={handleEmail} style={{ marginLeft: '3rem', marginTop: 0, width: '80%', height: '5rem' }} />
+                        <FloatingLabelInputComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ marginLeft: '3rem', marginTop: 0, width: '80%', height: '5rem' }} />
                     </Modal.Body>
                     <Modal.Footer className='text-center'>
-                        <ButtonComponent label={t("Login")} type='submit' style={{ marginRight: 200 }} />
+                        <ButtonComponent label={t("Login")} type='submit' style={{ marginLeft: 0, marginTop: 0, marginRight: '12rem' }} />
                     </Modal.Footer>
                 </form>
             </Modal>
