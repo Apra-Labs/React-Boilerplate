@@ -21,5 +21,17 @@
     "MyModal": "mi modal",
     "Thisisamodal": "Este es un modal",
     "MyRadioButton": "mi boton de radio",
-    "MySwitch": "Mi interruptor"
+    "MySwitch": "Mi interruptor",
+    "Alert": "Alert",
+    "Button": "Button",
+    "Card": "Card",
+    "Checkbox": "Checkbox",
+    "Dropdown": "Dropdown",
+    "FloatingLabelInput": "Floating label input",
+    "Image": "Image",
+    "Input": "Input",
+    "Modal": "Modal",
+    "Radio": "Radio",
+    "Spinner": "Spinner",
+    "ToggleSwitch": "Toggle switch"
 }

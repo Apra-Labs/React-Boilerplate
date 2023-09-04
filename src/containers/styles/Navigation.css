@@ -1,0 +1,10 @@
+.sideLinks {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    .sideLinks {
+        display: flex;
+        flex-direction: column;
+    }
+}

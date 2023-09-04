@@ -25,3 +25,9 @@
 .links:hover {
     background-color: #D8D9DA;
 }
+
+@media screen and (max-width: 768px) {
+    .sideNav {
+        display: none;
+    }
+}

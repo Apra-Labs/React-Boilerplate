@@ -23,7 +23,7 @@ const defaultProps: Partial<DropDownProps> = {
     variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
-    dropdownComponentStyle: {marginLeft: 300, marginTop: 50},
+    dropdownComponentStyle: {marginLeft: 300, marginTop: 90},
     dropdownMenuStyle: {padding: 10},
     searchInputStyle: {outline: "none", boxShadow: "none"}
 };
