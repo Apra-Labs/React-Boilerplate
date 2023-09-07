@@ -11,9 +11,8 @@ import { Modal, Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { login } from '../redux/reducers/authSlice';
-import ToggleSwitchComponent from '../components/ToggleSwitchComponent';
-import { setDark, setLight } from '../redux/reducers/themeSlice';
 import './styles/Navigation.css';
+import ThemeSwitchButton from '../components/ThemeSwitchButton';
 
 const Navigation: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -81,14 +80,6 @@ const Navigation: React.FC = () => {
         }
     }
 
-    const changeTheme = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.checked) {
-            dispatch(setDark());
-        } else {
-            dispatch(setLight());
-        }
-    }
-
     const user = {
         id: 1,
         name: "John",
@@ -120,7 +111,6 @@ const Navigation: React.FC = () => {
                                     {isLogin &&
                                         <Nav.Link as={Link} to={"/profile"} className='navLink'>{t("Profile")}</Nav.Link>
                                     }
-                                    <ToggleSwitchComponent label='Change Theme' onChange={changeTheme} style={{color: 'white', margin: '0.5rem'}}/>
                                     <NavDropdown
                                         title={<span className='navLink'>{t("ChangeLanguage")}</span>}
                                         id="navbarScrollingDropdown"
@@ -128,6 +118,7 @@ const Navigation: React.FC = () => {
                                         <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
                                         <NavDropdown.Item eventKey={"es"}>{t("Spanish")}</NavDropdown.Item>
                                     </NavDropdown>
+                                    <ThemeSwitchButton />
                                 </> :
                                 <div className='sideLinks'>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/alert"} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
