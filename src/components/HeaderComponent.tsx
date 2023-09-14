@@ -13,7 +13,7 @@ const defaultProps: Partial<HeaderProps> = {
 
 const HeaderComponent: React.FC<HeaderProps> = ({label, style, className, id}) => {
     return (
-        <header style={style} className={className} id={id}>
+        <header style={style} className={className} id={id} role='myHeader'>
             <h1>{label}</h1>
         </header>
     )

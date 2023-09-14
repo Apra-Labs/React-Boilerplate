@@ -1,7 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
-import Profile from './pages/profile';
-import UiKit from './pages/ui';
 import AlertExample from './pages/ui/examples/AlertExample';
 import ButtonExample from './pages/ui/examples/ButtonExample';
 import CardExample from './pages/ui/examples/CardExample';
@@ -20,7 +18,6 @@ const Main: React.FC = () => {
         <Routes>
             <Route>
                 <Route path='/' element={<Home />} />
-                <Route path='/profile' element={<Profile />} />
                 <Route path='/uikit/alert' element={<AlertExample />} />
                 <Route path='/uikit/button' element={<ButtonExample />} />
                 <Route path='/uikit/card' element={<CardExample />} />

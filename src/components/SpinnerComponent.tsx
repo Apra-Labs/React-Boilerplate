@@ -1,4 +1,4 @@
-import { Spinner } from "react-bootstrap";
+ import { Spinner } from "react-bootstrap";
 import './styles/Spinner.css';
 
 interface SpinnerProps {
@@ -45,9 +45,9 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
         <>
             {fullPage ?
                 <div style={fullPageStyle}>
-                    <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id}/>
+                    <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner"/>
                 </div> :
-                <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} />
+                <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id}  role="mySpinner"/>
             }
         </>
     )

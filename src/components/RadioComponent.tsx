@@ -40,6 +40,7 @@ const RadioComponent: React.FC<RadioProps> = ({
             name={name}
             title={title}
             disabled={disabled}
+            role="myRadio"
         />
     )
 }

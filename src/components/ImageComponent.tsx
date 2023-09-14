@@ -14,9 +14,7 @@ interface ImageProps {
 }
 
 const defaultProps: Partial<ImageProps> = {
-    // rounded: true,
-    // roundedCircle: true,
-    thumbnail: true,
+    rounded: true,
     className: "imageClass"
 }
 
@@ -33,10 +31,10 @@ const ImageComponent: React.FC<ImageProps> = ({
 }) => {
     return (
         <>
-            {rounded && <Image src={src} className={className} style={style} id={id} alt={alt} rounded />}
-            {roundedCircle && <Image src={src} className={className} style={style} id={id} alt={alt} roundedCircle />}
-            {thumbnail && <Image src={src} className={className} style={style} id={id} alt={alt} thumbnail />}
-            {fluid && <Image src={src} className={className} style={style} id={id} alt={alt} fluid />}
+            {rounded && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"rounded />}
+            {roundedCircle && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"roundedCircle />}
+            {thumbnail && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"thumbnail />}
+            {fluid && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"fluid />}
         </>
     )
 }

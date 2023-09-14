@@ -31,7 +31,7 @@ const InputComponent: React.FC<InputGroupProps> = ({
     title
 }) => {
     return (
-        <InputGroup style={style} className={className} id={id}>
+        <InputGroup style={style} className={className} id={id} role="myInput">
             <Form.Control type={type} placeholder={placeholder} onChange={onChange} value={value} title={title}/>
         </InputGroup>
     )

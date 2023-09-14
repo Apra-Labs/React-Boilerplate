@@ -8,5 +8,6 @@
 @media screen and (max-width: 768px) {
     .floatingLabelInputClass {
         margin-left: 10rem;
+        width: 15rem;
     }
 }

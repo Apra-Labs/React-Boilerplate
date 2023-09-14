@@ -1,0 +1,23 @@
+.imgContainer {
+    display: flex;
+}
+
+.imgElement {
+    display: flex;
+    flex-direction: column;
+}
+
+.subHeading {
+    margin-left: 25rem;
+    margin-top: 2rem;
+}
+
+@media screen and (max-width: 1000px)  {
+    .imgContainer {
+        flex-direction: column;
+    }
+
+    .subHeading {
+        margin-left: 12rem;
+    }
+}

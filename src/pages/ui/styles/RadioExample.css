@@ -1,12 +1,10 @@
-.inputClass {
-    width: 25rem;
+.exampleHeading {
     margin-left: 30rem;
     margin-top: 2rem;
 }
 
 @media screen and (max-width: 768px) {
-    .inputClass {
+    .exampleHeading {
         margin-left: 10rem;
-        width: 15rem;
     }
 }

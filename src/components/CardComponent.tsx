@@ -42,6 +42,7 @@ const CardComponent: React.FC<CardProps> = ({
             className={className}
             id={id}
             border={border}
+            role="myCard"
         >
             {header && <Card.Header>{header}</Card.Header>}
             {imgSrc && <Card.Img variant="top" src={imgSrc} />}

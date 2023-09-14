@@ -27,7 +27,7 @@ const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
     id
 }) => {
     return (
-        <FloatingLabel style={style} label={label} className={className} id={id}>
+        <FloatingLabel style={style} label={label} className={className} id={id} role="myFloatingLabelInput">
             <Form.Control type={type} placeholder={placeholder} onChange={onChange}/>
         </FloatingLabel>
     )

@@ -1,12 +1,12 @@
 .spinnerClass {
     height: 5rem;
     width: 5rem;
-    margin-left: 30rem;
+    margin-left: 25rem;
     margin-top: 2rem;
 }
 
 @media screen and (max-width: 768px) {
     .spinnerClass {
-        margin-left: 15rem;
+        margin-left: 12.5rem;
     }
 }

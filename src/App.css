@@ -8,14 +8,6 @@
 }
 
 body {
-    background-color: var(--background-color);
+    background-color: white;
     font-size: 1.6rem;
-}
-
-body.light{
-    background-color: azure;
-}
-
-body.dark{
-    background-color: black;
 }

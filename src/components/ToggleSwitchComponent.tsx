@@ -22,7 +22,7 @@ const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({
     id
 }) => {
     return (
-        <Form style={style} className={className} id={id}>
+        <Form style={style} className={className} id={id} role="mySwitch">
             <Form.Check id="custom-switch" type="switch" label={label} onChange={onChange} />
         </Form>
     )

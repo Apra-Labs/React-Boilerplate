@@ -12,7 +12,6 @@ import FloatingLabelInputComponent from '../components/FloatingLabelInputCompone
 import ButtonComponent from '../components/ButtonComponent';
 import { login } from '../redux/reducers/authSlice';
 import './styles/Navigation.css';
-import ThemeSwitchButton from '../components/ThemeSwitchButton';
 
 const Navigation: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -90,9 +89,9 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <Navbar expand="md" style={{ backgroundColor: '#A8DF8E' }} data-bs-theme="light" fixed='top'>
-                <Navbar.Brand as={Link} to={"/"} className='text-light'>{t("MyApplication")}</Navbar.Brand>
-                <Nav.Link as={Link} to={"/uikit/alert"} className='text-light'>{t("UiKit")}</Nav.Link>
+            <Navbar expand="md" style={{ backgroundColor: '#A8DF8E' }} data-bs-theme="light" fixed='top' role='myNavbar'>
+                <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
+                <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" />
                 <Navbar.Offcanvas id="navbar-offcanvas" style={{ backgroundColor: '#A8DF8E', left: 0, top: 0, right: 'auto' }}>
                     <Offcanvas.Header closeButton style={{ color: 'white' }}>
@@ -105,11 +104,8 @@ const Navigation: React.FC = () => {
                             {location.pathname === "/" ?
                                 <>
                                     {!isLogin ?
-                                        <Nav.Link className='text-white' onClick={handleShow}>{t("Login")}</Nav.Link> :
+                                        <Nav.Link className='navLink text-white' onClick={handleShow}>{t("Login")}</Nav.Link> :
                                         <Nav.Link className='navLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
-                                    }
-                                    {isLogin &&
-                                        <Nav.Link as={Link} to={"/profile"} className='navLink'>{t("Profile")}</Nav.Link>
                                     }
                                     <NavDropdown
                                         title={<span className='navLink'>{t("ChangeLanguage")}</span>}
@@ -118,7 +114,6 @@ const Navigation: React.FC = () => {
                                         <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
                                         <NavDropdown.Item eventKey={"es"}>{t("Spanish")}</NavDropdown.Item>
                                     </NavDropdown>
-                                    <ThemeSwitchButton />
                                 </> :
                                 <div className='sideLinks'>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/alert"} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
@@ -149,7 +144,7 @@ const Navigation: React.FC = () => {
                         <FloatingLabelInputComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ marginLeft: '3rem', marginTop: 0, width: '80%', height: '5rem' }} />
                     </Modal.Body>
                     <Modal.Footer className='text-center'>
-                        <ButtonComponent label={t("Login")} type='submit' style={{ marginLeft: 0, marginTop: 0, marginRight: '12rem' }} />
+                        <ButtonComponent label={t("Login")} type='submit' style={{ marginLeft: 0, marginTop: 0, marginRight: '10rem' }} />
                     </Modal.Footer>
                 </form>
             </Modal>

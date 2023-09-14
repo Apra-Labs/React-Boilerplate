@@ -24,7 +24,7 @@ const defaultProps: Partial<DropDownProps> = {
     variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
-    dropdownMenuStyle: {padding: 10},
+    dropdownMenuStyle: {padding: 10, maxHeight: '20rem', overflowY: 'auto'},
     searchInputStyle: {outline: "none", boxShadow: "none"},
     className: "dropdownClass"
 };
@@ -67,7 +67,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     }
 
     return (
-        <Dropdown onSelect={onSelect} style={dropdownComponentStyle} className={className} id={id}>
+        <Dropdown onSelect={onSelect} style={dropdownComponentStyle} className={className} id={id} role="myDropdown">
             <Dropdown.Toggle variant={variant}>{label}</Dropdown.Toggle>
             <Dropdown.Menu style={dropdownMenuStyle}>
                 {enableSearch &&

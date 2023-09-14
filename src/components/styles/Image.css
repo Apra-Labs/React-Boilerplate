@@ -5,8 +5,10 @@
     margin-top: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .imageClass {
         margin-left: 10rem;
+        height: 10rem;
+        width: 7.5rem;
     }
 }

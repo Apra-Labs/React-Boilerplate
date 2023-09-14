@@ -42,6 +42,7 @@ const CheckBoxComponent: React.FC<CheckBoxProps> = ({
             name={name}
             title={title}
             disabled={disabled}
+            role="myCheckbox"
         />
     )
 }

@@ -37,6 +37,7 @@ const ButtonComponent: React.FC<ButtonProps> = ({
             className={className}
             id={id}
             title={title}
+            role="myButton"
         >
             {label}
         </Button>

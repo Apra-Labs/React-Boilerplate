@@ -34,6 +34,7 @@ const AlertComponent: React.FC<AlertProps> = ({
             style={style}
             className={className}
             id={id}
+            role="myAlert"
         >
             {message}
         </Alert>
