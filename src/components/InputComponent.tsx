@@ -32,7 +32,7 @@ const InputComponent: React.FC<InputGroupProps> = ({
 }) => {
     return (
         <InputGroup style={style} className={className} id={id}>
-            <Form.Control type={type} placeholder={placeholder} onChange={onChange} value={value} title={title} />
+            <Form.Control type={type} placeholder={placeholder} onChange={onChange} value={value} title={title}/>
         </InputGroup>
     )
 }

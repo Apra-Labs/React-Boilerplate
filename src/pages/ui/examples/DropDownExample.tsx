@@ -3,8 +3,8 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import DropDownComponent from "../../../components/DropDownComponent";
 import { useTranslation } from "react-i18next";
-
-const items = [ {key: "Person 1", value: "1"}, {key: "Person 2", value: "2"} ];
+import HeaderComponent from "../../../components/HeaderComponent";
+import { items } from "../../../assets/data/data";
 
 const DropDownExample: React.FC = () => {
     const { t } = useTranslation();
@@ -13,6 +13,7 @@ const DropDownExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar/>
+            <HeaderComponent label={t("Dropdown")} />
             <DropDownComponent label={t("MyDropDown")} items={items}/>
             <Footer />
         </>

@@ -7,19 +7,20 @@
     left: 0;
     background-color: #F9F9F9;
     border-right: 0.1rem solid;
+    border-color: rgb(33, 37, 41);
     overflow-x: hidden;
     padding-top: 2rem;
-    margin-top: 3.5rem;
+    margin-top: 3.3rem;
 }
 
 .links {
-    margin: 1rem;
+    margin: 0.1rem;
     color: black;
     display: block;
     text-decoration: none;
     cursor: pointer;
     font-size: 1rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
 
 .links:hover {
@@ -27,13 +28,13 @@
 }
 
 .activeLink {
-    margin: 1rem;
+    margin: 0.1rem;
     color: black;
     display: block;
     text-decoration: none;
     cursor: pointer;
     font-size: 1rem;
-    border-radius: 0.5rem;
+    padding: 0.5rem;
     background-color: #D8D9DA;
 }
 

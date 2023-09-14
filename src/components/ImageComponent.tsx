@@ -14,7 +14,9 @@ interface ImageProps {
 }
 
 const defaultProps: Partial<ImageProps> = {
-    rounded: true,
+    // rounded: true,
+    // roundedCircle: true,
+    thumbnail: true,
     className: "imageClass"
 }
 

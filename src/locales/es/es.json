@@ -15,7 +15,6 @@
     "Click": "Hacer clic",
     "MyCard": "Mi tarjeta",
     "Thisisancardexample": "Este es un ejemplo de tarjeta",
-    "MyCheckbox": "Mi casilla de verificación",
     "MyDropDown": "Mi menú desplegable",
     "Email Address": "Dirección de correo electrónico",
     "MyModal": "mi modal",
@@ -33,5 +32,9 @@
     "Modal": "Modal",
     "Radio": "Radio",
     "Spinner": "Spinner",
-    "ToggleSwitch": "Toggle switch"
+    "ToggleSwitch": "Toggle switch",
+    "Option1": "Opción 1",
+    "Option2": "Opción 2",
+    "Option3": "Opción 3",
+    "SelectOptions": "Seleccione opciones"
 }

@@ -5,6 +5,7 @@ import ButtonComponent from "../../../components/ButtonComponent";
 import ModalComponent from "../../../components/ModalComponent";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
+import HeaderComponent from "../../../components/HeaderComponent";
 
 const ModalExample: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
@@ -23,6 +24,7 @@ const ModalExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
+            <HeaderComponent label={t("Modal")} />
             <ButtonComponent label={t("Click")} onClick={handleClick}/>
             <ModalComponent show={show} onHide={handleHide} title={t("MyModal")} body={t("Thisisamodal")}/>
             <Footer />

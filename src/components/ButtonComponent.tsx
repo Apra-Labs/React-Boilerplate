@@ -15,7 +15,6 @@ interface ButtonProps {
 const defaultProps: Partial<ButtonProps> = {
     type: "button",
     variant: "primary",
-    title: "This is a button",
     className: "buttonClass"
 }
 

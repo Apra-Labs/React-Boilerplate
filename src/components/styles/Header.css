@@ -1,0 +1,11 @@
+.headerClass {
+    margin-top: 5rem;
+    margin-left: 16rem;
+}
+
+@media screen and (max-width: 768px) {
+    .headerClass {
+        margin-left: 10rem;
+        margin-top: 5rem;
+    }
+}
