@@ -5,6 +5,7 @@ import DropDownComponent from "../../../components/DropDownComponent";
 import { useTranslation } from "react-i18next";
 import HeaderComponent from "../../../components/HeaderComponent";
 import { items } from "../../../assets/data/data";
+import '../styles/Common.css';
 
 const DropDownExample: React.FC = () => {
     const { t } = useTranslation();
@@ -12,9 +13,11 @@ const DropDownExample: React.FC = () => {
     return (
         <>
             <Navigation />
-            <Sidebar/>
+            <Sidebar />
             <HeaderComponent label={t("Dropdown")} />
-            <DropDownComponent label={t("MyDropDown")} items={items}/>
+            <div className="commonContainer">
+                <DropDownComponent label={t("MyDropDown")} options={items} />
+            </div>
             <Footer />
         </>
     )

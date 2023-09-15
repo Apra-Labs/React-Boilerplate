@@ -2,11 +2,10 @@ import { useState, useEffect } from "react";
 import { Dropdown, InputGroup, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
-import './styles/Dropdown.css';
 
 interface DropDownProps {
     label: string;
-    items: { key: string; value: string; }[];
+    options: { key: string; value: string; }[];
     variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     onSelect?: (e: string | null) => void;
     enableSearch?: boolean;
@@ -25,15 +24,14 @@ const defaultProps: Partial<DropDownProps> = {
     enableSearch: true,
     placeholder: "Search...",
     dropdownMenuStyle: {padding: 10, maxHeight: '20rem', overflowY: 'auto'},
-    searchInputStyle: {outline: "none", boxShadow: "none"},
-    className: "dropdownClass"
+    searchInputStyle: {outline: "none", boxShadow: "none"}
 };
 
 
 const DropDownComponent: React.FC<DropDownProps> = ({
     variant,
     label,
-    items,
+    options: items,
     onSelect,
     enableSearch,
     dropdownComponentStyle,

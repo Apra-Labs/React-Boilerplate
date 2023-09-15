@@ -1,5 +1,4 @@
 import { Form } from "react-bootstrap";
-import './styles/Radio.css';
 
 interface RadioProps {
     label: string;
@@ -8,13 +7,13 @@ interface RadioProps {
     style?: React.CSSProperties;
     value?: string;
     disabled?: boolean;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     name?: string;
     title?: string;
 }
 
 const defaultProps: Partial<RadioProps> = {
-    className: "radioClass"
+    disabled: false
 }
 
 const RadioComponent: React.FC<RadioProps> = ({

@@ -1,5 +1,4 @@
 import { Form } from "react-bootstrap";
-import './styles/Checkbox.css';
 
 interface CheckBoxProps {
     label: string;
@@ -8,14 +7,13 @@ interface CheckBoxProps {
     style?: React.CSSProperties;
     value?: string;
     disabled?: boolean;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     name?: string;
     title?: string;
 }
 
 const defaultProps: Partial<CheckBoxProps> = {
-    title: "This is a checkbox",
-    className: "checkboxClass"
+    title: "This is a checkbox"
 }
 
 const CheckBoxComponent: React.FC<CheckBoxProps> = ({
@@ -27,7 +25,6 @@ const CheckBoxComponent: React.FC<CheckBoxProps> = ({
     disabled,
     onChange,
     name,
-
     title
 }) => {
     return (

@@ -3,39 +3,32 @@ import './styles/Image.css';
 
 interface ImageProps {
     src: string;
-    rounded?: boolean;
-    roundedCircle?: boolean;
-    thumbnail?: boolean;
-    fluid?: boolean;
     className?: string;
     id?: string;
     style?: React.CSSProperties;
-    alt?: string
+    alt?: string,
+    shape?: string
 }
 
 const defaultProps: Partial<ImageProps> = {
-    rounded: true,
-    className: "imageClass"
+    className: "imageClass",
+    shape: "fluid"
 }
 
 const ImageComponent: React.FC<ImageProps> = ({
     src,
-    rounded,
-    roundedCircle,
-    thumbnail,
-    fluid,
     className,
     id,
     style,
-    alt
+    alt,
+    shape
 }) => {
+    const shapeProp = {
+        // @ts-ignore
+        [shape]: true
+    }
     return (
-        <>
-            {rounded && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"rounded />}
-            {roundedCircle && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"roundedCircle />}
-            {thumbnail && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"thumbnail />}
-            {fluid && <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage"fluid />}
-        </>
+        <Image src={src} className={className} style={style} id={id} alt={alt} role="myImage" {...shapeProp} />
     )
 }
 

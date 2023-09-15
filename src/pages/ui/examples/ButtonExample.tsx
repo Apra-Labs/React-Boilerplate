@@ -4,6 +4,7 @@ import ButtonComponent from "../../../components/ButtonComponent";
 import Sidebar from "../Sidebar";
 import { useTranslation } from "react-i18next";
 import HeaderComponent from "../../../components/HeaderComponent";
+import '../styles/Common.css';
 
 const ButtonExample: React.FC = () => {
     const { t } = useTranslation();
@@ -13,7 +14,9 @@ const ButtonExample: React.FC = () => {
             <Navigation />
             <Sidebar />
             <HeaderComponent label={t("Button")} />
-            <ButtonComponent label={t("Click")}/>
+            <div className="commonContainer">
+                <ButtonComponent label={t("Click")} onClick={() => { }} />
+            </div>
             <Footer />
         </>
     )

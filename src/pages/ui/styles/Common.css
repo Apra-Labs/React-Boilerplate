@@ -1,3 +1,14 @@
+.commonContainer {
+    margin-top: 2rem;
+    margin-left: 17rem;
+    margin-right: 3rem;
+}
+
+.checkbox {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
 .imgContainer {
     display: flex;
 }
@@ -12,7 +23,11 @@
     margin-top: 2rem;
 }
 
-@media screen and (max-width: 1000px)  {
+@media screen and (max-width: 768px)  {
+    .commonContainer {
+        margin-left: 3rem;
+    }
+
     .imgContainer {
         flex-direction: column;
     }

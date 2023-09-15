@@ -5,7 +5,7 @@ import CheckBoxComponent from "../../../components/CheckBoxComponent";
 import { useTranslation } from "react-i18next";
 import HeaderComponent from "../../../components/HeaderComponent";
 import ButtonComponent from "../../../components/ButtonComponent";
-import '../styles/CheckBoxExample.css';
+import '../styles/Common.css';
 
 const CheckBoxExample: React.FC = () => {
     const { t } = useTranslation();
@@ -15,11 +15,13 @@ const CheckBoxExample: React.FC = () => {
             <Navigation />
             <Sidebar />
             <HeaderComponent label={t("Checkbox")} />
-            <h3 className="exampleHeading">{t("SelectOptions")}</h3>
-            <CheckBoxComponent label={t("Option1")}/>
-            <CheckBoxComponent label={t("Option2")}/>
-            <CheckBoxComponent label={t("Option3")}/>
-            <ButtonComponent label="Submit"/>
+            <div className="commonContainer">
+                <h3>{t("SelectOptions")}</h3>
+                <CheckBoxComponent label={t("Option1")} onChange={() => { }} className="checkbox" />
+                <CheckBoxComponent label={t("Option2")} onChange={() => { }} className="checkbox" />
+                <CheckBoxComponent label={t("Option3")} onChange={() => { }} className="checkbox" />
+                <ButtonComponent label="Submit" onClick={() => { }} />
+            </div>
             <Footer />
         </>
     )

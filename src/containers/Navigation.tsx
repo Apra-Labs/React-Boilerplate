@@ -144,7 +144,7 @@ const Navigation: React.FC = () => {
                         <FloatingLabelInputComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ marginLeft: '3rem', marginTop: 0, width: '80%', height: '5rem' }} />
                     </Modal.Body>
                     <Modal.Footer className='text-center'>
-                        <ButtonComponent label={t("Login")} type='submit' style={{ marginLeft: 0, marginTop: 0, marginRight: '10rem' }} />
+                        <ButtonComponent label={t("Login")} type='submit' style={{ marginLeft: 0, marginTop: 0, marginRight: '10rem' }}/>
                     </Modal.Footer>
                 </form>
             </Modal>

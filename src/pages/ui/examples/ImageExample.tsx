@@ -4,7 +4,7 @@ import Sidebar from "../Sidebar";
 import ImageComponent from "../../../components/ImageComponent";
 import HeaderComponent from "../../../components/HeaderComponent";
 import { useTranslation } from "react-i18next";
-import '../styles/ImageExample.css';
+import '../styles/Common.css';
 
 const ImageExample: React.FC = () => {
     const { t } = useTranslation();
@@ -15,15 +15,15 @@ const ImageExample: React.FC = () => {
             <HeaderComponent label={t("Image")} />
             <div className="imgContainer">
                 <div className="imgElement">
-                    <ImageComponent src={require("../../../assets/images/apra_logo.png")} />
+                    <ImageComponent src={require("../../../assets/images/apra_logo.png")} shape="rounded"/>
                     <p className="subHeading">Rounded</p>
                 </div>
                 <div className="imgElement">
-                    <ImageComponent src={require("../../../assets/images/apra_logo.png")} roundedCircle rounded={false} />
+                    <ImageComponent src={require("../../../assets/images/apra_logo.png")} shape="roundedCircle"/>
                     <p className="subHeading">Rounded Circle</p>
                 </div>
                 <div className="imgElement">
-                    <ImageComponent src={require("../../../assets/images/apra_logo.png")} thumbnail rounded={false} />
+                    <ImageComponent src={require("../../../assets/images/apra_logo.png")} shape="thumbnail"/>
                     <p className="subHeading">Thumbnail</p>
                 </div>
             </div>

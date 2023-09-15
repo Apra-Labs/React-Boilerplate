@@ -1,10 +1,9 @@
 import React from "react";
 import { Form } from "react-bootstrap";
-import './styles/ToggleSwitch.css';
 
 interface ToggleSwitchProps {
     label: string;
-    onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     style?: React.CSSProperties;
     className?: string;
     id?: string;
@@ -22,9 +21,14 @@ const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({
     id
 }) => {
     return (
-        <Form style={style} className={className} id={id} role="mySwitch">
-            <Form.Check id="custom-switch" type="switch" label={label} onChange={onChange} />
-        </Form>
+        <Form.Check
+            id={id}
+            type="switch"
+            label={label}
+            onChange={onChange}
+            style={style}
+            className={className}
+        />
     )
 }
 

@@ -4,6 +4,7 @@ import Sidebar from "../Sidebar";
 import ToggleSwitchComponent from "../../../components/ToggleSwitchComponent";
 import { useTranslation } from "react-i18next";
 import HeaderComponent from "../../../components/HeaderComponent";
+import '../styles/Common.css';
 
 const ToggleSwitchExample: React.FC = () => {
     const { t } = useTranslation();
@@ -13,7 +14,9 @@ const ToggleSwitchExample: React.FC = () => {
             <Navigation />
             <Sidebar />
             <HeaderComponent label={t("ToggleSwitch")} />
-            <ToggleSwitchComponent label={t("MySwitch")}/>
+            <div className="commonContainer">
+                <ToggleSwitchComponent label={t("MySwitch")} onChange={() => {}}/>
+            </div>
             <Footer />
         </>
     )

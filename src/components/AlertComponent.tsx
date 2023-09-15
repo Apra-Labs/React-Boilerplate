@@ -1,5 +1,4 @@
 import { Alert } from "react-bootstrap";
-import './styles/Alert.css';
 
 interface AlertProps {
     message: string;
@@ -13,7 +12,6 @@ interface AlertProps {
 
 const defaultProps: Partial<AlertProps> = {
     variant: "primary",
-    className: "alertClass"
 }
 
 const AlertComponent: React.FC<AlertProps> = ({

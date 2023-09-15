@@ -1,5 +1,4 @@
 import { Button } from "react-bootstrap";
-import './styles/Button.css';
 
 interface ButtonProps {
     label: string;
@@ -15,7 +14,6 @@ interface ButtonProps {
 const defaultProps: Partial<ButtonProps> = {
     type: "button",
     variant: "primary",
-    className: "buttonClass"
 }
 
 const ButtonComponent: React.FC<ButtonProps> = ({

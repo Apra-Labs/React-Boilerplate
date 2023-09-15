@@ -4,6 +4,7 @@ import CardComponent from "../../../components/CardComponent";
 import Sidebar from "../Sidebar";
 import { useTranslation } from "react-i18next";
 import HeaderComponent from "../../../components/HeaderComponent";
+import '../styles/Common.css';
 
 const CardExample: React.FC = () => {
     const { t } = useTranslation();
@@ -13,7 +14,9 @@ const CardExample: React.FC = () => {
             <Navigation />
             <Sidebar />
             <HeaderComponent label={t("Card")} />
-            <CardComponent title={t("MyCard")} message={t("Thisisancardexample")}/>
+            <div className="commonContainer">
+                <CardComponent title={t("MyCard")} message={t("Thisisancardexample")} />
+            </div>
             <Footer />
         </>
     )

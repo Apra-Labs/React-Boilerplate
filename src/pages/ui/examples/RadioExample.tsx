@@ -5,7 +5,7 @@ import RadioComponent from "../../../components/RadioComponent";
 import { useTranslation } from "react-i18next";
 import HeaderComponent from "../../../components/HeaderComponent";
 import ButtonComponent from "../../../components/ButtonComponent";
-import '../styles/RadioExample.css';
+import '../styles/Common.css';
 
 const RadioExample: React.FC = () => {
     const { t } = useTranslation();
@@ -15,11 +15,13 @@ const RadioExample: React.FC = () => {
             <Navigation />
             <Sidebar />
             <HeaderComponent label={t("Radio")} />
-            <h3 className="exampleHeading">{t("SelectOptions")}</h3>
-            <RadioComponent name="myoption" label={t("Option1")}/>
-            <RadioComponent name="myoption" label={t("Option2")}/>
-            <RadioComponent name="myoption" label={t("Option3")}/>
-            <ButtonComponent label="Submit"/>
+            <div className="commonContainer">
+                <h3>{t("SelectOptions")}</h3>
+                <RadioComponent name="myoption" label={t("Option1")} onChange={() => { }} className="checkbox" />
+                <RadioComponent name="myoption" label={t("Option2")} onChange={() => { }} className="checkbox" />
+                <RadioComponent name="myoption" label={t("Option3")} onChange={() => { }} className="checkbox" />
+                <ButtonComponent label="Submit" onClick={() => { }} />
+            </div>
             <Footer />
         </>
     )

@@ -1,5 +1,4 @@
- import { Spinner } from "react-bootstrap";
-import './styles/Spinner.css';
+import { Spinner } from "react-bootstrap";
 
 interface SpinnerProps {
     animation: "border" | "grow";
@@ -28,7 +27,6 @@ const defaultProps: Partial<SpinnerProps> = {
         opacity: 0.5
     },
     variant: "primary",
-    className: "spinnerClass"
 }
 
 const SpinnerComponent: React.FC<SpinnerProps> = ({
@@ -45,9 +43,9 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
         <>
             {fullPage ?
                 <div style={fullPageStyle}>
-                    <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner"/>
+                    <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner" />
                 </div> :
-                <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id}  role="mySpinner"/>
+                <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner" />
             }
         </>
     )
