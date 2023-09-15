@@ -2,7 +2,7 @@ import Navigation from "../../containers/Navigation";
 import Footer from "../../containers/Footer";
 
 const Home: React.FC = () => {
-    return(
+    return (
         <div>
             <Navigation />
             <Footer />
@@ -10,4 +10,4 @@ const Home: React.FC = () => {
     )
 }
 
-export default Home
+export default Home;
