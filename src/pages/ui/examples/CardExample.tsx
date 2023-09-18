@@ -3,7 +3,6 @@ import Footer from "../../../containers/Footer";
 import CardComponent from "../../../components/CardComponent";
 import Sidebar from "../Sidebar";
 import { useTranslation } from "react-i18next";
-import HeaderComponent from "../../../components/HeaderComponent";
 import '../styles/Common.css';
 
 const CardExample: React.FC = () => {
@@ -13,7 +12,7 @@ const CardExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("Card")} />
+            <h1 className="heading">{t("Card")}</h1>
             <div className="commonContainer">
                 <CardComponent title={t("MyCard")} message={t("Thisisancardexample")} />
             </div>

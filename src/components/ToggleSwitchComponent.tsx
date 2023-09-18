@@ -28,6 +28,7 @@ const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({
             onChange={onChange}
             style={style}
             className={className}
+            role="mySwitch"
         />
     )
 }

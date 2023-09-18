@@ -5,7 +5,6 @@ import ButtonComponent from "../../../components/ButtonComponent";
 import ModalComponent from "../../../components/ModalComponent";
 import { useTranslation } from "react-i18next";
 import { useState } from "react";
-import HeaderComponent from "../../../components/HeaderComponent";
 import '../styles/Common.css';
 
 const ModalExample: React.FC = () => {
@@ -25,7 +24,7 @@ const ModalExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("Modal")} />
+            <h1 className="heading">{t("Modal")}</h1>
             <div className="commonContainer">
                 <ButtonComponent label={t("Click")} onClick={handleClick} />
                 <ModalComponent show={show} onHide={handleHide} title={t("MyModal")} body={t("Thisisamodal")} />

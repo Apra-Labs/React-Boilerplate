@@ -3,7 +3,6 @@ import Footer from "../../../containers/Footer";
 import ButtonComponent from "../../../components/ButtonComponent";
 import Sidebar from "../Sidebar";
 import { useTranslation } from "react-i18next";
-import HeaderComponent from "../../../components/HeaderComponent";
 import '../styles/Common.css';
 
 const ButtonExample: React.FC = () => {
@@ -13,7 +12,7 @@ const ButtonExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("Button")} />
+            <h1 className="heading">{t("Button")}</h1>
             <div className="commonContainer">
                 <ButtonComponent label={t("Click")} onClick={() => { }} />
             </div>

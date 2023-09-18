@@ -3,7 +3,6 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import FloatingLabelInputComponent from "../../../components/FloatingLabelInputComponent";
 import { useTranslation } from "react-i18next";
-import HeaderComponent from "../../../components/HeaderComponent";
 import '../styles/Common.css';
 
 const FloatingLabelInputExample: React.FC = () => {
@@ -13,7 +12,7 @@ const FloatingLabelInputExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("FloatingLabelInput")} />
+            <h1 className="heading">{t("FloatingLabelInput")}</h1>
             <div className="commonContainer">
                 <FloatingLabelInputComponent label={t("EmailAddress")} />
             </div>

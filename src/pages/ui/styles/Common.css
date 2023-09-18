@@ -1,3 +1,8 @@
+.heading {
+    margin-top: 5rem;
+    margin-left: 16rem;
+}
+
 .commonContainer {
     margin-top: 2rem;
     margin-left: 17rem;
@@ -7,6 +12,13 @@
 .checkbox {
     margin-top: 1rem;
     margin-bottom: 1rem;
+}
+
+.imageClass {
+    height: 20rem;
+    width: 15rem;
+    margin-left: 20rem;
+    margin-top: 2rem;
 }
 
 .imgContainer {
@@ -24,10 +36,21 @@
 }
 
 @media screen and (max-width: 768px)  {
+    .heading {
+        margin-left: 3rem;
+        margin-top: 5rem;
+    }
+    
     .commonContainer {
         margin-left: 3rem;
     }
 
+    .imageClass {
+        margin-left: 10rem;
+        height: 10rem;
+        width: 7.5rem;
+    }
+    
     .imgContainer {
         flex-direction: column;
     }

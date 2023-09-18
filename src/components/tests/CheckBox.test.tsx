@@ -5,7 +5,8 @@ import '@testing-library/jest-dom/extend-expect';
 describe('Checkbox', () => {
     test("renders", () => {
         const label = "My label";
-        render(<CheckBoxComponent label={label}/>);
+        const handleChange = jest.fn();
+        render(<CheckBoxComponent label={label} onChange={handleChange}/>);
         const element = screen.getByRole("myCheckbox");
         expect(element).toBeInTheDocument();
         fireEvent.click(element);

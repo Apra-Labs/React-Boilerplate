@@ -5,7 +5,8 @@ import '@testing-library/jest-dom/extend-expect';
 describe('Radio', () => {
     test("renders", () => {
         const label = "My radio";
-        render(<RadioComponent label={label}/>);
+        const handleChange = jest.fn();
+        render(<RadioComponent label={label} onChange={handleChange}/>);
         const element = screen.getByRole("myRadio");
         expect(element).toBeInTheDocument();
         fireEvent.click(element);

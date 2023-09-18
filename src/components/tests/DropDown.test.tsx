@@ -6,7 +6,7 @@ describe('Dropdown', () => {
     test("renders", () => {
         const label = "My label";
         const items = [{key: "Ramesh", value: "Belagavi"}, {key: "Suresh", value: "Bangalore"}];
-        render(<DropDownComponent label={label} items={items}/>);
+        render(<DropDownComponent label={label} options={items}/>);
         const element = screen.getByRole("myDropdown");
         expect(element).toBeInTheDocument();
     });

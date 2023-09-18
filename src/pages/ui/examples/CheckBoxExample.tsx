@@ -3,7 +3,6 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import CheckBoxComponent from "../../../components/CheckBoxComponent";
 import { useTranslation } from "react-i18next";
-import HeaderComponent from "../../../components/HeaderComponent";
 import ButtonComponent from "../../../components/ButtonComponent";
 import '../styles/Common.css';
 
@@ -14,7 +13,7 @@ const CheckBoxExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("Checkbox")} />
+            <h1 className="heading">{t("Checkbox")}</h1>
             <div className="commonContainer">
                 <h3>{t("SelectOptions")}</h3>
                 <CheckBoxComponent label={t("Option1")} onChange={() => { }} className="checkbox" />

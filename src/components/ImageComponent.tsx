@@ -1,5 +1,4 @@
 import { Image } from "react-bootstrap";
-import './styles/Image.css';
 
 interface ImageProps {
     src: string;
@@ -11,7 +10,6 @@ interface ImageProps {
 }
 
 const defaultProps: Partial<ImageProps> = {
-    className: "imageClass",
     shape: "fluid"
 }
 

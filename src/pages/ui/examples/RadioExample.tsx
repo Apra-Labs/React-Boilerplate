@@ -3,7 +3,6 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import RadioComponent from "../../../components/RadioComponent";
 import { useTranslation } from "react-i18next";
-import HeaderComponent from "../../../components/HeaderComponent";
 import ButtonComponent from "../../../components/ButtonComponent";
 import '../styles/Common.css';
 
@@ -14,7 +13,7 @@ const RadioExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("Radio")} />
+            <h1 className="heading">{t("Radio")}</h1>
             <div className="commonContainer">
                 <h3>{t("SelectOptions")}</h3>
                 <RadioComponent name="myoption" label={t("Option1")} onChange={() => { }} className="checkbox" />

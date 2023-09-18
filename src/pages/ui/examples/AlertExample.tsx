@@ -3,7 +3,6 @@ import Sidebar from "../Sidebar";
 import Navigation from "../../../containers/Navigation";
 import Footer from "../../../containers/Footer";
 import { useTranslation } from "react-i18next";
-import HeaderComponent from "../../../components/HeaderComponent";
 import '../styles/Common.css';
 
 const AlertExample: React.FC = () => {
@@ -13,7 +12,7 @@ const AlertExample: React.FC = () => {
         <>
             <Navigation />
             <Sidebar />
-            <HeaderComponent label={t("Alert")} />
+            <h1 className="heading">{t("Alert")}</h1>
             <div className="commonContainer">
                 <AlertComponent message={t("Thisisanalertexample")} />
             </div>
