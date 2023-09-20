@@ -1,14 +1,12 @@
 .sideNav {
-    height: 90%;
+    height: calc(100% - 6rem);
     width: 15rem;
     position: fixed;
-    z-index: 1;
     top: 0;
     left: 0;
     background-color: #F9F9F9;
     border-right: 0.1rem solid;
-    border-color: rgb(33, 37, 41);
-    overflow-x: hidden;
+    border-color: #dadde1;
     padding-top: 2rem;
     margin-top: 3.3rem;
 }

@@ -89,7 +89,7 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <Navbar expand="md" style={{ backgroundColor: '#A8DF8E' }} data-bs-theme="light" fixed='top' role='myNavbar'>
+            <Navbar expand="md" className='nav' data-bs-theme="light" fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
                 <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" />

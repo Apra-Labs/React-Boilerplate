@@ -9,7 +9,7 @@ interface DropDownProps {
     variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     onSelect?: (e: string | null) => void;
     enableSearch?: boolean;
-    dropdownComponentStyle?: React.CSSProperties;
+    dropdownToggleStyle?: React.CSSProperties;
     dropdownMenuStyle?: React.CSSProperties;
     searchComponentStyle?: React.CSSProperties;
     searchInputStyle?: React.CSSProperties;
@@ -34,7 +34,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     options: items,
     onSelect,
     enableSearch,
-    dropdownComponentStyle,
+    dropdownToggleStyle,
     dropdownMenuStyle,
     searchComponentStyle,
     searchInputStyle,
@@ -65,8 +65,8 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     }
 
     return (
-        <Dropdown onSelect={onSelect} style={dropdownComponentStyle} className={className} id={id} role="myDropdown">
-            <Dropdown.Toggle variant={variant}>{label}</Dropdown.Toggle>
+        <Dropdown onSelect={onSelect}  className={className} id={id} role="myDropdown">
+            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle}>{label}</Dropdown.Toggle>
             <Dropdown.Menu style={dropdownMenuStyle}>
                 {enableSearch &&
                     <InputGroup style={searchComponentStyle}>

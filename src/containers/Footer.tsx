@@ -1,10 +1,10 @@
-import { Container } from "react-bootstrap";
+import "./styles/Footer.css";
 
 const Footer: React.FC = () => {
     return (
-        <Container fluid className="position-absolute bottom-0 bg-secondary" data-testid="myFooter">
-            <p className="text-center text-light">Apra Labs &copy; 2023</p>
-        </Container>
+        <div className="footerContainer">
+            <p className="footerTitle">Apra Labs &copy; 2023</p>
+        </div>
     )
 }
 
