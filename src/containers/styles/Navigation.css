@@ -1,6 +1,16 @@
 .nav {
     background-color: #A8DF8E;
     height: 3rem;
+    margin: 0;
+}
+
+.themeButton {
+    background-color: #A8DF8E;
+    border: 0;
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+    color: #fff;
 }
 
 .sideLinks {

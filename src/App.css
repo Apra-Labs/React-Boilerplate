@@ -5,9 +5,36 @@
     max-width: '100%';
     overflow-x: hidden;
     font-size: '62.5%';
+    background-color: var(--background);
+
+    /* colors */
+    --background: #fff;
+    --text-color: #000;
+    --footer-background: #f8f9fa;
+    --sidebar-background: #F9F9F9;
+    --sidebar-link-hover: #D8D9DA;
+    --sidebar-border-color: #dadde1;
+}
+
+[data-theme="light"] {
+    --background: #fff;
+    --text-color: #000;
+    --footer-background: #f8f9fa;
+    --sidebar-background: #F9F9F9;
+    --sidebar-link-hover: #D8D9DA;
+    --sidebar-border-color: #dadde1;
+}
+
+[data-theme="dark"] {
+    --background: #000;
+    --text-color: #fff;
+    --footer-background: #2b3035;
+    --sidebar-background: #000;
+    --sidebar-link-hover: #ffffff1a;
+    --sidebar-border-color:#adb5bd;
 }
 
 body {
-    background-color: white;
     font-size: 1.6rem;
+    background: var(--background);
 }

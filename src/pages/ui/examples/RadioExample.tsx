@@ -10,7 +10,7 @@ const RadioExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Radio")}</h1>
@@ -22,7 +22,7 @@ const RadioExample: React.FC = () => {
                 <ButtonComponent label="Submit" onClick={() => { }} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -9,7 +9,7 @@ const SpinnerExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Spinner")}</h1>
@@ -17,7 +17,7 @@ const SpinnerExample: React.FC = () => {
                 <SpinnerComponent animation="border" style={{height: '10rem', width: '10rem'}}/>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -8,7 +8,7 @@ import '../styles/Common.css';
 const InputExample: React.FC = () => {
     const { t } = useTranslation();
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Input")}</h1>
@@ -16,7 +16,7 @@ const InputExample: React.FC = () => {
                 <InputComponent />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

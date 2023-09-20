@@ -9,7 +9,7 @@ const ToggleSwitchExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("ToggleSwitch")}</h1>
@@ -17,7 +17,7 @@ const ToggleSwitchExample: React.FC = () => {
                 <ToggleSwitchComponent label={t("MySwitch")} onChange={() => {}}/>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

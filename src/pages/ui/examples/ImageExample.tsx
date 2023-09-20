@@ -8,7 +8,7 @@ import '../styles/Common.css';
 const ImageExample: React.FC = () => {
     const { t } = useTranslation();
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Image")}</h1>
@@ -27,7 +27,7 @@ const ImageExample: React.FC = () => {
                 </div>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -9,7 +9,7 @@ const CardExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Card")}</h1>
@@ -17,7 +17,7 @@ const CardExample: React.FC = () => {
                 <CardComponent title={t("MyCard")} message={t("Thisisancardexample")} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

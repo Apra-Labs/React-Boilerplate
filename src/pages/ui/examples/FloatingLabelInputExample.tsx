@@ -9,7 +9,7 @@ const FloatingLabelInputExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("FloatingLabelInput")}</h1>
@@ -17,7 +17,7 @@ const FloatingLabelInputExample: React.FC = () => {
                 <FloatingLabelInputComponent label={t("EmailAddress")} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

@@ -9,7 +9,7 @@ const AlertExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Alert")}</h1>
@@ -17,7 +17,7 @@ const AlertExample: React.FC = () => {
                 <AlertComponent message={t("Thisisanalertexample")} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

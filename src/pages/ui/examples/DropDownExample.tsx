@@ -10,7 +10,7 @@ const DropDownExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Dropdown")}</h1>
@@ -18,7 +18,7 @@ const DropDownExample: React.FC = () => {
                 <DropDownComponent label={t("MyDropDown")} options={items} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

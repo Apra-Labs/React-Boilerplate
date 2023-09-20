@@ -1,3 +1,8 @@
+.exampleContainer {
+    background-color: var(--background);
+    color: var(--text-color);
+}
+
 .heading {
     margin-top: 5rem;
     margin-left: 16rem;
@@ -12,6 +17,7 @@
 .checkbox {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    color: var(--text-color);
 }
 
 .imageClass {
@@ -23,6 +29,7 @@
 
 .imgContainer {
     display: flex;
+    background-color: var(--background);
 }
 
 .imgElement {
@@ -33,6 +40,7 @@
 .subHeading {
     margin-left: 25rem;
     margin-top: 2rem;
+    color: var(--text-color);
 }
 
 @media screen and (max-width: 768px)  {

@@ -9,7 +9,7 @@ const ButtonExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Button")}</h1>
@@ -17,7 +17,7 @@ const ButtonExample: React.FC = () => {
                 <ButtonComponent label={t("Click")} onClick={() => { }} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

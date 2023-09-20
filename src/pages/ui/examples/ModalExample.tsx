@@ -21,7 +21,7 @@ const ModalExample: React.FC = () => {
     }
 
     return (
-        <>
+        <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Modal")}</h1>
@@ -30,7 +30,7 @@ const ModalExample: React.FC = () => {
                 <ModalComponent show={show} onHide={handleHide} title={t("MyModal")} body={t("Thisisamodal")} />
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

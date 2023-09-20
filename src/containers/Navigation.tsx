@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -11,6 +11,8 @@ import { Modal, Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { login } from '../redux/reducers/authSlice';
+import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/Navigation.css';
 
 const Navigation: React.FC = () => {
@@ -18,6 +20,7 @@ const Navigation: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
+    const [icon, setIcon] = useState<any>(faMoon);
 
     const loggedIn = useAppSelector((state) => state.authReducer.isLoggedIn);
     const location = useLocation();
@@ -60,6 +63,16 @@ const Navigation: React.FC = () => {
     const handleShow = () => {
         setShow(true);
     }
+
+    const changeIcon = useCallback(() => {
+        if(icon === faMoon) {
+            setIcon(faSun);
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else if(icon === faSun) {
+            setIcon(faMoon);
+            document.documentElement.setAttribute('data-theme', 'light');
+        }
+    }, [icon]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -114,6 +127,7 @@ const Navigation: React.FC = () => {
                                         <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
                                         <NavDropdown.Item eventKey={"es"}>{t("Spanish")}</NavDropdown.Item>
                                     </NavDropdown>
+                                    <button className='themeButton' onClick={changeIcon}><FontAwesomeIcon icon={icon} /></button>
                                 </> :
                                 <div className='sideLinks'>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/alert"} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
