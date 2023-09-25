@@ -13,7 +13,7 @@ const InputExample: React.FC = () => {
             <Sidebar />
             <h1 className="heading">{t("Input")}</h1>
             <div className="commonContainer">
-                <InputComponent />
+                <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer"/>
             </div>
             <Footer />
         </div>

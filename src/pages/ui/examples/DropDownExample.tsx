@@ -15,7 +15,12 @@ const DropDownExample: React.FC = () => {
             <Sidebar />
             <h1 className="heading">{t("Dropdown")}</h1>
             <div className="commonContainer">
-                <DropDownComponent label={t("MyDropDown")} options={items} />
+                <DropDownComponent
+                    label={t("MyDropDown")}
+                    options={items}
+                    dropDownMenuclassName="dropDownMenu"
+                    dropDownItemclassName="dropDownItem"
+                />
             </div>
             <Footer />
         </div>

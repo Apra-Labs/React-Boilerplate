@@ -7,6 +7,7 @@ interface ToggleSwitchProps {
     style?: React.CSSProperties;
     className?: string;
     id?: string;
+    name?: string;
 }
 
 const defaultProps: Partial<ToggleSwitchProps> = {
@@ -18,7 +19,8 @@ const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({
     onChange,
     style,
     className,
-    id
+    id,
+    name
 }) => {
     return (
         <Form.Check
@@ -28,6 +30,7 @@ const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({
             onChange={onChange}
             style={style}
             className={className}
+            name={name}
             role="mySwitch"
         />
     )

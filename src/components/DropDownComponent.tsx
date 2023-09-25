@@ -14,7 +14,10 @@ interface DropDownProps {
     searchComponentStyle?: React.CSSProperties;
     searchInputStyle?: React.CSSProperties;
     placeholder?: string;
-    className?: string;
+    dropDownclassName?: string;
+    dropDownToggleclassName?: string;
+    dropDownMenuclassName?: string;
+    dropDownItemclassName?: string;
     id?: string;
     //multi select options
 }
@@ -39,7 +42,10 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     searchComponentStyle,
     searchInputStyle,
     placeholder,
-    className,
+    dropDownclassName,
+    dropDownMenuclassName,
+    dropDownToggleclassName,
+    dropDownItemclassName,
     id
 }) => {
     const [inputValue, setInputValue] = useState<string>("");
@@ -49,7 +55,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
         if (filteredData?.length === 0) {
             setFilteredData(items);
         }
-    }, [filteredData]);
+    }, [items, filteredData]);
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
@@ -65,23 +71,23 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     }
 
     return (
-        <Dropdown onSelect={onSelect}  className={className} id={id} role="myDropdown">
-            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle}>{label}</Dropdown.Toggle>
-            <Dropdown.Menu style={dropdownMenuStyle}>
+        <Dropdown onSelect={onSelect}  className={dropDownclassName} id={id} role="myDropdown">
+            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle} className={dropDownToggleclassName}>{label}</Dropdown.Toggle>
+            <Dropdown.Menu style={dropdownMenuStyle} className={dropDownMenuclassName}> 
                 {enableSearch &&
                     <InputGroup style={searchComponentStyle}>
-                        <Form.Control placeholder={placeholder} style={searchInputStyle} onChange={handleOnChange} value={inputValue} />
+                        <Form.Control placeholder={placeholder} style={searchInputStyle} onChange={handleOnChange} value={inputValue} className={dropDownMenuclassName}/>
                         {(inputValue !== '') ?
-                            <InputGroup.Text onClick={clearInput} style={{ cursor: 'pointer' }}>
+                            <InputGroup.Text onClick={clearInput} style={{ cursor: 'pointer' }} className={dropDownMenuclassName}>
                                 <FontAwesomeIcon icon={faXmark} />
                             </InputGroup.Text>
-                            : <InputGroup.Text>
+                            : <InputGroup.Text className={dropDownMenuclassName}>
                                 <FontAwesomeIcon icon={faMagnifyingGlass} />
                             </InputGroup.Text>
                         }
                     </InputGroup>
                 }
-                {filteredData?.map(item => <Dropdown.Item eventKey={item.value}>{item.key}</Dropdown.Item>)}
+                {filteredData?.map(item => <Dropdown.Item className={dropDownItemclassName} eventKey={item.value}>{item.key}</Dropdown.Item>)}
             </Dropdown.Menu>
         </Dropdown>
     )

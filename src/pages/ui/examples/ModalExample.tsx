@@ -27,7 +27,15 @@ const ModalExample: React.FC = () => {
             <h1 className="heading">{t("Modal")}</h1>
             <div className="commonContainer">
                 <ButtonComponent label={t("Click")} onClick={handleClick} />
-                <ModalComponent show={show} onHide={handleHide} title={t("MyModal")} body={t("Thisisamodal")} />
+                <ModalComponent
+                    show={show}
+                    onHide={handleHide}
+                    title={t("MyModal")}
+                    body={t("Thisisamodal")}
+                    modalHeaderClass="modalClass"
+                    modalBodyClass="modalClass"
+                    modalFooterClass="modalClass"
+                />
             </div>
             <Footer />
         </div>

@@ -1,19 +1,19 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { logOut } from '../redux/reducers/authSlice';
+import { logOut, login } from '../redux/reducers/authSlice';
 import { toast } from 'react-toastify';
 import { Modal, Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
-import { login } from '../redux/reducers/authSlice';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/Navigation.css';
+import ModalComponent from '../components/ModalComponent';
 
 const Navigation: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -23,15 +23,17 @@ const Navigation: React.FC = () => {
     const [icon, setIcon] = useState<any>(faMoon);
 
     const loggedIn = useAppSelector((state) => state.authReducer.isLoggedIn);
+    const themeIcon = useAppSelector((state) => state.themeIconReducer.icon);
     const location = useLocation();
 
     useEffect(() => {
         setIsLogin(loggedIn);
+        setIcon(themeIcon);
 
         return () => {
             console.log('Component unmounted');
         }
-    }, [loggedIn, location]);
+    }, [loggedIn, location, themeIcon]);
 
     const { i18n, t } = useTranslation();
     const dispatch = useAppDispatch();
@@ -64,15 +66,15 @@ const Navigation: React.FC = () => {
         setShow(true);
     }
 
-    const changeIcon = useCallback(() => {
-        if(icon === faMoon) {
+    const changeIcon = () => {
+        if (icon === faMoon) {
             setIcon(faSun);
             document.documentElement.setAttribute('data-theme', 'dark');
-        } else if(icon === faSun) {
+        } else if (icon === faSun) {
             setIcon(faMoon);
             document.documentElement.setAttribute('data-theme', 'light');
         }
-    }, [icon]);
+    };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -104,12 +106,14 @@ const Navigation: React.FC = () => {
         <>
             <Navbar expand="md" className='nav' data-bs-theme="light" fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
+                
                 <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" />
                 <Navbar.Offcanvas id="navbar-offcanvas" style={{ backgroundColor: '#A8DF8E', left: 0, top: 0, right: 'auto' }}>
                     <Offcanvas.Header closeButton style={{ color: 'white' }}>
                         <Offcanvas.Title>
                             <Navbar.Brand as={Link} to={"/"} className='text-light'>{t("MyApplication")}</Navbar.Brand>
+                            <button className='themeButtonOnCollapse' onClick={changeIcon}><FontAwesomeIcon icon={icon} /></button>
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body>
@@ -148,20 +152,38 @@ const Navigation: React.FC = () => {
                     </Offcanvas.Body>
                 </Navbar.Offcanvas>
             </Navbar>
-            <Modal show={show} onHide={handleClose} centered>
-                <form onSubmit={handleSubmit}>
-                    <Modal.Header closeButton>
-                        <Modal.Title style={{ marginLeft: '12rem' }}>{t("Login")}</Modal.Title>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <FloatingLabelInputComponent label={t("Email")} type='email' placeholder={t("Email")} onChange={handleEmail} style={{ marginLeft: '3rem', marginTop: 0, width: '80%', height: '5rem' }} />
-                        <FloatingLabelInputComponent label={t("Password")} type='password' placeholder={t("Password")} onChange={handlePassword} style={{ marginLeft: '3rem', marginTop: 0, width: '80%', height: '5rem' }} />
-                    </Modal.Body>
-                    <Modal.Footer className='text-center'>
-                        <ButtonComponent label={t("Login")} type='submit' style={{ marginLeft: 0, marginTop: 0, marginRight: '13rem' }}/>
-                    </Modal.Footer>
-                </form>
-            </Modal>
+            <ModalComponent
+                show={show}
+                onHide={handleClose}
+                title={t("Login")}
+                body={
+                    <>
+                        <FloatingLabelInputComponent
+                            label={t("Email")}
+                            type='email'
+                            placeholder={t("Email")}
+                            onChange={handleEmail}
+                            classNameFloatingContainer='modalInputContainer'
+                            classNameFloatingInput='modalInput'
+                        />
+                        <FloatingLabelInputComponent
+                            label={t("Password")}
+                            type='password'
+                            placeholder={t("Password")}
+                            onChange={handlePassword}
+                            classNameFloatingContainer='modalInputContainer'
+                            classNameFloatingInput='modalInput'
+                        />
+                    </>
+                }
+                footer={
+                    <ButtonComponent label={t("Login")} type='submit' className='loginButton'/>
+                }
+                modalHeaderClass='loginHeader'
+                modalBodyClass='loginBody'
+                modalFooterClass='loginFooter'
+                centered
+            />
         </>
     )
 }

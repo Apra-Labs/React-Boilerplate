@@ -5,29 +5,49 @@ interface FloatingLabelInputProps {
     type?: string;
     placeholder?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    style?: React.CSSProperties;
-    className?: string;
-    id?: string;
+    styleFloatingContainer?: React.CSSProperties;
+    classNameFloatingContainer?: string;
+    idFloatingContainer?: string;
+    classNameFloatingInput?: string;
+    idFloatingLabel?: string;
+    name?: string;
+    required?: boolean;
 }
 
 const defaultProps: Partial<FloatingLabelInputProps> = {
     type: "text",
-    placeholder: "placeholder",
-    style: {width: '20rem'}
+    placeholder: "placeholder"
 }
 
 const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
-    label, 
-    type, 
-    placeholder, 
-    onChange, 
-    style, 
-    className, 
-    id
+    label,
+    type,
+    placeholder,
+    onChange,
+    styleFloatingContainer,
+    classNameFloatingContainer,
+    idFloatingContainer,
+    classNameFloatingInput,
+    name,
+    required
 }) => {
     return (
-        <FloatingLabel style={style} label={label} className={className} id={id} role="myFloatingLabelInput">
-            <Form.Control type={type} placeholder={placeholder} onChange={onChange}/>
+        <FloatingLabel
+            style={styleFloatingContainer}
+            label={label}
+            className={classNameFloatingContainer}
+            id={idFloatingContainer}
+            role="myFloatingLabelInput"
+        >
+            <Form.Control
+                id="floatingInput"
+                type={type}
+                placeholder={placeholder}
+                onChange={onChange}
+                className={classNameFloatingInput}
+                name={name}
+                required={required}
+            />
         </FloatingLabel>
     )
 }

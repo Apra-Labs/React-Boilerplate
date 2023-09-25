@@ -1,10 +1,10 @@
 .nav {
     background-color: #A8DF8E;
-    height: 3rem;
-    margin: 0;
+    height: 3.5rem;
 }
 
-.themeButton {
+
+.themeButton, .themeButtonOnCollapse {
     background-color: #A8DF8E;
     border: 0;
     font-size: 1.5rem;
@@ -27,9 +27,40 @@
     color: white;
 }
 
+.modalInputContainer, .modalInputContainer:focus {
+    margin: 0.8rem;
+    width: 90%;
+    background-color: var(--footer-background);
+    color: var(--text-color);
+}
+
+.loginHeader, .modalInput, .modalInput:focus {
+    background-color: var(--footer-background);
+    color: var(--text-color);
+}
+
+.loginBody {
+    background-color: var(--footer-background);
+    color: var(--text-color);
+    padding: 0;
+}
+
+.loginFooter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--footer-background);
+    color: var(--text-color);
+    height: 5rem;
+}
+
 @media screen and (max-width: 768px) {
     .sideLinks {
         display: flex;
         flex-direction: column;
+    }
+
+    .themeButton {
+        display: none;
     }
 }

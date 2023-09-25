@@ -14,7 +14,7 @@ const ToggleSwitchExample: React.FC = () => {
             <Sidebar />
             <h1 className="heading">{t("ToggleSwitch")}</h1>
             <div className="commonContainer">
-                <ToggleSwitchComponent label={t("MySwitch")} onChange={() => {}}/>
+                <ToggleSwitchComponent label={t("MySwitch")} onChange={() => {}} className="toggleSwitch"/>
             </div>
             <Footer />
         </div>

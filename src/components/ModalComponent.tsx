@@ -6,9 +6,12 @@ interface ModalProps {
     title: string;
     body: JSX.Element | string;
     footer?: JSX.Element;
-    dialogClassName?: string;
+    modalHeaderClass?: string;
+    modalBodyClass?: string;
+    modalFooterClass?: string;
     centered?: boolean;
     style?: React.CSSProperties;
+    fullScreen?: boolean;
 }
 
 const defaultProps: Partial<ModalProps> = {
@@ -21,17 +24,20 @@ const ModalComponent: React.FC<ModalProps> = ({
     title,
     body,
     footer,
-    dialogClassName,
+    modalHeaderClass,
+    modalBodyClass,
+    modalFooterClass,
     centered,
-    style
+    style,
+    fullScreen
 }) => {
     return (
-        <Modal show={show} onHide={onHide} dialogClassName={dialogClassName} centered={centered} style={style}>
-            <Modal.Header closeButton>
+        <Modal show={show} onHide={onHide} centered={centered} style={style} fullscreen={fullScreen? true : undefined}>
+            <Modal.Header closeButton className={modalHeaderClass}>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
-            <Modal.Body>{body}</Modal.Body>
-            <Modal.Footer>{footer}</Modal.Footer>
+            <Modal.Body className={modalBodyClass}>{body}</Modal.Body>
+            <Modal.Footer className={modalFooterClass}>{footer}</Modal.Footer>
         </Modal>
     )
 }

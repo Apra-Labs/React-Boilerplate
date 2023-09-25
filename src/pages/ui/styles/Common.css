@@ -4,14 +4,15 @@
 }
 
 .heading {
-    margin-top: 5rem;
-    margin-left: 16rem;
+    padding-top: 5rem;
+    padding-left: 16rem;
 }
 
 .commonContainer {
-    margin-top: 2rem;
-    margin-left: 17rem;
-    margin-right: 3rem;
+    padding: 2rem;
+    padding-left: 17rem;
+    padding-right: 3rem;
+    background-color: var(--background);
 }
 
 .checkbox {
@@ -20,11 +21,53 @@
     color: var(--text-color);
 }
 
+.form-check-input{
+    background-color: var(--footer-background);
+}
+
+.floatingInputContainer {
+    color: var(--text-color);
+    background-color: var(--footer-background);
+    width: 20rem;
+}
+
+.form-floating > .form-control:focus ~ label {
+    color: var(--text-color);
+}
+
+.form-floating > .form-control:focus ~ label::after {
+    background-color: var(--footer-background);
+}
+
+.dropDownMenu, 
+.dropDownMenu:focus, 
+.dropDownItem:hover, 
+.floatingInput, 
+.floatingInput:focus, 
+.inputElement, 
+.inputElement:focus,
+.modalClass {
+    color: var(--text-color);
+    background-color: var(--footer-background);
+    border: 0.1rem solid;
+    border-color: var(--text-color);
+}
+
+.dropDownItem, .dropDownMenu::placeholder, .inputElement::placeholder {
+    color: var(--text-color);
+}
+
 .imageClass {
     height: 20rem;
     width: 15rem;
     margin-left: 20rem;
     margin-top: 2rem;
+    background-color: var(--background);
+}
+
+.imgDiv {
+    height: calc(100% - 6.5rem);
+    overflow-y: scroll;
 }
 
 .imgContainer {
@@ -38,19 +81,22 @@
 }
 
 .subHeading {
-    margin-left: 25rem;
-    margin-top: 2rem;
+    padding: 1rem 0.5rem 0.5rem 25rem;
     color: var(--text-color);
+}
+
+.form-switch .form-check-input:not(:checked):not(:focus) {
+    background-image: var(--toggle-image-urL);
 }
 
 @media screen and (max-width: 768px)  {
     .heading {
-        margin-left: 3rem;
-        margin-top: 5rem;
+        padding-left: 3rem;
+        padding-top: 5rem;
     }
     
     .commonContainer {
-        margin-left: 3rem;
+        padding: 3rem;
     }
 
     .imageClass {
@@ -59,11 +105,10 @@
         width: 7.5rem;
     }
     
+    .subHeading {
+        padding-left: 11rem;
+    }
     .imgContainer {
         flex-direction: column;
-    }
-
-    .subHeading {
-        margin-left: 12rem;
     }
 }
