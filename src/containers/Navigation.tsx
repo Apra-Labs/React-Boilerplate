@@ -7,7 +7,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { logOut, login } from '../redux/reducers/authSlice';
 import { toast } from 'react-toastify';
-import { Modal, Offcanvas } from 'react-bootstrap';
+import { Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
     const handleLogOut = () => {
         dispatch(logOut());
         toast.success("Logged out", {
-            position: toast.POSITION.TOP_RIGHT
+            position: toast.POSITION.TOP_RIGHT //toast from react bootstrap
         })
     }
 
@@ -104,9 +104,8 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <Navbar expand="md" className='nav' data-bs-theme="light" fixed='top' role='myNavbar'>
+            <Navbar expand="md" className='nav' fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
-                
                 <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" />
                 <Navbar.Offcanvas id="navbar-offcanvas" style={{ backgroundColor: '#A8DF8E', left: 0, top: 0, right: 'auto' }}>
@@ -121,7 +120,7 @@ const Navigation: React.FC = () => {
                             {location.pathname === "/" ?
                                 <>
                                     {!isLogin ?
-                                        <Nav.Link className='navLink text-white' onClick={handleShow}>{t("Login")}</Nav.Link> :
+                                        <Nav.Link className='navLink' onClick={handleShow}>{t("Login")}</Nav.Link> :
                                         <Nav.Link className='navLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
                                     }
                                     <NavDropdown
@@ -177,7 +176,7 @@ const Navigation: React.FC = () => {
                     </>
                 }
                 footer={
-                    <ButtonComponent label={t("Login")} type='submit' className='loginButton'/>
+                    <ButtonComponent label={t("Login")} type='submit' className='loginButton' onClick={handleSubmit}/>
                 }
                 modalHeaderClass='loginHeader'
                 modalBodyClass='loginBody'

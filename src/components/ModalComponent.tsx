@@ -12,6 +12,7 @@ interface ModalProps {
     centered?: boolean;
     style?: React.CSSProperties;
     fullScreen?: boolean;
+    animation?: boolean;
 }
 
 const defaultProps: Partial<ModalProps> = {
@@ -29,10 +30,18 @@ const ModalComponent: React.FC<ModalProps> = ({
     modalFooterClass,
     centered,
     style,
-    fullScreen
+    fullScreen,
+    animation
 }) => {
     return (
-        <Modal show={show} onHide={onHide} centered={centered} style={style} fullscreen={fullScreen? true : undefined}>
+        <Modal
+            show={show}
+            onHide={onHide}
+            centered={centered}
+            style={style}
+            fullscreen={fullScreen ? true : undefined}
+            animation={animation}
+        >
             <Modal.Header closeButton className={modalHeaderClass}>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>

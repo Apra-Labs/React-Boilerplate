@@ -1,16 +1,18 @@
 .nav {
-    background-color: #A8DF8E;
+    background-color: var(--nav-background-color);
     height: 3.5rem;
+    border-bottom: 0.001rem solid;
+    border-color: var(--sidebar-border-color);
 }
 
 
 .themeButton, .themeButtonOnCollapse {
-    background-color: #A8DF8E;
+    background-color: var(--nav-background-color);
     border: 0;
     font-size: 1.5rem;
     margin-left: 0.5rem;
     margin-right: 0.5rem;
-    color: #fff;
+    color: var(--text-color);
 }
 
 .sideLinks {
@@ -18,13 +20,14 @@
 }
 
 .navLink {
-    color: white;
+    color: var(--text-color);
     font-size: 1.2rem;
     font-weight: 500;
 }
 
-.navLink:hover {
-    color: white;
+.navLink:hover, .navLink:active {
+    cursor: pointer;
+    color: var(--text-color);
 }
 
 .modalInputContainer, .modalInputContainer:focus {

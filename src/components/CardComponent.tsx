@@ -17,8 +17,7 @@ const defaultProps: CardProps = {
     title: "Card",
     message: "This is my card",
     variant: "primary",
-    border: "dark",
-    style: {height: '10rem', width: '15rem'}
+    border: "dark"
 }
 
 const CardComponent: React.FC<CardProps> = ({

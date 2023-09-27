@@ -12,6 +12,7 @@ interface FloatingLabelInputProps {
     idFloatingLabel?: string;
     name?: string;
     required?: boolean;
+    textarea?: boolean;
 }
 
 const defaultProps: Partial<FloatingLabelInputProps> = {
@@ -29,7 +30,8 @@ const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
     idFloatingContainer,
     classNameFloatingInput,
     name,
-    required
+    required,
+    textarea
 }) => {
     return (
         <FloatingLabel
@@ -40,6 +42,7 @@ const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
             role="myFloatingLabelInput"
         >
             <Form.Control
+                as={textarea? "textarea": "input"}
                 id="floatingInput"
                 type={type}
                 placeholder={placeholder}
@@ -47,6 +50,7 @@ const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
                 className={classNameFloatingInput}
                 name={name}
                 required={required}
+                style={textarea ? {height: "10rem"} : {}}
             />
         </FloatingLabel>
     )

@@ -34,7 +34,7 @@ const defaultProps: Partial<DropDownProps> = {
 const DropDownComponent: React.FC<DropDownProps> = ({
     variant,
     label,
-    options: items,
+    options,
     onSelect,
     enableSearch,
     dropdownToggleStyle,
@@ -49,18 +49,18 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     id
 }) => {
     const [inputValue, setInputValue] = useState<string>("");
-    const [filteredData, setFilteredData] = useState<{ key: string; value: string; }[] | undefined >(items);
+    const [filteredData, setFilteredData] = useState<{ key: string; value: string; }[] | undefined >(options);
 
     useEffect(() => {
         if (filteredData?.length === 0) {
-            setFilteredData(items);
+            setFilteredData(options);
         }
-    }, [items, filteredData]);
+    }, [options, filteredData]);
 
     const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
-        const filter = items?.filter((item) => {
-            return item.key.toLowerCase().includes(inputValue.toLowerCase());
+        const filter = options?.filter((option) => {
+            return option.key.toLowerCase().includes(inputValue.toLowerCase());
         })
         setFilteredData(filter);
     };
@@ -69,10 +69,10 @@ const DropDownComponent: React.FC<DropDownProps> = ({
         setInputValue("");
         setFilteredData([]);
     }
-
+//show selection for dropdown response
     return (
         <Dropdown onSelect={onSelect}  className={dropDownclassName} id={id} role="myDropdown">
-            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle} className={dropDownToggleclassName}>{label}</Dropdown.Toggle>
+            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle} className={dropDownToggleclassName}>{label}</Dropdown.Toggle> 
             <Dropdown.Menu style={dropdownMenuStyle} className={dropDownMenuclassName}> 
                 {enableSearch &&
                     <InputGroup style={searchComponentStyle}>

@@ -15,6 +15,15 @@
     background-color: var(--background);
 }
 
+.buttonContainer, .cardContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.button {
+    width: 6rem;
+}
+
 .checkbox {
     margin-top: 1rem;
     margin-bottom: 1rem;
@@ -28,6 +37,7 @@
 .floatingInputContainer {
     color: var(--text-color);
     background-color: var(--footer-background);
+    border: 0;
     width: 20rem;
 }
 
@@ -48,7 +58,7 @@
 .inputElement:focus,
 .modalClass {
     color: var(--text-color);
-    background-color: var(--footer-background);
+    background-color: var(--background);
     border: 0.1rem solid;
     border-color: var(--text-color);
 }
@@ -67,7 +77,6 @@
 
 .imgDiv {
     height: calc(100% - 6.5rem);
-    overflow-y: scroll;
 }
 
 .imgContainer {
@@ -85,6 +94,11 @@
     color: var(--text-color);
 }
 
+.spinner {
+    height: 12rem;
+    width: 12rem;
+}
+
 .form-switch .form-check-input:not(:checked):not(:focus) {
     background-image: var(--toggle-image-urL);
 }
@@ -99,6 +113,19 @@
         padding: 3rem;
     }
 
+    .buttonContainer, .cardContainer, .imgContainer {
+        flex-direction: column;
+    }
+
+    .button, .card {
+        margin: 1rem;
+    }
+
+    .imgDiv {
+        overflow-y: scroll;
+        overflow-x: hidden;
+    }
+
     .imageClass {
         margin-left: 10rem;
         height: 10rem;
@@ -107,8 +134,5 @@
     
     .subHeading {
         padding-left: 11rem;
-    }
-    .imgContainer {
-        flex-direction: column;
     }
 }

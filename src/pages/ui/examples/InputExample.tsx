@@ -7,13 +7,18 @@ import '../styles/Common.css';
 
 const InputExample: React.FC = () => {
     const { t } = useTranslation();
+    
     return (
         <div className="exampleContainer">
             <Navigation />
             <Sidebar />
             <h1 className="heading">{t("Input")}</h1>
             <div className="commonContainer">
-                <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer"/>
+                <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer" />
+            </div>
+            <h2 className="heading">{t("Textarea")}</h2>
+            <div className="commonContainer">
+                <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer" textarea/>
             </div>
             <Footer />
         </div>

@@ -5,7 +5,7 @@ import '@testing-library/jest-dom/extend-expect';
 describe('Footer', () => {
     test("renders", () => {
         render(<Footer />);
-        const paragraphElement = screen.getByTestId("myFooter");
-        expect(paragraphElement).toBeInTheDocument();
+        const Element = screen.getByRole("myFooter");
+        expect(Element).toBeInTheDocument();
     });
 });

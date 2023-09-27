@@ -7,6 +7,7 @@ import '../styles/Common.css';
 
 const ImageExample: React.FC = () => {
     const { t } = useTranslation();
+    //take background other than white
     return (
         <div className="exampleContainer">
             <Navigation />
@@ -15,15 +16,15 @@ const ImageExample: React.FC = () => {
                 <h1 className="heading">{t("Image")}</h1>
                 <div className="imgContainer">
                     <div className="imgElement">
-                        <ImageComponent src={require("../../../assets/images/apra_logo.png")} className="imageClass" shape="rounded" />
+                        <ImageComponent src={require("../../../assets/images/person_image.webp")} className="imageClass" shape="rounded" />
                         <p className="subHeading">Rounded</p>
                     </div>
                     <div className="imgElement">
-                        <ImageComponent src={require("../../../assets/images/apra_logo.png")} className="imageClass" shape="roundedCircle" />
+                        <ImageComponent src={require("../../../assets/images/person_image.webp")} className="imageClass" shape="roundedCircle" />
                         <p className="subHeading">Rounded Circle</p>
                     </div>
                     <div className="imgElement">
-                        <ImageComponent src={require("../../../assets/images/apra_logo.png")} className="imageClass" shape="thumbnail" />
+                        <ImageComponent src={require("../../../assets/images/person_image.webp")} className="imageClass" shape="thumbnail" />
                         <p className="subHeading">Thumbnail</p>
                     </div>
                 </div>

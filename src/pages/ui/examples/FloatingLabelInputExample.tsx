@@ -19,6 +19,18 @@ const FloatingLabelInputExample: React.FC = () => {
                     classNameFloatingContainer="floatingInputContainer"
                     classNameFloatingInput="floatingInput"
                     placeholder="Enter your email address"
+                    type="email"
+                />
+            </div>
+            <h2 className="heading">{t("Textarea")}</h2>
+            <div className="commonContainer">
+                <FloatingLabelInputComponent
+                    label={t("Textarea")}
+                    classNameFloatingContainer="floatingInputContainer"
+                    classNameFloatingInput="floatingInput"
+                    placeholder="Enter your email address"
+                    type="email"
+                    textarea
                 />
             </div>
             <Footer />

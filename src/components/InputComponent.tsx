@@ -12,6 +12,7 @@ interface InputGroupProps {
     title?: string;
     name?: string;
     required?: boolean;
+    textarea?: boolean;
     //add validation code 
 }
 
@@ -33,11 +34,13 @@ const InputComponent: React.FC<InputGroupProps> = ({
     id,
     title,
     name,
-    required
+    required,
+    textarea
 }) => {
     return (
         <InputGroup style={style} className={inputContainerClassName} id={id} role="myInput">
             <Form.Control
+                as={textarea ? "textarea" : "input"}
                 type={type}
                 placeholder={placeholder}
                 onChange={onChange}
@@ -46,6 +49,7 @@ const InputComponent: React.FC<InputGroupProps> = ({
                 className={inputClassName}
                 name={name}
                 required={required}
+                style={textarea ? { height: "10rem" } : {}}
             />
         </InputGroup>
     )

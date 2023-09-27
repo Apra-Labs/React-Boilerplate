@@ -14,7 +14,26 @@ const CardExample: React.FC = () => {
             <Sidebar />
             <h1 className="heading">{t("Card")}</h1>
             <div className="commonContainer">
-                <CardComponent title={t("MyCard")} message={t("Thisisancardexample")} />
+                <div className="cardContainer">
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="secondary" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="danger" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="success" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="warning" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="info" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="light" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="dark" />
+                </div>
+            </div>
+            <h2 className="heading">{t("Card") + " " + t("with") + " " + t("Image")}</h2>
+            <div className="commonContainer">
+                <CardComponent
+                    style={{width: "12rem"}}
+                    imgSrc={require("../../../assets/images/person_image.webp")}
+                    title={t("MyCard")}
+                    message={t("Thisisancardexample")}
+                    variant="light"
+                />
             </div>
             <Footer />
         </div>
