@@ -1,10 +1,7 @@
 .nav {
     background-color: var(--nav-background-color);
     height: 3.5rem;
-    border-bottom: 0.001rem solid;
-    border-color: var(--sidebar-border-color);
 }
-
 
 .themeButton, .themeButtonOnCollapse {
     background-color: var(--nav-background-color);
@@ -19,15 +16,38 @@
     display: none;
 }
 
-.navLink {
-    color: var(--text-color);
+.titleLink,.navLink, .loginLink {
+    color: var(--navlink-color);
     font-size: 1.2rem;
     font-weight: 500;
+    font-family: var(--font);
 }
 
-.navLink:hover, .navLink:active {
+.titleLink {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.titleLink:hover, .titleLink:focus {
+    color: var(--navlink-color);
+}
+
+.loginLink {
+    padding-top: 1rem;
+}
+
+.navLink:hover,.navLink:focus, .navLink:active, .loginLink:hover, .loginLink:focus {
     cursor: pointer;
     color: var(--text-color);
+}
+
+#navbarScrollingDropdown, .navDropdownMenu, .dropdown-menu.show {
+    background-color: var(--nav-background-color);
+    color: var(--text-color);
+}
+
+#navbarScrollingDropdown {
+    padding-top: 1rem;
 }
 
 .modalInputContainer, .modalInputContainer:focus {
@@ -35,6 +55,7 @@
     width: 90%;
     background-color: var(--footer-background);
     color: var(--text-color);
+    font-size: 1rem;
 }
 
 .loginHeader, .modalInput, .modalInput:focus {
@@ -46,6 +67,14 @@
     background-color: var(--footer-background);
     color: var(--text-color);
     padding: 0;
+}
+
+#floatingInput > .form-control:focus ~ label {
+    color: var(--text-color);
+}
+
+#floatingInput > .form-control:focus ~ label::after {
+    background-color: var(--footer-background);
 }
 
 .loginFooter {

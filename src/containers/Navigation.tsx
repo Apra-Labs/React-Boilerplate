@@ -105,13 +105,13 @@ const Navigation: React.FC = () => {
     return (
         <>
             <Navbar expand="md" className='nav' fixed='top' role='myNavbar'>
-                <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
+                <Navbar.Brand as={Link} to={"/"} className='titleLink'>{t("MyApplication")}</Navbar.Brand>
                 <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" />
-                <Navbar.Offcanvas id="navbar-offcanvas" style={{ backgroundColor: '#A8DF8E', left: 0, top: 0, right: 'auto' }}>
+                <Navbar.Offcanvas id="navbar-offcanvas" style={{left: 0, top: 0, right: 'auto' }}>
                     <Offcanvas.Header closeButton style={{ color: 'white' }}>
                         <Offcanvas.Title>
-                            <Navbar.Brand as={Link} to={"/"} className='text-light'>{t("MyApplication")}</Navbar.Brand>
+                            <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
                             <button className='themeButtonOnCollapse' onClick={changeIcon}><FontAwesomeIcon icon={icon} /></button>
                         </Offcanvas.Title>
                     </Offcanvas.Header>
@@ -120,15 +120,15 @@ const Navigation: React.FC = () => {
                             {location.pathname === "/" ?
                                 <>
                                     {!isLogin ?
-                                        <Nav.Link className='navLink' onClick={handleShow}>{t("Login")}</Nav.Link> :
-                                        <Nav.Link className='navLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
+                                        <Nav.Link className='loginLink' onClick={handleShow}>{t("Login")}</Nav.Link> :
+                                        <Nav.Link className='loginLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
                                     }
                                     <NavDropdown
                                         title={<span className='navLink'>{t("ChangeLanguage")}</span>}
                                         id="navbarScrollingDropdown"
                                         onSelect={onSelectLang} >
-                                        <NavDropdown.Item eventKey={"en"}>{t("English")}</NavDropdown.Item>
-                                        <NavDropdown.Item eventKey={"es"}>{t("Spanish")}</NavDropdown.Item>
+                                        <NavDropdown.Item eventKey={"en"} className='navDropdownMenu'>{t("English")}</NavDropdown.Item>
+                                        <NavDropdown.Item eventKey={"es"} className='navDropdownMenu'>{t("Spanish")}</NavDropdown.Item>
                                     </NavDropdown>
                                     <button className='themeButton' onClick={changeIcon}><FontAwesomeIcon icon={icon} /></button>
                                 </> :

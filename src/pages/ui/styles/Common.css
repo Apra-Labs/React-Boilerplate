@@ -13,6 +13,7 @@
     padding-left: 17rem;
     padding-right: 3rem;
     background-color: var(--background);
+    font-size: 1rem;
 }
 
 .buttonContainer, .cardContainer {
@@ -59,8 +60,8 @@
 .modalClass {
     color: var(--text-color);
     background-color: var(--background);
-    border: 0.1rem solid;
-    border-color: var(--text-color);
+    border: 0.1rem solid var(--sidebar-border-color);
+    font-size: 1rem;
 }
 
 .dropDownItem, .dropDownMenu::placeholder, .inputElement::placeholder {

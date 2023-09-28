@@ -32,7 +32,7 @@ const CardExample: React.FC = () => {
                     imgSrc={require("../../../assets/images/person_image.webp")}
                     title={t("MyCard")}
                     message={t("Thisisancardexample")}
-                    variant="light"
+                    variant="primary"
                 />
             </div>
             <Footer />

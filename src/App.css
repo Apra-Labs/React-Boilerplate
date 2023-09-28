@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Raleway&display=swap');
+
 :root { 
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Lato', sans-serif;
     max-width: '100%';
     overflow-x: hidden;
     font-size: '62.5%';
@@ -9,36 +11,43 @@
 
     /* colors */
     --background: #fff;
-    --text-color: #000;
+    --text-color: #61677A;
+    --navlink-color: #000036;
+    --nav-background-color: #fff;
     --footer-background: #ebedf0;
+    --footer-text-color: #fff;
     --sidebar-background: #F9F9F9;
     --sidebar-link-hover: #D8D9DA;
     --sidebar-border-color: #dadde1;
-    --nav-background-color: #fff;
-
+    /* fonts */
+    --font: 'Raleway', sans-serif;
+    --footer-font: 'Lato', sans-serif;
     /* background-image */
     --toggle-image-urL: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='rgba(0, 0, 0, 0.25)'/%3E%3C/svg%3E");
 }
 
 [data-theme="light"] {
-    --background: #fff;
-    --text-color: #000;
-    --footer-background: #ebedf0;
+    --background: #f5f5f5;
+    --text-color: #352F44;
+    --navlink-color: #000036;
+    --nav-background-color: #fff;
+    --footer-background: #000036;
+    --footer-text-color: #fff;
     --sidebar-background: #E7E9EB;
     --sidebar-link-hover: #D8D9DA;
     --sidebar-border-color: #dadde1;
-    --nav-background-color: #fff;
     --toggle-image-urL: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='rgba(0, 0, 0, 0.25)'/%3E%3C/svg%3E");
 }
 
 [data-theme="dark"] {
-    --background: #1F262E;
+    --background: #0b082c;
     --text-color: #fff;
-    --footer-background: #2b3035;
-    --sidebar-background: #1F262E;
-    --sidebar-link-hover: #ffffff1a;
+    --navlink-color: #fff;
+    --nav-background-color: #000036;
+    --footer-background: #1D267D;
+    --sidebar-background: #080622;
+    --sidebar-link-hover: #140e3a;
     --sidebar-border-color:#adb5bd;
-    --nav-background-color: #101418;
     --toggle-image-urL: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3E%3Ccircle r='3' fill='rgba(255, 255, 255, 0.25)'/%3E%3C/svg%3E");
 }
 

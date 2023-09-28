@@ -2,9 +2,9 @@ import { Toast, ToastContainer } from "react-bootstrap";
 
 interface ToastProps {
     header: JSX.Element | string;
-    message: string;
     show: boolean;
     onClose: () => void;
+    message?: string;
     position?: 'top-start' | 'top-center' | 'top-end' | 'middle-start' | 'middle-center' | 'middle-end' | 'bottom-start' | 'bottom-center' | 'bottom-end';
     variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     delay?: number;
@@ -49,7 +49,7 @@ const ToastComponent: React.FC<ToastProps> = ({
                 autohide={autohide}
             >
                 <Toast.Header style={headerStyle}>{header}</Toast.Header>
-                <Toast.Body style={messageStyle}>{message}</Toast.Body>
+                {message && <Toast.Body style={messageStyle}>{message}</Toast.Body> }
             </Toast>
         </ToastContainer>
     )

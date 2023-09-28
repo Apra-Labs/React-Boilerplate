@@ -6,12 +6,12 @@
     left: 0;
     bottom: 0;
     text-align: center;
-    border-top: 0.001rem solid;
-    border-color: var(--sidebar-border-color);
     padding: 1rem;
 }
 
 .footerTitle{
+    font-size: 1rem;
     font-weight: 500;
-    color: var(--text-color);
+    color: var(--footer-text-color);
+    font-family: var(--footer-font);
 }
