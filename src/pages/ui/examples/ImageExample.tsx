@@ -7,7 +7,7 @@ import '../styles/Common.css';
 
 const ImageExample: React.FC = () => {
     const { t } = useTranslation();
-    //take background other than white
+
     return (
         <div className="exampleContainer">
             <Navigation />
@@ -17,15 +17,15 @@ const ImageExample: React.FC = () => {
                 <div className="imgContainer">
                     <div className="imgElement">
                         <ImageComponent src={require("../../../assets/images/person_image.webp")} className="imageClass" shape="rounded" />
-                        <p className="subHeading">Rounded</p>
+                        <p className="imgSubHeading">Rounded</p>
                     </div>
                     <div className="imgElement">
                         <ImageComponent src={require("../../../assets/images/person_image.webp")} className="imageClass" shape="roundedCircle" />
-                        <p className="subHeading">Rounded Circle</p>
+                        <p className="imgSubHeading">Rounded Circle</p>
                     </div>
                     <div className="imgElement">
                         <ImageComponent src={require("../../../assets/images/person_image.webp")} className="imageClass" shape="thumbnail" />
-                        <p className="subHeading">Thumbnail</p>
+                        <p className="imgSubHeading">Thumbnail</p>
                     </div>
                 </div>
             </div>

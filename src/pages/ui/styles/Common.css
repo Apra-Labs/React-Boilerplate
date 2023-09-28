@@ -32,12 +32,12 @@
 }
 
 .form-check-input{
-    background-color: var(--footer-background);
+    background-color: var(--input-background-color);
 }
 
-.floatingInputContainer {
+.floatingInputContainer, .inputContainer {
     color: var(--text-color);
-    background-color: var(--footer-background);
+    background-color: var(--input-background-color);
     border: 0;
     width: 20rem;
 }
@@ -47,7 +47,7 @@
 }
 
 .form-floating > .form-control:focus ~ label::after {
-    background-color: var(--footer-background);
+    background-color: var(--input-background-color);
 }
 
 .dropDownMenu, 
@@ -59,7 +59,7 @@
 .inputElement:focus,
 .modalClass {
     color: var(--text-color);
-    background-color: var(--background);
+    background-color: var(--input-background-color);
     border: 0.1rem solid var(--sidebar-border-color);
     font-size: 1rem;
 }
@@ -90,7 +90,7 @@
     flex-direction: column;
 }
 
-.subHeading {
+.imgSubHeading {
     padding: 1rem 0.5rem 0.5rem 25rem;
     color: var(--text-color);
 }
@@ -104,7 +104,7 @@
     background-image: var(--toggle-image-urL);
 }
 
-@media screen and (max-width: 768px)  {
+@media screen and (max-width: 992px)  {
     .heading {
         padding-left: 3rem;
         padding-top: 5rem;
@@ -128,12 +128,42 @@
     }
 
     .imageClass {
-        margin-left: 10rem;
+        margin-left: 20rem;
         height: 10rem;
         width: 7.5rem;
+    }
+
+    .imgSubHeading {
+        padding: 1rem 0.5rem 0.5rem 21rem;
     }
     
     .subHeading {
         padding-left: 11rem;
+    }
+
+    .spinner {
+        height: 10rem;
+        width: 10rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .floatingInputContainer, .inputContainer {
+        width: 15rem;
+    }
+
+    .imageClass {
+        margin-left: 9rem;
+        height: 10rem;
+        width: 7.5rem;
+    }
+
+    .imgSubHeading {
+        padding: 1rem 0.5rem 0.5rem 10rem;
+    }
+
+    .spinner {
+        height: 8rem;
+        width: 8rem;
     }
 }

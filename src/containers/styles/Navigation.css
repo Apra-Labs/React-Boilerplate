@@ -1,6 +1,17 @@
 .nav {
     background-color: var(--nav-background-color);
     height: 3.5rem;
+    border-bottom: 1px solid var(--nav-footer-border);
+}
+
+.navbar-toggler-icon {
+    display: none;
+}
+
+.toggleButton{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--navlink-color);
 }
 
 .themeButton, .themeButtonOnCollapse {
@@ -20,7 +31,7 @@
     color: var(--navlink-color);
     font-size: 1.2rem;
     font-weight: 500;
-    font-family: var(--font);
+    font-family: var(--footer-font);
 }
 
 .titleLink {
@@ -41,7 +52,7 @@
     color: var(--text-color);
 }
 
-#navbarScrollingDropdown, .navDropdownMenu, .dropdown-menu.show {
+#navbarScrollingDropdown, .navDropdownMenu, .dropdown-menu.show, #navbar-offcanvas {
     background-color: var(--nav-background-color);
     color: var(--text-color);
 }
@@ -53,18 +64,18 @@
 .modalInputContainer, .modalInputContainer:focus {
     margin: 0.8rem;
     width: 90%;
-    background-color: var(--footer-background);
+    background-color: var(modalInputContainer);
     color: var(--text-color);
     font-size: 1rem;
 }
 
 .loginHeader, .modalInput, .modalInput:focus {
-    background-color: var(--footer-background);
+    background-color: var(--nav-background-color);
     color: var(--text-color);
 }
 
 .loginBody {
-    background-color: var(--footer-background);
+    background-color: var(--nav-background-color);
     color: var(--text-color);
     padding: 0;
 }
@@ -74,19 +85,38 @@
 }
 
 #floatingInput > .form-control:focus ~ label::after {
-    background-color: var(--footer-background);
+    background-color: var(--nav-background-color);
 }
 
 .loginFooter {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: var(--footer-background);
+    background-color: var(--nav-background-color);
     color: var(--text-color);
     height: 5rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 992px) {
+    .titleLink {
+        font-size: 1.5rem;
+    }
+
+    .sideLinks {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .themeButton {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .titleLink {
+        font-size: 1.5rem;
+    }
+
     .sideLinks {
         display: flex;
         flex-direction: column;

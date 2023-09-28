@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
-import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/Navigation.css';
 import ModalComponent from '../components/ModalComponent';
@@ -104,12 +104,14 @@ const Navigation: React.FC = () => {
 
     return (
         <>
-            <Navbar expand="md" className='nav' fixed='top' role='myNavbar'>
+            <Navbar expand="lg" className='nav' fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className='titleLink'>{t("MyApplication")}</Navbar.Brand>
                 <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
-                <Navbar.Toggle aria-controls="navbar-offcanvas" />
-                <Navbar.Offcanvas id="navbar-offcanvas" style={{left: 0, top: 0, right: 'auto' }}>
-                    <Offcanvas.Header closeButton style={{ color: 'white' }}>
+                <Navbar.Toggle aria-controls="navbar-offcanvas" className='toggleButton'>
+                    <FontAwesomeIcon icon={faBars} />  
+                </Navbar.Toggle>
+                <Navbar.Offcanvas id="navbar-offcanvas">
+                    <Offcanvas.Header closeButton closeVariant={icon === faSun ? 'white' : ''}>
                         <Offcanvas.Title>
                             <Navbar.Brand as={Link} to={"/"} className='navLink'>{t("MyApplication")}</Navbar.Brand>
                             <button className='themeButtonOnCollapse' onClick={changeIcon}><FontAwesomeIcon icon={icon} /></button>

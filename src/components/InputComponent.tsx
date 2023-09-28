@@ -19,8 +19,7 @@ interface InputGroupProps {
 const defaultProps: InputGroupProps = {
     type: "text",
     placeholder: "example",
-    title: "This is input",
-    style: { width: '20rem' }
+    title: "This is input"
 }
 
 const InputComponent: React.FC<InputGroupProps> = ({
