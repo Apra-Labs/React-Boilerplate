@@ -11,10 +11,10 @@
     "PersonalInformation": "Personal Information",
     "PhoneNumber": "Phone Number",
     "Address": "Address",
-    "Thisisanalertexample": "This is an alert example",
+    "Thisisanalertexample": "This is a alert example",
     "Click": "Click",
     "MyCard": "My Card",
-    "Thisisancardexample": "This is an card example",
+    "Thisisacardexample": "This is a card example",
     "SelectOptions": "Select Options",
     "MyCheckbox": "My Checkbox",
     "MyDropDown": "My Dropdown",
@@ -51,5 +51,9 @@
     "fullpage": "fullpage",
     "checked": "checked",
     "switch": "switch",
-    "Success": "Success"
+    "Success": "Success",
+    "Toast": "Toast",
+    "Thisisatoastexample": "This is a toast example", 
+    "Placement": "Placement",
+    "of": "of"
 }

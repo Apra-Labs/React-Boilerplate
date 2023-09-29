@@ -20,7 +20,6 @@ const ToggleSwitchExample: React.FC = () => {
                     label={t("MySwitch")}
                     onChange={() => {}}
                     className="toggleSwitch"
-                    style={{ fontSize: '2rem' }}
                 />
             </div>
             <Footer />

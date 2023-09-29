@@ -15,14 +15,14 @@ const CardExample: React.FC = () => {
             <h1 className="heading">{t("Card")}</h1>
             <div className="commonContainer">
                 <div className="cardContainer">
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="secondary" />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="danger" />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="success" />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="warning" />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="info" />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="light" />
-                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisancardexample")} variant="dark" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="secondary" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="danger" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="success" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="warning" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="info" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="light" />
+                    <CardComponent className="card" title={t("MyCard")} message={t("Thisisacardexample")} variant="dark" />
                 </div>
             </div>
             <h2 className="heading">{t("Card") + " " + t("with") + " " + t("Image")}</h2>

@@ -1,17 +1,16 @@
 import { NavLink } from 'react-router-dom';
 import './styles/Sidebar.css';
-
-const components = ["Alert", "Button", "Card", "Checkbox", "Dropdown", "Floating label input", "Image", "Input", "Modal", "Radio", "Spinner", "Toggle switch"];
+import { sideBarElements } from '../../assets/data/data';
 
 const Sidebar: React.FC = () => {
     return (
         <div className="sideNav">
-            {components.map(component =>
+            {sideBarElements?.map(element =>
                 <NavLink
                     className={({ isActive }) => (isActive ? 'activeLink' : 'links')}
-                    to={"/uikit/" + component.toLowerCase().split(" ").join("")}
+                    to={"/uikit/" + element.toLowerCase().split(" ").join("")}
                 >
-                    {component}
+                    {element}
                 </NavLink>
             )}
         </div>

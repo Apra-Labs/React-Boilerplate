@@ -146,6 +146,7 @@ const Navigation: React.FC = () => {
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/modal"} to={"/uikit/modal"} className='navLink'>{t("Modal")}</Nav.Link>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/radio"} to={"/uikit/radio"} className='navLink'>{t("Radio")}</Nav.Link>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/spinner"} to={"/uikit/spinner"} className='navLink'>{t("Spinner")}</Nav.Link>
+                                    <Nav.Link as={Link} active={location.pathname === "/uikit/toast"} to={"/uikit/toast"} className='navLink'>{t("Toast")}</Nav.Link>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/toggleswitch"} to={"/uikit/toggleswitch"} className='navLink'>{t("ToggleSwitch")}</Nav.Link>
                                 </div>
                             }

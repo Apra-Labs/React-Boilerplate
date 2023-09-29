@@ -1,11 +1,10 @@
-import { Toast, ToastContainer } from "react-bootstrap";
+import { Toast } from "react-bootstrap";
 
 interface ToastProps {
     header: JSX.Element | string;
-    show: boolean;
-    onClose: () => void;
+    show?: boolean;
+    onClose?: () => void;
     message?: string;
-    position?: 'top-start' | 'top-center' | 'top-end' | 'middle-start' | 'middle-center' | 'middle-end' | 'bottom-start' | 'bottom-center' | 'bottom-end';
     variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
     delay?: number;
     containerStyle?: React.CSSProperties;
@@ -18,7 +17,6 @@ interface ToastProps {
 }
 
 const defaultProps: Partial<ToastProps> = {
-    position: 'top-end',
     animation: true
 }
 
@@ -27,7 +25,6 @@ const ToastComponent: React.FC<ToastProps> = ({
     message,
     show,
     onClose,
-    position,
     variant,
     delay,
     autohide,
@@ -39,19 +36,21 @@ const ToastComponent: React.FC<ToastProps> = ({
     messageStyle,
 }) => {
     return (
-        <ToastContainer className={className} id={id} position={position} style={containerStyle}>
-            <Toast
-                bg={variant}
-                show={show}
-                onClose={onClose}
-                animation={animation}
-                delay={delay}
-                autohide={autohide}
-            >
-                <Toast.Header style={headerStyle}>{header}</Toast.Header>
-                {message && <Toast.Body style={messageStyle}>{message}</Toast.Body> }
-            </Toast>
-        </ToastContainer>
+        <Toast
+            bg={variant}
+            show={show}
+            onClose={onClose}
+            animation={animation}
+            delay={delay}
+            autohide={autohide}
+            className={className}
+            id={id}
+            style={containerStyle}
+            data-testid="toast"
+        >
+            <Toast.Header style={headerStyle}>{header}</Toast.Header>
+            {message && <Toast.Body style={messageStyle}>{message}</Toast.Body>}
+        </Toast>
     )
 }
 

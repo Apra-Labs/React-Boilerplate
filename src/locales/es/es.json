@@ -14,7 +14,7 @@
     "Thisisanalertexample": "Este es un ejemplo de alerta",
     "Click": "Hacer clic",
     "MyCard": "Mi tarjeta",
-    "Thisisancardexample": "Este es un ejemplo de tarjeta",
+    "Thisisacardexample": "Este es un ejemplo de tarjeta.",
     "MyDropDown": "Mi menú desplegable",
     "Email Address": "Dirección de correo electrónico",
     "MyModal": "mi modal",
@@ -51,5 +51,9 @@
     "fullpage": "página completa",
     "checked": "comprobado",
     "switch": "cambiar",
-    "Success": "Éxito"
+    "Success": "Éxito",
+    "Toast": "Toast",
+    "Thisisatoastexample": "Este es un ejemplo de brindis.",
+    "Placement": "colocación",
+    "of": "de"
 }

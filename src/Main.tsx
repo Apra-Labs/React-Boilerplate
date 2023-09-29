@@ -12,6 +12,7 @@ import ModalExample from './pages/ui/examples/ModalExample';
 import RadioExample from './pages/ui/examples/RadioExample';
 import SpinnerExample from './pages/ui/examples/SpinnerExample';
 import ToggleSwitchExample from './pages/ui/examples/ToggleSwitchExample';
+import ToastExample from './pages/ui/examples/ToastExample';
 
 const Main: React.FC = () => {
     return (
@@ -30,6 +31,7 @@ const Main: React.FC = () => {
                 <Route path='/uikit/radio' element={<RadioExample />} />
                 <Route path='/uikit/spinner' element={<SpinnerExample />} />
                 <Route path='/uikit/toggleswitch' element={<ToggleSwitchExample />} />
+                <Route path='/uikit/toast' element={<ToastExample />} />
                 <Route path='*' element={<Home />} />
             </Route>
         </Routes>
