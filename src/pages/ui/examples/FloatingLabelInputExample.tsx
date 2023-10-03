@@ -31,6 +31,7 @@ const FloatingLabelInputExample: React.FC = () => {
                     placeholder="Enter your email address"
                     type="email"
                     textarea
+                    styleFloatingInput={{maxHeight: "15rem"}}
                 />
             </div>
             <Footer />

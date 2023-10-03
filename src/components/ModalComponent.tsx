@@ -10,6 +10,7 @@ interface ModalProps {
     modalBodyClass?: string;
     modalFooterClass?: string;
     centered?: boolean;
+    closeVariant?: string | undefined;
     style?: React.CSSProperties;
     fullScreen?: boolean;
     animation?: boolean;
@@ -29,6 +30,7 @@ const ModalComponent: React.FC<ModalProps> = ({
     modalBodyClass,
     modalFooterClass,
     centered,
+    closeVariant,
     style,
     fullScreen,
     animation
@@ -42,7 +44,7 @@ const ModalComponent: React.FC<ModalProps> = ({
             fullscreen={fullScreen ? true : undefined}
             animation={animation}
         >
-            <Modal.Header closeButton className={modalHeaderClass}>
+            <Modal.Header closeButton closeVariant={closeVariant} className={modalHeaderClass}>
                 <Modal.Title>{title}</Modal.Title>
             </Modal.Header>
             <Modal.Body className={modalBodyClass}>{body}</Modal.Body>

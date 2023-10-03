@@ -47,7 +47,7 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
             {fullPage ?
                 <div style={fullPageStyle}>
                     <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner" />
-                    <CloseButton style={{top: 0, right: 0, position: 'fixed', fontSize: '2rem'}} onClick={handleClose}/>
+                    <CloseButton style={{top: 0, right: 0, position: 'fixed', fontSize: '2rem'}} onClick={handleClose} />
                 </div> :
                 <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner" />
             }

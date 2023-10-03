@@ -4,7 +4,8 @@ interface InputGroupProps {
     type?: string;
     placeholder?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-    style?: React.CSSProperties;
+    styleInputContainer?: React.CSSProperties;
+    styleInput?: React.CSSProperties;
     value?: string;
     inputContainerClassName?: string;
     inputClassName?: string;
@@ -26,7 +27,8 @@ const InputComponent: React.FC<InputGroupProps> = ({
     type,
     placeholder,
     onChange,
-    style,
+    styleInputContainer,
+    styleInput,
     value,
     inputContainerClassName,
     inputClassName,
@@ -37,7 +39,7 @@ const InputComponent: React.FC<InputGroupProps> = ({
     textarea
 }) => {
     return (
-        <InputGroup style={style} className={inputContainerClassName} id={id} role="myInput">
+        <InputGroup style={styleInputContainer} className={inputContainerClassName} id={id} role="myInput">
             <Form.Control
                 as={textarea ? "textarea" : "input"}
                 type={type}
@@ -48,7 +50,7 @@ const InputComponent: React.FC<InputGroupProps> = ({
                 className={inputClassName}
                 name={name}
                 required={required}
-                style={textarea ? { height: "10rem" } : {}}
+                style={textarea ? {...styleInput, height: "10rem" } : styleInput}
             />
         </InputGroup>
     )

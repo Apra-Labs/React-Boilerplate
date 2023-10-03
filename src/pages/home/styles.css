@@ -51,7 +51,7 @@
 /* mobile */
 @media screen and (max-width: 480px) {
     .description {
-        height: 8%;
+        height: 10rem;
         width: 25rem;
     }
 

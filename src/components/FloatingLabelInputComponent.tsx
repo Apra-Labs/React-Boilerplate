@@ -6,6 +6,7 @@ interface FloatingLabelInputProps {
     placeholder?: string;
     onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
     styleFloatingContainer?: React.CSSProperties;
+    styleFloatingInput?: React.CSSProperties;
     classNameFloatingContainer?: string;
     idFloatingContainer?: string;
     classNameFloatingInput?: string;
@@ -26,6 +27,7 @@ const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
     placeholder,
     onChange,
     styleFloatingContainer,
+    styleFloatingInput,
     classNameFloatingContainer,
     idFloatingContainer,
     classNameFloatingInput,
@@ -50,7 +52,7 @@ const FloatingLabelInputComponent: React.FC<FloatingLabelInputProps> = ({
                 className={classNameFloatingInput}
                 name={name}
                 required={required}
-                style={textarea ? {height: "10rem"} : {}}
+                style={textarea ? {...styleFloatingInput, height: "10rem"} : styleFloatingInput}
             />
         </FloatingLabel>
     )

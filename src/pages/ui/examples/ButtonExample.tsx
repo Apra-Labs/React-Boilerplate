@@ -37,6 +37,15 @@ const ButtonExample: React.FC = () => {
                         headerStyle={{ justifyContent: 'space-between' }}
                         messageStyle={{ color: 'white' }}
                     />
+                    <ToastComponent
+                        header={t("Button") + ' ' + t("Clicked")}
+                        message={t("You") + ' ' + t("Clicked") + ' ' + t("Button")}
+                        show={showAlert}
+                        onClose={closeAlert}
+                        variant="danger"
+                        headerStyle={{ justifyContent: 'space-between' }}
+                        messageStyle={{ color: 'white' }}
+                    />
                 </ToastContainerComponent>
                 <div className="buttonContainer">
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} />
@@ -47,6 +56,20 @@ const ButtonExample: React.FC = () => {
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="info" />
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="light" style={{ border: '0.1rem', borderStyle: 'solid' }} />
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="dark" style={{ border: '0.1rem', borderStyle: 'solid', borderColor: 'white' }} />
+                </div>
+
+            </div>
+            <h2 className="heading">{t("Outline") + ' ' + t("Button")}</h2>
+            <div className="commonContainer">
+                <div className="buttonContainer">
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-primary" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-secondary" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-danger" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-success" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-warning" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-info" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-light" />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-dark" style={{ border: '0.1rem', borderStyle: 'solid', borderColor: 'white', color: 'white' }} />
                 </div>
             </div>
             <Footer />

@@ -10,7 +10,7 @@ import { toast } from 'react-toastify';
 import { Offcanvas } from 'react-bootstrap';
 import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
 import ButtonComponent from '../components/ButtonComponent';
-import { faSun, faMoon, faBars } from '@fortawesome/free-solid-svg-icons';
+import { faSun, faMoon, faBars, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import './styles/Navigation.css';
 import ModalComponent from '../components/ModalComponent';
@@ -46,7 +46,7 @@ const Navigation: React.FC = () => {
     const handleLogOut = () => {
         dispatch(logOut());
         toast.success("Logged out", {
-            position: toast.POSITION.TOP_RIGHT //toast from react bootstrap
+            position: toast.POSITION.TOP_RIGHT
         })
     }
 
@@ -106,9 +106,8 @@ const Navigation: React.FC = () => {
         <>
             <Navbar expand="lg" className='nav' fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className='titleLink'>{t("MyApplication")}</Navbar.Brand>
-                <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("UiKit")}</Nav.Link>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" className='toggleButton'>
-                    <FontAwesomeIcon icon={faBars} />  
+                    <FontAwesomeIcon icon={faBars} />
                 </Navbar.Toggle>
                 <Navbar.Offcanvas id="navbar-offcanvas">
                     <Offcanvas.Header closeButton closeVariant={icon === faSun ? 'white' : ''}>
@@ -121,6 +120,7 @@ const Navigation: React.FC = () => {
                         <Nav className='ms-auto'>
                             {location.pathname === "/" ?
                                 <>
+                                    <Nav.Link as={Link} to={"/uikit/alert"} className='navLink' id='uikitlink'>{t("UiKit")}</Nav.Link>
                                     {!isLogin ?
                                         <Nav.Link className='loginLink' onClick={handleShow}>{t("Login")}</Nav.Link> :
                                         <Nav.Link className='loginLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
@@ -135,6 +135,12 @@ const Navigation: React.FC = () => {
                                     <button className='themeButton' onClick={changeIcon}><FontAwesomeIcon icon={icon} /></button>
                                 </> :
                                 <div className='sideLinks'>
+                                    <Nav.Link as={Link} active={location.pathname === "/"} to={"/"} className='navLink'>
+                                        <span>
+                                            <FontAwesomeIcon icon={faArrowLeftLong} />
+                                        </span>
+                                        {' ' + t("Backtomainmenu")}
+                                    </Nav.Link>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/alert"} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/button"} to={"/uikit/button"} className='navLink'>{t("Button")}</Nav.Link>
                                     <Nav.Link as={Link} active={location.pathname === "/uikit/card"} to={"/uikit/card"} className='navLink'>{t("Card")}</Nav.Link>
@@ -179,7 +185,7 @@ const Navigation: React.FC = () => {
                     </>
                 }
                 footer={
-                    <ButtonComponent label={t("Login")} type='submit' className='loginButton' onClick={handleSubmit}/>
+                    <ButtonComponent label={t("Login")} type='submit' className='loginButton' onClick={handleSubmit} />
                 }
                 modalHeaderClass='loginHeader'
                 modalBodyClass='loginBody'

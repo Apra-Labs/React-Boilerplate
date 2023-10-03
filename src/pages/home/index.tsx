@@ -21,7 +21,7 @@ const Home: React.FC = () => {
                     Our react boilerplate offers reuseable common components such as button, alerts, inputs etc. It also comes with built in redux toolkit setup.
                     The boilerplate comes with Internationalization support and also login and logout.
                 </p>
-                <ButtonComponent label="Explore UI Kit" onClick={handleClick} />
+                <ButtonComponent label="Explore UI Kit" onClick={handleClick} variant="outline-primary"/>
             </div>
             <Footer />
         </>

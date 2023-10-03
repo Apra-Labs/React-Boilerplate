@@ -7,7 +7,7 @@ import '../styles/Common.css';
 
 const InputExample: React.FC = () => {
     const { t } = useTranslation();
-    
+
     return (
         <div className="exampleContainer">
             <Navigation />
@@ -18,7 +18,12 @@ const InputExample: React.FC = () => {
             </div>
             <h2 className="heading">{t("Textarea")}</h2>
             <div className="commonContainer">
-                <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer" textarea/>
+                <InputComponent
+                    inputClassName="inputElement"
+                    inputContainerClassName="inputContainer"
+                    textarea
+                    styleInput={{ maxHeight: '15rem' }}
+                />
             </div>
             <Footer />
         </div>

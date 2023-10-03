@@ -37,6 +37,8 @@ const ModalExample: React.FC = () => {
     const handleHideVerticalModal = () => {
         setShowVerticalModal(false);
     }
+    
+    const theme = document.documentElement.getAttribute('data-theme');
 
     return (
         <div className="exampleContainer">
@@ -53,6 +55,7 @@ const ModalExample: React.FC = () => {
                     modalHeaderClass="modalClass"
                     modalBodyClass="modalClass"
                     modalFooterClass="modalClass"
+                    closeVariant={theme === "dark" ? "white" : "black"}
                 />
             </div>
             <h2 className="heading">{t("Modal") + ' ' + t("without") + ' ' + t("animation")}</h2>
@@ -67,6 +70,7 @@ const ModalExample: React.FC = () => {
                     modalBodyClass="modalClass"
                     modalFooterClass="modalClass"
                     animation={false}
+                    closeVariant={theme === "dark" ? "white" : "black"}
                 />
             </div>
             <h2 className="heading">
@@ -82,6 +86,7 @@ const ModalExample: React.FC = () => {
                     modalHeaderClass="modalClass"
                     modalBodyClass="modalClass"
                     modalFooterClass="modalClass"
+                    closeVariant={theme === "dark" ? "white" : "black"}
                     centered
                 />
             </div>
