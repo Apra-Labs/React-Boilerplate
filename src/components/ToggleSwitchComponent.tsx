@@ -6,7 +6,6 @@ interface ToggleSwitchProps {
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     style?: React.CSSProperties;
     className?: string;
-    id?: string;
     name?: string;
 }
 
@@ -19,22 +18,18 @@ const ToggleSwitchComponent: React.FC<ToggleSwitchProps> = ({
     onChange,
     style,
     className,
-    id,
     name
-}) => {
-    return (
-        <Form.Check
-            id={id}
-            type="switch"
-            label={label}
-            onChange={onChange}
-            style={style}
-            className={className}
-            name={name}
-            role="mySwitch"
-        />
-    )
-}
+}) => (
+    <Form.Check
+        type="switch"
+        label={label}
+        onChange={onChange}
+        style={style}
+        className={className}
+        name={name}
+        role="mySwitch"
+    />
+)
 
 ToggleSwitchComponent.defaultProps = defaultProps;
 export default ToggleSwitchComponent;

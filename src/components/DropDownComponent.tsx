@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import { Dropdown, InputGroup, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -18,8 +18,6 @@ interface DropDownProps {
     dropDownToggleclassName?: string;
     dropDownMenuclassName?: string;
     dropDownItemclassName?: string;
-    id?: string;
-    //multi select options
 }
 
 const defaultProps: Partial<DropDownProps> = {
@@ -45,8 +43,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     dropDownclassName,
     dropDownMenuclassName,
     dropDownToggleclassName,
-    dropDownItemclassName,
-    id
+    dropDownItemclassName
 }) => {
     const [inputValue, setInputValue] = useState<string>("");
     const [filteredData, setFilteredData] = useState<{ key: string; value: string; }[] | undefined >(options);
@@ -57,21 +54,21 @@ const DropDownComponent: React.FC<DropDownProps> = ({
         }
     }, [options, filteredData]);
 
-    const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
         const filter = options?.filter((option) => {
             return option.key.toLowerCase().includes(inputValue.toLowerCase());
         })
         setFilteredData(filter);
-    };
+    }, [options]);
 
     const clearInput = () => {
         setInputValue("");
         setFilteredData([]);
     }
-//show selection for dropdown response
+
     return (
-        <Dropdown onSelect={onSelect}  className={dropDownclassName} id={id} role="myDropdown">
+        <Dropdown onSelect={onSelect}  className={dropDownclassName} role="myDropdown">
             <Dropdown.Toggle variant={variant} style={dropdownToggleStyle} className={dropDownToggleclassName}>{label}</Dropdown.Toggle> 
             <Dropdown.Menu style={dropdownMenuStyle} className={dropDownMenuclassName}> 
                 {enableSearch &&

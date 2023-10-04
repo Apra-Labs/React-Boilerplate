@@ -57,14 +57,16 @@
 .floatingInput:focus, 
 .inputElement, 
 .inputElement:focus,
-.modalClass {
+.modalClass,
+.textAreaInput,
+.textAreaInput:focus {
     color: var(--text-color);
     background-color: var(--input-background-color);
     border: 0.1rem solid var(--sidebar-border-color);
     font-size: 1rem;
 }
 
-.dropDownItem, .dropDownMenu::placeholder, .inputElement::placeholder {
+.dropDownItem, .dropDownMenu::placeholder, .inputElement::placeholder, .textAreaInput::placeholder {
     color: var(--text-color);
 }
 
@@ -102,6 +104,16 @@
 
 .form-switch .form-check-input:not(:checked):not(:focus) {
     background-image: var(--toggle-image-urL);
+}
+
+.textAreaContainer {
+    width: 20rem;
+}
+
+.textAreaInput {
+    height: 10rem;
+    min-height: 5rem;
+    max-height: 25rem;
 }
 
 .toast {

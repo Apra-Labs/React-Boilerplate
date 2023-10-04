@@ -15,13 +15,13 @@ function App() {
 	useEffect(() => {
         const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
         if (isDarkTheme.matches) {
-            dispatch(changeTheme(faSun));
+            dispatch(changeTheme(faMoon));
             document.documentElement.setAttribute('data-theme', 'dark');
         } else {
-            dispatch(changeTheme(faMoon));
+            dispatch(changeTheme(faSun));
             document.documentElement.setAttribute('data-theme', 'light');
         }
-    });
+    }, []);
 
 	return (
 		<div>

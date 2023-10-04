@@ -4,9 +4,20 @@ import Navigation from "../../../containers/Navigation";
 import Sidebar from "../Sidebar";
 import Footer from "../../../containers/Footer";
 import '../styles/Common.css';
+import { useState } from "react";
+import ButtonComponent from "../../../components/ButtonComponent";
 
 const ToastExample: React.FC = () => {
+    const [showAlert, setShowAlert] = useState<boolean>(false);
     const { t } = useTranslation();
+
+    const closeAlert = () => {
+        setShowAlert(false);
+    }
+
+    const handleClick = () => {
+        setShowAlert(true);
+    }
 
     return (
         <div className="exampleContainer">
@@ -15,64 +26,11 @@ const ToastExample: React.FC = () => {
             <h1 className="heading">{t("Toast")}</h1>
             <div className="commonContainer">
                 <div className="toastContainer">
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="primary"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="secondary"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="danger"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="success"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="warning"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="info"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="light"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                        messageStyle={{ color: 'black' }}
-                    />
-                    <ToastComponent
-                        header={t("Toast")}
-                        message={t("Thisisatoastexample")}
-                        variant="dark"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        className="toast"
-                        messageStyle={{ color: 'white' }}
-                    />
+                    <ButtonComponent label={t("Click")} onClick={handleClick}/>
+                    <ToastComponent position="top-end" toasts={[
+                        {header: "Toast", message: "This is a toast", variant: "primary", show: showAlert, onClose: closeAlert},
+                        {header: "Toast", message: "This is a toast", variant: "danger", show: showAlert, onClose: closeAlert}
+                    ]}/>
                 </div>
             </div>
             <Footer />

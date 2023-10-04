@@ -3,8 +3,10 @@ import Footer from "../../containers/Footer";
 import './styles.css';
 import ButtonComponent from "../../components/ButtonComponent";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const Home: React.FC = () => {
+    const {t} = useTranslation();
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -15,13 +17,18 @@ const Home: React.FC = () => {
         <>
             <Navigation />
             <div className="description">
-                <p className="mainHeading">Reduce development time</p>
-                <p className="descSubHeading">with our React Boilerplate</p>
+                <p className="mainHeading">{t("Reduce") + " " + t("development") + " " + t("time")}</p>
+                <p className="descSubHeading">{t("with") + " "} Apra React Boilerplate</p>
                 <p className="featureDesc">
-                    Our react boilerplate offers reuseable common components such as button, alerts, inputs etc. It also comes with built in redux toolkit setup.
-                    The boilerplate comes with Internationalization support and also login and logout.
+                    Apra react boilerplate {t("offers") + " " + t("reuseable") + " " + t("common") + " " + t("components") +
+                    t("such") + " " + t("as") + " " + t("button") + "," + " " + t("alerts") + "," + " " + t("inputs") + " " + t("and")
+                    + " " + t("many") + " " + t("more") + "." + " " + t("it").charAt(0).toUpperCase() + t("it").slice(1) + " " +
+                    t("also") + " " + t("comes") + " " + t("with") + " " + t("built") + " " + t("in") + " " + "redux" + " " +
+                    "toolkit" + " " + "setup" + "." + " " + t("The") + " " +  "boilerplate" + " " + t("comes") + " " + t("with")
+                    + " " + t("Internationalization") + " " + t("support") + " " + t("and") + " " + t("also") + " " + t("login")
+                    + " " + t("and") + " " + t("logout") +"."}
                 </p>
-                <ButtonComponent label="Explore UI Kit" onClick={handleClick} variant="outline-primary"/>
+                <ButtonComponent label={t("Explore") + " " + t("UiKit")} onClick={handleClick} variant="outline-primary"/>
             </div>
             <Footer />
         </>

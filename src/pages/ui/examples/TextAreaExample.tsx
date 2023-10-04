@@ -1,23 +1,23 @@
 import Navigation from "../../../containers/Navigation";
 import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
-import ToggleSwitchComponent from "../../../components/ToggleSwitchComponent";
 import { useTranslation } from "react-i18next";
 import '../styles/Common.css';
+import TextAreaComponent from "../../../components/TextAreaComponent";
 
-const ToggleSwitchExample: React.FC = () => {
+const TextAreaExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
         <div className="exampleContainer">
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("ToggleSwitch")}</h1>
+            <h1 className="heading">{t("Textarea")}</h1>
             <div className="commonContainer">
-                <ToggleSwitchComponent
-                    label={t("MySwitch")}
-                    onChange={() => {}}
-                    className="toggleSwitch"
+                <TextAreaComponent
+                    placeholder={t("Address")}
+                    textAreaContainerClassName="textAreaContainer"
+                    textAreaInputClassName="textAreaInput"
                 />
             </div>
             <Footer />
@@ -25,4 +25,4 @@ const ToggleSwitchExample: React.FC = () => {
     )
 }
 
-export default ToggleSwitchExample;
+export default TextAreaExample;

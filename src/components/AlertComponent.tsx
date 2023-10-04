@@ -7,7 +7,6 @@ interface AlertProps {
     onClose?: () => void;
     style?: React.CSSProperties;
     className?: string;
-    id?: string;
 }
 
 const defaultProps: Partial<AlertProps> = {
@@ -20,24 +19,20 @@ const AlertComponent: React.FC<AlertProps> = ({
     message,
     onClose,
     style,
-    className,
-    id
-}) => {
-    return (
-        <Alert
-            show={show}
-            variant={variant}
-            onClose={onClose}
-            dismissible
-            style={style}
-            className={className}
-            id={id}
-            role="myAlert"
-        >
-            {message}
-        </Alert>
-    )
-}
+    className
+}) => (
+    <Alert
+        show={show}
+        variant={variant}
+        onClose={onClose}
+        dismissible
+        style={style}
+        className={className}
+        role="myAlert"
+    >
+        {message}
+    </Alert>
+)
 
 AlertComponent.defaultProps = defaultProps;
 export default AlertComponent;

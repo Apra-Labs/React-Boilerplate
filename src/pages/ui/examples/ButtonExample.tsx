@@ -6,7 +6,6 @@ import { useTranslation } from "react-i18next";
 import '../styles/Common.css';
 import { useState } from "react";
 import ToastComponent from "../../../components/ToastComponent";
-import ToastContainerComponent from "../../../components/ToastContainerComponent";
 
 const ButtonExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -27,26 +26,16 @@ const ButtonExample: React.FC = () => {
             <Sidebar />
             <h1 className="heading">{t("Button")}</h1>
             <div className="commonContainer">
-                <ToastContainerComponent position="top-end">
-                    <ToastComponent
-                        header={t("Button") + ' ' + t("Clicked")}
-                        message={t("You") + ' ' + t("Clicked") + ' ' + t("Button")}
-                        show={showAlert}
-                        onClose={closeAlert}
-                        variant="primary"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        messageStyle={{ color: 'white' }}
-                    />
-                    <ToastComponent
-                        header={t("Button") + ' ' + t("Clicked")}
-                        message={t("You") + ' ' + t("Clicked") + ' ' + t("Button")}
-                        show={showAlert}
-                        onClose={closeAlert}
-                        variant="danger"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        messageStyle={{ color: 'white' }}
-                    />
-                </ToastContainerComponent>
+                <ToastComponent position="top-end" toasts={[
+                    {
+                        header: "Button clicked",
+                        message: "Button is clicked",
+                        show: showAlert,
+                        onClose: closeAlert,
+                        variant: "primary",
+                        headerStyle: { justifyContent: 'space-between' }
+                    }
+                ]} />
                 <div className="buttonContainer">
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} />
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="secondary" />
@@ -68,8 +57,8 @@ const ButtonExample: React.FC = () => {
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-success" />
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-warning" />
                     <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-info" />
-                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-light" />
-                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-dark" style={{ border: '0.1rem', borderStyle: 'solid', borderColor: 'white', color: 'white' }} />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-light" style={{ color: 'gray' }} />
+                    <ButtonComponent className="button" label={t("Click")} onClick={handleClick} variant="outline-dark" style={{ border: '0.1rem', borderStyle: 'solid', borderColor: 'white', color: 'gray' }} />
                 </div>
             </div>
             <Footer />

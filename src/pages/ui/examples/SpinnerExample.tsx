@@ -6,6 +6,7 @@ import { useTranslation } from "react-i18next";
 import '../styles/Common.css';
 import ButtonComponent from "../../../components/ButtonComponent";
 import { useState } from "react";
+import { CloseButton } from "react-bootstrap";
 
 
 const SpinnerExample: React.FC = () => {
@@ -15,6 +16,7 @@ const SpinnerExample: React.FC = () => {
 
     const handleFullPage = () => {
         setFullPage(true);
+        setTimeout(closeFullPage, 3000);
     }
 
     const closeFullPage = () => {
@@ -50,13 +52,8 @@ const SpinnerExample: React.FC = () => {
             </div>
             <h2 className="heading">{t("fullpage").charAt(0).toUpperCase() + t("fullpage").slice(1) + ' ' + t("Spinner")}</h2>
             <div className="commonContainer">
-                <ButtonComponent label={t("fullpage").charAt(0).toUpperCase() + t("fullpage").slice(1) + ' ' + t("Spinner")} onClick={handleFullPage} style={{marginBottom: '2rem'}}/>
-                {fullPage && <SpinnerComponent
-                    animation="border"
-                    className="spinner"
-                    fullPage={fullPage}
-                    handleClose={closeFullPage}
-                />}
+                <ButtonComponent label={t("fullpage").charAt(0).toUpperCase() + t("fullpage").slice(1) + ' ' + t("Spinner")} onClick={handleFullPage} style={{ marginBottom: '2rem' }} />
+                {fullPage && <SpinnerComponent animation="border" className="spinner" fullPage={fullPage} />}
             </div>
             <Footer />
         </div>

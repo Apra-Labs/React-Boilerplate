@@ -7,7 +7,6 @@ import ButtonComponent from "../../../components/ButtonComponent";
 import '../styles/Common.css';
 import { useState } from "react";
 import ToastComponent from "../../../components/ToastComponent";
-import ToastContainerComponent from "../../../components/ToastContainerComponent";
 
 const RadioExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -33,17 +32,17 @@ const RadioExample: React.FC = () => {
             <Sidebar />
             <h1 className="heading">{t("Radio")}</h1>
             <div className="commonContainer">
-                <ToastContainerComponent position="top-end">
-                    <ToastComponent
-                        header={t("Checkbox") + ' ' + t("choosed")}
-                        message={option}
-                        show={showAlert}
-                        onClose={closeAlert}
-                        variant="primary"
-                        headerStyle={{ justifyContent: 'space-between' }}
-                        messageStyle={{ color: 'white' }}
-                    />
-                </ToastContainerComponent>
+                <ToastComponent position="top-end" toasts={[
+                    {
+                        header: t("Radio") + ' ' + t("choosed"),
+                        message: option,
+                        show: showAlert,
+                        onClose: closeAlert,
+                        variant: "primary",
+                        headerStyle: { justifyContent: 'space-between' },
+                        messageStyle: { color: 'white' }
+                    }
+                ]} />
                 <h3>{t("SelectOptions")}</h3>
                 <RadioComponent name="myoption" label={t("Option1")} onChange={handleOnChange} className="checkbox" value="option 1" />
                 <RadioComponent name="myoption" label={t("Option2")} onChange={handleOnChange} className="checkbox" value="option 2" />

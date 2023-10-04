@@ -5,7 +5,6 @@ import Footer from "../../../containers/Footer";
 import { useTranslation } from "react-i18next";
 import '../styles/Common.css';
 
-
 const AlertExample: React.FC = () => {
     const { t } = useTranslation();
     

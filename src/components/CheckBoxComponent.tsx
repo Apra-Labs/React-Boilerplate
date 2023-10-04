@@ -3,7 +3,6 @@ import { Form } from "react-bootstrap";
 interface CheckBoxProps {
     label: string;
     className?: string;
-    id?: string;
     style?: React.CSSProperties;
     value?: string;
     disabled?: boolean;
@@ -19,30 +18,26 @@ const defaultProps: Partial<CheckBoxProps> = {
 const CheckBoxComponent: React.FC<CheckBoxProps> = ({
     label,
     className,
-    id,
     style,
     value,
     disabled,
     onChange,
     name,
     title
-}) => {
-    return (
-        <Form.Check
-            type="checkbox"
-            label={label}
-            className={className}
-            id={id}
-            style={style}
-            value={value}
-            onChange={onChange}
-            name={name}
-            title={title}
-            disabled={disabled}
-            role="myCheckbox"
-        />
-    )
-}
+}) => (
+    <Form.Check
+        type="checkbox"
+        label={label}
+        className={className}
+        style={style}
+        value={value}
+        onChange={onChange}
+        name={name}
+        title={title}
+        disabled={disabled}
+        role="myCheckbox"
+    />
+)
 
 CheckBoxComponent.defaultProps = defaultProps;
 export default CheckBoxComponent;

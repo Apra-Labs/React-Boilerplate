@@ -8,7 +8,7 @@ import { useAppDispatch, useAppSelector } from '../redux/hooks';
 import { logOut, login } from '../redux/reducers/authSlice';
 import { toast } from 'react-toastify';
 import { Offcanvas } from 'react-bootstrap';
-import FloatingLabelInputComponent from '../components/FloatingLabelInputComponent';
+import InputFloatingLabelComponent from '../components/InputFloatingLabelComponent';
 import ButtonComponent from '../components/ButtonComponent';
 import { faSun, faMoon, faBars, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -20,7 +20,8 @@ const Navigation: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [icon, setIcon] = useState<any>(faMoon);
+    const [icon, setIcon] = useState<any>(faSun);
+    const [language, setLanguage] = useState<string>('English');
 
     const loggedIn = useAppSelector((state) => state.authReducer.isLoggedIn);
     const themeIcon = useAppSelector((state) => state.themeIconReducer.icon);
@@ -40,6 +41,11 @@ const Navigation: React.FC = () => {
 
     const onSelectLang = (e: string | null) => {
         const lang_code = e || undefined;
+        if (lang_code === "en") {
+            setLanguage("English")
+        } else {
+            setLanguage("español");
+        }
         i18n.changeLanguage(lang_code);
     };
 
@@ -69,10 +75,10 @@ const Navigation: React.FC = () => {
     const changeIcon = () => {
         if (icon === faMoon) {
             setIcon(faSun);
-            document.documentElement.setAttribute('data-theme', 'dark');
+            document.documentElement.setAttribute('data-theme', 'light');
         } else if (icon === faSun) {
             setIcon(faMoon);
-            document.documentElement.setAttribute('data-theme', 'light');
+            document.documentElement.setAttribute('data-theme', 'dark');
         }
     };
 
@@ -94,6 +100,8 @@ const Navigation: React.FC = () => {
         }
     }
 
+    const theme = document.documentElement.getAttribute('data-theme');
+
     const user = {
         id: 1,
         name: "John",
@@ -105,7 +113,10 @@ const Navigation: React.FC = () => {
     return (
         <>
             <Navbar expand="lg" className='nav' fixed='top' role='myNavbar'>
-                <Navbar.Brand as={Link} to={"/"} className='titleLink'>{t("MyApplication")}</Navbar.Brand>
+                <Navbar.Brand as={Link} to={"/"} className='titleLink'>
+                    <img src={require('../assets/images/brand_logo.png')} width={30} height={30} className="d-inline-block align-top" />
+                    {" " + t("MyApplication")}
+                </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" className='toggleButton'>
                     <FontAwesomeIcon icon={faBars} />
                 </Navbar.Toggle>
@@ -126,7 +137,7 @@ const Navigation: React.FC = () => {
                                         <Nav.Link className='loginLink' onClick={handleLogOut}>{t("Logout")}</Nav.Link>
                                     }
                                     <NavDropdown
-                                        title={<span className='navLink'>{t("ChangeLanguage")}</span>}
+                                        title={<span className='navLink'>{language}</span>}
                                         id="navbarScrollingDropdown"
                                         onSelect={onSelectLang} >
                                         <NavDropdown.Item eventKey={"en"} className='navDropdownMenu'>{t("English")}</NavDropdown.Item>
@@ -141,19 +152,20 @@ const Navigation: React.FC = () => {
                                         </span>
                                         {' ' + t("Backtomainmenu")}
                                     </Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/alert"} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/button"} to={"/uikit/button"} className='navLink'>{t("Button")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/card"} to={"/uikit/card"} className='navLink'>{t("Card")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/checkbox"} to={"/uikit/checkbox"} className='navLink'>{t("Checkbox")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/dropdown"} to={"/uikit/dropdown"} className='navLink'>{t("Dropdown")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/floatinglabelinput"} to={"/uikit/floatinglabelinput"} className='navLink'>{t("FloatingLabelInput")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/image"} to={"/uikit/image"} className='navLink'>{t("Image")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/input"} to={"/uikit/input"} className='navLink'>{t("Input")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/modal"} to={"/uikit/modal"} className='navLink'>{t("Modal")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/radio"} to={"/uikit/radio"} className='navLink'>{t("Radio")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/spinner"} to={"/uikit/spinner"} className='navLink'>{t("Spinner")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/toast"} to={"/uikit/toast"} className='navLink'>{t("Toast")}</Nav.Link>
-                                    <Nav.Link as={Link} active={location.pathname === "/uikit/toggleswitch"} to={"/uikit/toggleswitch"} className='navLink'>{t("ToggleSwitch")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/alert"} className='navLink'>{t("Alert")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/button"} className='navLink'>{t("Button")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/card"} className='navLink'>{t("Card")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/checkbox"} className='navLink'>{t("Checkbox")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/dropdown"} className='navLink'>{t("Dropdown")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/inputfloatinglabel"} className='navLink'>{t("InputFloatingLabel")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/image"} className='navLink'>{t("Image")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/input"} className='navLink'>{t("Input")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/modal"} className='navLink'>{t("Modal")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/radio"} className='navLink'>{t("Radio")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/spinner"} className='navLink'>{t("Spinner")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/textarea"} className='navLink'>{t("Textarea")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/toast"} className='navLink'>{t("Toast")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/toggleswitch"} className='navLink'>{t("ToggleSwitch")}</Nav.Link>
                                 </div>
                             }
                         </Nav>
@@ -166,30 +178,33 @@ const Navigation: React.FC = () => {
                 title={t("Login")}
                 body={
                     <>
-                        <FloatingLabelInputComponent
-                            label={t("Email")}
-                            type='email'
-                            placeholder={t("Email")}
-                            onChange={handleEmail}
-                            classNameFloatingContainer='modalInputContainer'
-                            classNameFloatingInput='modalInput'
-                        />
-                        <FloatingLabelInputComponent
-                            label={t("Password")}
-                            type='password'
-                            placeholder={t("Password")}
-                            onChange={handlePassword}
-                            classNameFloatingContainer='modalInputContainer'
-                            classNameFloatingInput='modalInput'
-                        />
+                        <form onSubmit={handleSubmit}>
+                            <InputFloatingLabelComponent
+                                label={t("Email")}
+                                type='email'
+                                placeholder={t("Email")}
+                                onChange={handleEmail}
+                                classNameFloatingContainer='modalInputContainer'
+                                classNameFloatingInput='modalInput'
+                            />
+                            <InputFloatingLabelComponent
+                                label={t("Password")}
+                                type='password'
+                                placeholder={t("Password")}
+                                onChange={handlePassword}
+                                classNameFloatingContainer='modalInputContainer'
+                                classNameFloatingInput='modalInput'
+                            />
+                        </form>
                     </>
                 }
                 footer={
-                    <ButtonComponent label={t("Login")} type='submit' className='loginButton' onClick={handleSubmit} />
+                    <ButtonComponent label={t("Login")} type='submit' className='loginButton' onClick={handleSubmit}/>
                 }
                 modalHeaderClass='loginHeader'
                 modalBodyClass='loginBody'
                 modalFooterClass='loginFooter'
+                closeVariant={theme === "dark" ? "white" : "black"}
                 centered
             />
         </>

@@ -6,7 +6,7 @@ interface ImageProps {
     id?: string;
     style?: React.CSSProperties;
     alt?: string,
-    shape?: string
+    shape?: string // prop improve as 
 }
 
 const defaultProps: Partial<ImageProps> = {

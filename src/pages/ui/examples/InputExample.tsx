@@ -16,15 +16,6 @@ const InputExample: React.FC = () => {
             <div className="commonContainer">
                 <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer" />
             </div>
-            <h2 className="heading">{t("Textarea")}</h2>
-            <div className="commonContainer">
-                <InputComponent
-                    inputClassName="inputElement"
-                    inputContainerClassName="inputContainer"
-                    textarea
-                    styleInput={{ maxHeight: '15rem' }}
-                />
-            </div>
             <Footer />
         </div>
     )

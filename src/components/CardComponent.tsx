@@ -9,7 +9,6 @@ interface CardProps {
     subtitle?: string;
     imgSrc?: string;
     className?: string;
-    id?: string;
     border?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
 }
 
@@ -29,29 +28,25 @@ const CardComponent: React.FC<CardProps> = ({
     subtitle,
     imgSrc,
     className,
-    id,
     border
-}) => {
-    return (
-        <Card
-            bg={variant}
-            style={style}
-            text={variant?.toLowerCase() === 'light' ? 'dark' : 'white'}
-            className={className}
-            id={id}
-            border={border}
-            role="myCard"
-        >
-            {header && <Card.Header>{header}</Card.Header>}
-            {imgSrc && <Card.Img variant="top" src={imgSrc} />}
-            <Card.Body>
-                <Card.Title>{title}</Card.Title>
-                {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
-                <Card.Text>{message}</Card.Text>
-            </Card.Body>
-        </Card>
-    )
-}
+}) => (
+    <Card
+        bg={variant}
+        style={style}
+        text={variant?.toLowerCase() === 'light' ? 'dark' : 'white'}
+        className={className}
+        border={border}
+        role="myCard"
+    >
+        {header && <Card.Header>{header}</Card.Header>}
+        {imgSrc && <Card.Img variant="top" src={imgSrc} />}
+        <Card.Body>
+            <Card.Title>{title}</Card.Title>
+            {subtitle && <Card.Subtitle>{subtitle}</Card.Subtitle>}
+            <Card.Text>{message}</Card.Text>
+        </Card.Body>
+    </Card>
+)
 
 CardComponent.defaultProps = defaultProps;
 export default CardComponent;

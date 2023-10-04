@@ -23,6 +23,7 @@ export const sideBarElements = [
     "Modal",
     "Radio",
     "Spinner",
+    "Textarea",
     "Toast",
     "Toggle switch"
 ];

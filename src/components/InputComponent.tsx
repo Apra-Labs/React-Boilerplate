@@ -9,12 +9,9 @@ interface InputGroupProps {
     value?: string;
     inputContainerClassName?: string;
     inputClassName?: string;
-    id?: string;
     title?: string;
     name?: string;
     required?: boolean;
-    textarea?: boolean;
-    //add validation code 
 }
 
 const defaultProps: InputGroupProps = {
@@ -32,29 +29,24 @@ const InputComponent: React.FC<InputGroupProps> = ({
     value,
     inputContainerClassName,
     inputClassName,
-    id,
     title,
     name,
-    required,
-    textarea
-}) => {
-    return (
-        <InputGroup style={styleInputContainer} className={inputContainerClassName} id={id} role="myInput">
-            <Form.Control
-                as={textarea ? "textarea" : "input"}
-                type={type}
-                placeholder={placeholder}
-                onChange={onChange}
-                value={value}
-                title={title}
-                className={inputClassName}
-                name={name}
-                required={required}
-                style={textarea ? {...styleInput, height: "10rem" } : styleInput}
-            />
-        </InputGroup>
-    )
-}
+    required
+}) => (
+    <InputGroup style={styleInputContainer} className={inputContainerClassName} role="myInput">
+        <Form.Control
+            type={type}
+            placeholder={placeholder}
+            onChange={onChange}
+            value={value}
+            title={title}
+            className={inputClassName}
+            name={name}
+            required={required}
+            style={styleInput}
+        />
+    </InputGroup>
+)
 
 InputComponent.defaultProps = defaultProps;
 export default InputComponent;
