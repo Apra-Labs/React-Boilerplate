@@ -28,6 +28,7 @@
 .checkbox {
     margin-top: 1rem;
     margin-bottom: 1rem;
+    cursor: pointer;
     color: var(--text-color);
 }
 
@@ -93,6 +94,11 @@
     filter: blur(5px) grayscale(90%);
 }
 
+.row {
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
 .rowcolumn, .rowcolumnheading {
     border: 0.1rem solid var(--sidebar-border-color);
     text-align: center;
@@ -105,6 +111,7 @@
 .spinner {
     height: 12rem;
     width: 12rem;
+    margin: 0.5rem;
 }
 
 .form-switch .form-check-input:not(:checked):not(:focus) {
@@ -127,6 +134,7 @@
 
 .toggleSwitch {
     font-size: 2rem;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 992px)  {
@@ -173,6 +181,10 @@
 
     .toast {
         margin: 0.4rem;
+    }
+
+    .toastButton {
+        width: 5rem;
     }
 }
 

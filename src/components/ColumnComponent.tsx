@@ -7,7 +7,7 @@ interface ColumnProps {
     lg?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
     xl?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
     xxl?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    label?: string;
+    children?: JSX.Element[] | JSX.Element;
     className?: string;
     style?: React.CSSProperties;
 }
@@ -19,7 +19,7 @@ const ColumnComponent: React.FC<ColumnProps> = ({
     lg,
     xl,
     xxl,
-    label,
+    children,
     className,
     style
 }) => {
@@ -35,7 +35,7 @@ const ColumnComponent: React.FC<ColumnProps> = ({
             style={style}
             role="myCol"
         >
-            {label}
+            {children}
         </Col>
     )
 }

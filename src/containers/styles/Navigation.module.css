@@ -37,6 +37,7 @@
 }
 
 .titleLink {
+    padding-top: 1rem;
     font-weight: 600;
 }
 
@@ -59,8 +60,8 @@
 }
 
 .modalInputContainer, .modalInputContainer:focus {
-    margin: 0.5rem;
-    width: 30rem;
+    margin: 1rem;
+    width: 29rem;
     background-color: var(modalInputContainer);
     color: var(--text-color);
     font-size: 1rem;
@@ -71,19 +72,14 @@
     color: var(--text-color);
 }
 
-.loginBody {
-    background-color: var(--nav-background-color);
-    color: var(--text-color);
-    padding: 0;
-}
-
-.loginFooter {
+.loginBody > form {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     background-color: var(--nav-background-color);
     color: var(--text-color);
-    height: 5rem;
+    padding: 0;
 }
 
 @media screen and (max-width: 992px) {

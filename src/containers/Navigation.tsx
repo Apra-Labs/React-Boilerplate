@@ -122,8 +122,8 @@ const Navigation: React.FC = () => {
     return (
         <>
             <Navbar expand="lg" className={styles.nav} fixed='top' role='myNavbar'>
-                <Navbar.Brand as={Link} to={"/"} className={styles.titleLink}>
-                    <img src={require('../assets/images/apra_logo.png')} width={30} height={30} className="d-inline-block align-top" />
+                <Navbar.Brand as={Link} to={"/"} className={styles.titleLink} >
+                    <img src={require('../assets/images/logo1.png')} width={30} height={30} />
                     {" " + t("MyApplication")}
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" className={styles.toggleButton}>
@@ -168,12 +168,12 @@ const Navigation: React.FC = () => {
                                     <Nav.Link as={Link} to={"/uikit/card"} className={styles.navLink}>{t("Card")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/checkbox"} className={styles.navLink}>{t("Checkbox")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/dropdown"} className={styles.navLink}>{t("Dropdown")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/inputfloatinglabel"} className={styles.navLink}>{t("InputFloatingLabel")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/image"} className={styles.navLink}>{t("Image")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/input"} className={styles.navLink}>{t("Input")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/inputfloatinglabel"} className={styles.navLink}>{t("InputFloatingLabel")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/modal"} className={styles.navLink}>{t("Modal")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/radio"} className={styles.navLink}>{t("Radio")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/rowcol"} className={styles.navLink}>{t("RowColumn")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/rowcolumn"} className={styles.navLink}>{t("RowColumn")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/spinner"} className={styles.navLink}>{t("Spinner")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/textarea"} className={styles.navLink}>{t("Textarea")}</Nav.Link>
                                     <Nav.Link as={Link} to={"/uikit/toast"} className={styles.navLink}>{t("Toast")}</Nav.Link>
@@ -189,7 +189,7 @@ const Navigation: React.FC = () => {
                 onHide={handleClose}
                 title={t("Login")}
                 body={
-                    <>
+                    <form onSubmit={handleSubmit}>
                         <InputFloatingLabelComponent
                             label={t("Email")}
                             type='email'
@@ -197,6 +197,7 @@ const Navigation: React.FC = () => {
                             onChange={handleEmail}
                             classNameFloatingContainer={styles.modalInputContainer}
                             classNameFloatingInput={styles.modalInput}
+                            required
                         />
                         <InputFloatingLabelComponent
                             label={t("Password")}
@@ -205,15 +206,13 @@ const Navigation: React.FC = () => {
                             onChange={handlePassword}
                             classNameFloatingContainer={styles.modalInputContainer}
                             classNameFloatingInput={styles.modalInput}
+                            required
                         />
-                    </>
-                }
-                footer={
-                    <ButtonComponent label={t("Login")} type='submit' className={styles.loginButton} onClick={handleSubmit} />
+                        <ButtonComponent label={t("Login")} type='submit' />
+                    </form>
                 }
                 modalHeaderClass={styles.loginHeader}
                 modalBodyClass={styles.loginBody}
-                modalFooterClass={styles.loginFooter}
                 closeVariant={theme === "dark" ? "white" : ""}
                 centered
             />

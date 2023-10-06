@@ -5,7 +5,7 @@ import SpinnerComponent from "../../../components/SpinnerComponent";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import ButtonComponent from "../../../components/ButtonComponent";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 
 const SpinnerExample: React.FC = () => {
@@ -13,14 +13,14 @@ const SpinnerExample: React.FC = () => {
 
     const { t } = useTranslation();
 
-    const handleFullPage = () => {
+    const handleFullPage = useCallback(() => {
         setFullPage(true);
         setTimeout(closeFullPage, 3000);
-    }
+    },[]);
 
-    const closeFullPage = () => {
+    const closeFullPage = useCallback(() => {
         setFullPage(false);
-    }
+    },[]);
 
     return (
         <div className={styles.exampleContainer}>

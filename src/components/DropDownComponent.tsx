@@ -52,9 +52,8 @@ const DropDownComponent: React.FC<DropDownProps> = ({
         const filter = options?.filter((option) => {
             return option.key.toLowerCase().includes(inputValue.toLowerCase());
         })
-        console.log(filter);
         setFilteredData(filter);
-    }, []);
+    }, [filteredData]);
 
     const clearInput = useCallback(() => {
         setInputValue("");

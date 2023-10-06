@@ -20,8 +20,8 @@ const Home: React.FC = () => {
                 <p className={styles.mainHeading}>{t("Reduce") + " " + t("development") + " " + t("time")}</p>
                 <p className={styles.descSubHeading}>{t("with") + " "} Apra React Boilerplate</p>
                 <p className={styles.featureDesc}>
-                    Apra react boilerplate {t("offers") + " " + t("reuseable") + " " + t("common") + " " + t("components") +
-                    t("such") + " " + t("as") + " " + t("button") + "," + " " + t("alerts") + "," + " " + t("inputs") + " " + t("and")
+                    Apra react boilerplate {t("offers") + " " + t("reuseable") + " " + t("common") + " " + t("components") + " " +
+                    t("such") + " " + t("as") + " " + t("buttons") + "," + " " + t("alerts") + "," + " " + t("inputs") + " " + t("and")
                     + " " + t("many") + " " + t("more") + "." + " " + t("it").charAt(0).toUpperCase() + t("it").slice(1) + " " +
                     t("also") + " " + t("comes") + " " + t("with") + " " + t("built") + " " + t("in") + " " + "redux" + " " +
                     "toolkit" + " " + "setup" + "." + " " + t("The") + " " +  "boilerplate" + " " + t("comes") + " " + t("with")

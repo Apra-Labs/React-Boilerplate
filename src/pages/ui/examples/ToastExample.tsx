@@ -26,10 +26,16 @@ const ToastExample: React.FC = () => {
             <h1 className={styles.heading}>{t("Toast")}</h1>
             <div className={styles.commonContainer}>
                 <div className={styles.toastContainer}>
-                    <ButtonComponent label={t("Click")} onClick={handleClick}/>
+                    <ButtonComponent label={t("Click")} onClick={handleClick} className={styles.toastButton}/>
                     <ToastComponent position="top-end" toastsArray={[
+                        {header: "Toast", message: "This is a toast", variant: "primary", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "secondary", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
                         {header: "Toast", message: "This is a toast", variant: "success", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "danger", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}}
+                        {header: "Toast", message: "This is a toast", variant: "danger", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "warning", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "info", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "light", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}, messageStyle:{color: 'black'}},
+                        {header: "Toast", message: "This is a toast", variant: "dark", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}, messageStyle: {color: 'white'}}
                     ]}/>
                 </div>
             </div>

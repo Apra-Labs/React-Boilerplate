@@ -13,7 +13,7 @@ function App() {
 	useEffect(() => {
         const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
         if (isDarkTheme.matches) {
-            document.documentElement.setAttribute('data-theme', 'dark');//check 
+            document.documentElement.setAttribute('data-theme', 'dark');
         } else {
             document.documentElement.setAttribute('data-theme', 'light');
         }

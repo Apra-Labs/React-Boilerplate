@@ -15,20 +15,20 @@ const RowColumnExample: React.FC = () => {
             <Sidebar />
             <h1 className={styles.heading}>{t("RowColumn")}</h1>
             <div className={styles.commonContainer}>
-                <RowComponent>
-                    <ColumnComponent label={t("SNo")} className={styles.rowcolumnheading} />
-                    <ColumnComponent label={t("TechStack")} className={styles.rowcolumnheading} />
-                    <ColumnComponent label={t("Domain")} className={styles.rowcolumnheading} />
+                <RowComponent className={styles.row}>
+                    <ColumnComponent children={<p>{t("SNo")}</p>} className={styles.rowcolumnheading} />
+                    <ColumnComponent children={<p>{t("TechStack")}</p>} className={styles.rowcolumnheading} />
+                    <ColumnComponent children={<p>{t("Domain")}</p>} className={styles.rowcolumnheading} />
                 </RowComponent>
-                <RowComponent>
-                    <ColumnComponent label="1" className={styles.rowcolumn} />
-                    <ColumnComponent label={t("React")} className={styles.rowcolumn} />
-                    <ColumnComponent label={t("Web")} className={styles.rowcolumn} />
+                <RowComponent className={styles.row}>
+                    <ColumnComponent children={<p>1</p>} className={styles.rowcolumn} />
+                    <ColumnComponent children={<p>{t("React")}</p>} className={styles.rowcolumn} />
+                    <ColumnComponent children={<p>{t("Web")}</p>} className={styles.rowcolumn} />
                 </RowComponent>
-                <RowComponent>
-                    <ColumnComponent label="2" className={styles.rowcolumn} />
-                    <ColumnComponent label={t("Kotlin") + " " + t("with") + " " + t("AndroidStudio")} className={styles.rowcolumn} />
-                    <ColumnComponent label={t("Mobile") + " " + t("app") + " " + t("development")} className={styles.rowcolumn} />
+                <RowComponent className={styles.row}>
+                    <ColumnComponent children={<p>2</p>} className={styles.rowcolumn} />
+                    <ColumnComponent children={<p>{t("Kotlin") + " " + t("with") + " " + t("AndroidStudio")}</p>} className={styles.rowcolumn} />
+                    <ColumnComponent children={<p>{t("Mobile") + " " + t("app") + " " + t("development")}</p>} className={styles.rowcolumn} />
                 </RowComponent>
             </div>
             <Footer />
