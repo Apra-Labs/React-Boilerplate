@@ -10,8 +10,8 @@
 
 .commonContainer {
     padding: 2rem;
-    padding-left: 17rem;
-    padding-right: 3rem;
+    padding-left: 16rem;
+    padding-right: 1rem;
     background-color: var(--background);
     font-size: 1rem;
 }
@@ -40,14 +40,6 @@
     background-color: var(--input-background-color);
     border: 0;
     width: 20rem;
-}
-
-.form-floating > .form-control:focus ~ label {
-    color: var(--text-color);
-}
-
-.form-floating > .form-control:focus ~ label::after {
-    background-color: var(--input-background-color);
 }
 
 .dropDownMenu, 
@@ -97,6 +89,19 @@
     color: var(--text-color);
 }
 
+.blurbackground {
+    filter: blur(5px) grayscale(90%);
+}
+
+.rowcolumn, .rowcolumnheading {
+    border: 0.1rem solid var(--sidebar-border-color);
+    text-align: center;
+    padding: 0.5rem;
+}
+
+.rowcolumnheading {
+    font-weight: 600;
+}
 .spinner {
     height: 12rem;
     width: 12rem;

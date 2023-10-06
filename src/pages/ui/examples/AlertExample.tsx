@@ -3,17 +3,17 @@ import Sidebar from "../Sidebar";
 import Navigation from "../../../containers/Navigation";
 import Footer from "../../../containers/Footer";
 import { useTranslation } from "react-i18next";
-import '../styles/Common.css';
+import styles from '../styles/Common.module.css';
 
 const AlertExample: React.FC = () => {
     const { t } = useTranslation();
     
     return (
-        <div className="exampleContainer">
+        <div className={styles.exampleContainer}>
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("Alert")}</h1>
-            <div className="commonContainer">
+            <h1 className={styles.heading}>{t("Alert")}</h1>
+            <div className={styles.commonContainer}>
                 <AlertComponent message={t("Thisisanalertexample")} /> 
                 <AlertComponent message={t("Thisisanalertexample")} variant="secondary"/> 
                 <AlertComponent message={t("Thisisanalertexample")} variant="danger"/> 

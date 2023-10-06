@@ -3,21 +3,22 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import InputFloatingLabelComponent from "../../../components/InputFloatingLabelComponent";
 import { useTranslation } from "react-i18next";
-import '../styles/Common.css';
+import styles from '../styles/Common.module.css';
+import '../styles/styles.css';
 
 const InputFloatingLabelExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="exampleContainer">
+        <div className={styles.exampleContainer}>
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("InputFloatingLabel")}</h1>
-            <div className="commonContainer">
+            <h1 className={styles.heading}>{t("InputFloatingLabel")}</h1>
+            <div className={styles.commonContainer}>
                 <InputFloatingLabelComponent
                     label={t("EmailAddress")}
-                    classNameFloatingContainer="floatingInputContainer"
-                    classNameFloatingInput="floatingInput"
+                    classNameFloatingContainer={styles.floatingInputContainer}
+                    classNameFloatingInput={styles.floatingInput}
                     placeholder="Enter your email address"
                     type="email"
                 />

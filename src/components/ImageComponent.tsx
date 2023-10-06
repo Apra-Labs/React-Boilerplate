@@ -6,7 +6,7 @@ interface ImageProps {
     id?: string;
     style?: React.CSSProperties;
     alt?: string,
-    shape?: string // prop improve as 
+    shape?: "fluid" | "rounded" | "roundedCircle" | "thumbnail" 
 }
 
 const defaultProps: Partial<ImageProps> = {

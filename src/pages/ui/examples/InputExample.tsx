@@ -3,18 +3,18 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import InputComponent from "../../../components/InputComponent";
 import { useTranslation } from "react-i18next";
-import '../styles/Common.css';
+import styles from '../styles/Common.module.css';
 
 const InputExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="exampleContainer">
+        <div className={styles.exampleContainer}>
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("Input")}</h1>
-            <div className="commonContainer">
-                <InputComponent inputClassName="inputElement" inputContainerClassName="inputContainer" />
+            <h1 className={styles.heading}>{t("Input")}</h1>
+            <div className={styles.commonContainer}>
+                <InputComponent inputClassName={styles.inputElement} inputContainerClassName={styles.inputContainer} />
             </div>
             <Footer />
         </div>

@@ -1,9 +1,9 @@
-import "./styles/Footer.css";
+import styles from "./styles/Footer.module.css";
 
 const Footer: React.FC = () => {
     return (
-        <footer className="footerContainer" role="myFooter">
-            <p className="footerTitle">Apra Labs &copy; 2023</p>
+        <footer className={styles.footerContainer} role="myFooter">
+            <p className={styles.footerTitle}>Apra Labs &copy; 2023</p>
         </footer>
     )
 }

@@ -9,7 +9,7 @@
 }
 
 .toggleButton{
-    font-size: 2rem;
+    font-size: 1.8rem;
     margin-bottom: 0.5rem;
     color: var(--navlink-color);
 }
@@ -18,8 +18,6 @@
     background-color: var(--nav-background-color);
     border: 0;
     font-size: 1.5rem;
-    margin-left: 0.5rem;
-    margin-right: 0.5rem;
     color: var(--text-color);
 }
 
@@ -27,11 +25,15 @@
     display: none;
 }
 
-.titleLink,.navLink, .loginLink {
+.titleLink,.navLink,.navDropdown, .loginLink {
     color: var(--navlink-color);
     font-size: 1.2rem;
     font-weight: 500;
     font-family: var(--footer-font);
+}
+
+.navDropdown {
+    padding-top: 0.5rem;
 }
 
 .titleLink {
@@ -42,7 +44,7 @@
     color: var(--navlink-color);
 }
 
-.loginLink, #uikitlink {
+.loginLink, .navLink {
     padding-top: 1rem;
 }
 
@@ -51,18 +53,14 @@
     color: var(--text-color);
 }
 
-#navbarScrollingDropdown, .navDropdownMenu, .dropdown-menu.show, #navbar-offcanvas {
+.navDropdown, .navDropdownMenu, .offcanvasNav {
     background-color: var(--nav-background-color);
     color: var(--text-color);
 }
 
-#navbarScrollingDropdown {
-    padding-top: 1rem;
-}
-
 .modalInputContainer, .modalInputContainer:focus {
-    margin: 0.8rem;
-    width: 90%;
+    margin: 0.5rem;
+    width: 30rem;
     background-color: var(modalInputContainer);
     color: var(--text-color);
     font-size: 1rem;
@@ -77,14 +75,6 @@
     background-color: var(--nav-background-color);
     color: var(--text-color);
     padding: 0;
-}
-
-#floatingInput > .form-control:focus ~ label {
-    color: var(--text-color);
-}
-
-#floatingInput > .form-control:focus ~ label::after {
-    background-color: var(--nav-background-color);
 }
 
 .loginFooter {

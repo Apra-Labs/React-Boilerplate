@@ -4,3 +4,5 @@
 2. Component's name should be PascalCase Ex: ButtonComponent.tsx
 3. Utility files should be named in camelCase Ex: i18n.ts
 4. Formal function and variable should be in camelCase Ex: handleChange
+5. Components should have extension tsx Ex: ButtonComponent.tsx
+6. Utility files should have extension ts Ex: data.ts

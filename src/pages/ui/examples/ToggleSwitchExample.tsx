@@ -3,21 +3,21 @@ import Footer from "../../../containers/Footer";
 import Sidebar from "../Sidebar";
 import ToggleSwitchComponent from "../../../components/ToggleSwitchComponent";
 import { useTranslation } from "react-i18next";
-import '../styles/Common.css';
+import styles from '../styles/Common.module.css';
 
 const ToggleSwitchExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
-        <div className="exampleContainer">
+        <div className={styles.exampleContainer}>
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("ToggleSwitch")}</h1>
-            <div className="commonContainer">
+            <h1 className={styles.heading}>{t("ToggleSwitch")}</h1>
+            <div className={styles.commonContainer}>
                 <ToggleSwitchComponent
                     label={t("MySwitch")}
                     onChange={() => {}}
-                    className="toggleSwitch"
+                    className={styles.toggleSwitch}
                 />
             </div>
             <Footer />

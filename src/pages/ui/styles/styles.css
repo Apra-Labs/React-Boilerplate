@@ -1,0 +1,7 @@
+.form-floating > .form-control:focus ~ label {
+    color: var(--text-color);
+}
+
+.form-floating > .form-control:focus ~ label::after {
+    background-color: var(--input-background-color);
+}

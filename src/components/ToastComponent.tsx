@@ -2,7 +2,7 @@ import { Toast, ToastContainer } from "react-bootstrap";
 
 interface ToastProps {
     position: 'top-start' | 'top-center' | 'top-end' | 'middle-start' | 'middle-center' | 'middle-end' | 'bottom-start' | 'bottom-center' | 'bottom-end',
-    toasts: {
+    toastsArray: {
         header: string,
         message?: string,
         show?: boolean,
@@ -18,9 +18,9 @@ interface ToastProps {
     }[]
 }
 
-const ToastComponent: React.FC<ToastProps> = ({ position, toasts }) => (
+const ToastComponent: React.FC<ToastProps> = ({ position, toastsArray }) => (
     <ToastContainer position={position} role="myToastContainer">
-        {toasts.map((toast) => (
+        {toastsArray.map((toast) => (
             <Toast
                 bg={toast.variant}
                 show={toast.show}

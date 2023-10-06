@@ -3,33 +3,33 @@ import ToastComponent from "../../../components/ToastComponent";
 import Navigation from "../../../containers/Navigation";
 import Sidebar from "../Sidebar";
 import Footer from "../../../containers/Footer";
-import '../styles/Common.css';
-import { useState } from "react";
+import styles from '../styles/Common.module.css';
+import { useCallback, useState } from "react";
 import ButtonComponent from "../../../components/ButtonComponent";
 
 const ToastExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
     const { t } = useTranslation();
 
-    const closeAlert = () => {
+    const closeAlert = useCallback(() => {
         setShowAlert(false);
-    }
+    },[]);
 
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         setShowAlert(true);
-    }
+    },[])
 
     return (
-        <div className="exampleContainer">
+        <div className={styles.exampleContainer}>
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("Toast")}</h1>
-            <div className="commonContainer">
-                <div className="toastContainer">
+            <h1 className={styles.heading}>{t("Toast")}</h1>
+            <div className={styles.commonContainer}>
+                <div className={styles.toastContainer}>
                     <ButtonComponent label={t("Click")} onClick={handleClick}/>
-                    <ToastComponent position="top-end" toasts={[
-                        {header: "Toast", message: "This is a toast", variant: "primary", show: showAlert, onClose: closeAlert},
-                        {header: "Toast", message: "This is a toast", variant: "danger", show: showAlert, onClose: closeAlert}
+                    <ToastComponent position="top-end" toastsArray={[
+                        {header: "Toast", message: "This is a toast", variant: "success", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "danger", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}}
                     ]}/>
                 </div>
             </div>

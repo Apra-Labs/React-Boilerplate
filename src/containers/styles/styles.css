@@ -1,0 +1,8 @@
+.dropdown-menu.show, .form-floating>.form-control:not(:placeholder-shown)~label::after { 
+    background-color: var(--nav-background-color);
+    color: var(--text-color);
+}
+
+.form-floating>.form-control:not(:placeholder-shown)~label {
+    color: var(--text-color);
+}

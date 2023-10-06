@@ -42,9 +42,25 @@ const SpinnerComponent: React.FC<SpinnerProps> = ({
     <>
         {fullPage ?
             <div style={fullPageStyle}>
-                <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner" />
+                <Spinner
+                    animation={animation}
+                    variant={variant}
+                    size={size}
+                    className={className}
+                    style={style}
+                    id={id}
+                    role="mySpinner"
+                />
             </div> :
-            <Spinner animation={animation} variant={variant} size={size} className={className} style={style} id={id} role="mySpinner" />
+            <Spinner
+                animation={animation}
+                variant={variant}
+                size={size}
+                className={className}
+                style={style}
+                id={id}
+                role="mySpinner"
+            />
         }
     </>
 )

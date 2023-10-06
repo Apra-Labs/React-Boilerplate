@@ -4,8 +4,8 @@ import Sidebar from "../Sidebar";
 import CheckBoxComponent from "../../../components/CheckBoxComponent";
 import { useTranslation } from "react-i18next";
 import ButtonComponent from "../../../components/ButtonComponent";
-import '../styles/Common.css';
-import { useState } from "react";
+import styles from '../styles/Common.module.css';
+import { useCallback, useState } from "react";
 import ToastComponent from "../../../components/ToastComponent";
 
 const CheckBoxExample: React.FC = () => {
@@ -14,25 +14,25 @@ const CheckBoxExample: React.FC = () => {
 
     const { t } = useTranslation();
 
-    const closeAlert = () => {
+    const closeAlert = useCallback(() => {
         setShowAlert(false);
-    }
+    },[]);
 
-    const handleOnChange = (e: any) => {
+    const handleOnChange = useCallback((e: any) => {
         setOption(e.target.value);
-    }
+    },[]);
 
-    const handleOnClick = () => {
+    const handleOnClick = useCallback(() => {
         setShowAlert(true);
-    }
+    },[]);
 
     return (
-        <div className="exampleContainer">
+        <div className={styles.exampleContainer}>
             <Navigation />
             <Sidebar />
-            <h1 className="heading">{t("Checkbox")}</h1>
-            <div className="commonContainer">
-                <ToastComponent position="top-end" toasts={[
+            <h1 className={styles.heading}>{t("Checkbox")}</h1>
+            <div className={styles.commonContainer}>
+                <ToastComponent position="top-end" toastsArray={[
                     {
                         header: t("Checkbox") + ' ' + t("choosed"),
                         message: option,
@@ -44,9 +44,9 @@ const CheckBoxExample: React.FC = () => {
                     }
                 ]} />
                 <h3>{t("SelectOptions")}</h3>
-                <CheckBoxComponent label={t("Option1")} onChange={handleOnChange} className="checkbox" value="option 1" />
-                <CheckBoxComponent label={t("Option2")} onChange={handleOnChange} className="checkbox" value="option 2" />
-                <CheckBoxComponent label={t("Option3")} onChange={handleOnChange} className="checkbox" value="option 3" />
+                <CheckBoxComponent label={t("Option1")} onChange={handleOnChange} className={styles.checkbox} value="option 1" />
+                <CheckBoxComponent label={t("Option2")} onChange={handleOnChange} className={styles.checkbox} value="option 2" />
+                <CheckBoxComponent label={t("Option3")} onChange={handleOnChange} className={styles.checkbox} value="option 3" />
                 <ButtonComponent label="Submit" onClick={handleOnClick} />
             </div>
             <Footer />

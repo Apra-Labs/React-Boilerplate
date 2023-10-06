@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import authReducer from './reducers/authSlice';
-import themeIconReducer from './reducers/themeIconSlice';
+import langReducer from './reducers/languageSlice';
 
 export const store = configureStore({
     reducer: {
         authReducer,
-        themeIconReducer
+        langReducer
     },
 })
 

@@ -81,5 +81,15 @@
     "and": "y",
     "many": "muchos",
     "more": "más",
-    "Explore": "Explorar"
+    "Explore": "Explorar",
+    "RowColumn": "Row Column",
+    "SNo": "Sí No",
+    "TechStack": "Pila de tecnología",
+    "Domain": "Dominio",
+    "React": "React",
+    "Web": "Web",
+    "Kotlin": "Kotlin",
+    "AndroidStudio": "Android Studio",
+    "Mobile": "Mobile",
+    "app": "app"
 }

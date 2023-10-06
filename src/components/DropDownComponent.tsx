@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import { Dropdown, InputGroup, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -24,10 +24,9 @@ const defaultProps: Partial<DropDownProps> = {
     variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
-    dropdownMenuStyle: {padding: 10, maxHeight: '20rem', overflowY: 'auto'},
-    searchInputStyle: {outline: "none", boxShadow: "none"}
+    dropdownMenuStyle: { padding: 10, maxHeight: '20rem', overflowY: 'auto' },
+    searchInputStyle: { outline: "none", boxShadow: "none" }
 };
-
 
 const DropDownComponent: React.FC<DropDownProps> = ({
     variant,
@@ -46,34 +45,29 @@ const DropDownComponent: React.FC<DropDownProps> = ({
     dropDownItemclassName
 }) => {
     const [inputValue, setInputValue] = useState<string>("");
-    const [filteredData, setFilteredData] = useState<{ key: string; value: string; }[] | undefined >(options);
-
-    useEffect(() => {
-        if (filteredData?.length === 0) {
-            setFilteredData(options);
-        }
-    }, [options, filteredData]);
+    const [filteredData, setFilteredData] = useState<{ key: string; value: string; }[] | undefined>(options);
 
     const handleOnChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         setInputValue(e.target.value);
         const filter = options?.filter((option) => {
             return option.key.toLowerCase().includes(inputValue.toLowerCase());
         })
+        console.log(filter);
         setFilteredData(filter);
-    }, [options]);
+    }, []);
 
-    const clearInput = () => {
+    const clearInput = useCallback(() => {
         setInputValue("");
         setFilteredData([]);
-    }
+    }, []);
 
     return (
-        <Dropdown onSelect={onSelect}  className={dropDownclassName} role="myDropdown">
-            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle} className={dropDownToggleclassName}>{label}</Dropdown.Toggle> 
-            <Dropdown.Menu style={dropdownMenuStyle} className={dropDownMenuclassName}> 
+        <Dropdown onSelect={onSelect} className={dropDownclassName} role="myDropdown">
+            <Dropdown.Toggle variant={variant} style={dropdownToggleStyle} className={dropDownToggleclassName}>{label}</Dropdown.Toggle>
+            <Dropdown.Menu style={dropdownMenuStyle} className={dropDownMenuclassName}>
                 {enableSearch &&
                     <InputGroup style={searchComponentStyle}>
-                        <Form.Control placeholder={placeholder} style={searchInputStyle} onChange={handleOnChange} value={inputValue} className={dropDownMenuclassName}/>
+                        <Form.Control placeholder={placeholder} style={searchInputStyle} onChange={handleOnChange} value={inputValue} className={dropDownMenuclassName} />
                         {(inputValue !== '') ?
                             <InputGroup.Text onClick={clearInput} style={{ cursor: 'pointer' }} className={dropDownMenuclassName}>
                                 <FontAwesomeIcon icon={faXmark} />
