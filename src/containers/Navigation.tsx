@@ -213,6 +213,7 @@ const Navigation: React.FC = () => {
                 }
                 modalHeaderClass={styles.loginHeader}
                 modalBodyClass={styles.loginBody}
+                modalFooterClass={styles.loginBody}
                 closeVariant={theme === "dark" ? "white" : ""}
                 centered
             />

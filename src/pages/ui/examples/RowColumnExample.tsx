@@ -15,24 +15,31 @@ const RowColumnExample: React.FC = () => {
             <Sidebar />
             <h1 className={styles.heading}>{t("RowColumn")}</h1>
             <div className={styles.commonContainer}>
-                <RowComponent className={styles.row}>
-                    <ColumnComponent children={<p>{t("SNo")}</p>} className={styles.rowcolumnheading} />
-                    <ColumnComponent children={<p>{t("TechStack")}</p>} className={styles.rowcolumnheading} />
-                    <ColumnComponent children={<p>{t("Domain")}</p>} className={styles.rowcolumnheading} />
+                <RowComponent>
+                    <div className={styles.row}>
+                        <ColumnComponent children={<p>{t("SNo")}</p>} className={styles.rowcolumnheading} />
+                        <ColumnComponent children={<p>{t("TechStack")}</p>} className={styles.rowcolumnheading} />
+                        <ColumnComponent children={<p>{t("Domain")}</p>} className={styles.rowcolumnheading} />
+                    </div>
                 </RowComponent>
-                <RowComponent className={styles.row}>
-                    <ColumnComponent children={<p>1</p>} className={styles.rowcolumn} />
-                    <ColumnComponent children={<p>{t("React")}</p>} className={styles.rowcolumn} />
-                    <ColumnComponent children={<p>{t("Web")}</p>} className={styles.rowcolumn} />
+                <RowComponent>
+                    <div className={styles.row}>
+                        <ColumnComponent children={<p>1</p>} className={styles.rowcolumn} />
+                        <ColumnComponent children={<p>{t("React")}</p>} className={styles.rowcolumn} />
+                        <ColumnComponent children={<p>{t("Web")}</p>} className={styles.rowcolumn} />
+                    </div>
                 </RowComponent>
-                <RowComponent className={styles.row}>
-                    <ColumnComponent children={<p>2</p>} className={styles.rowcolumn} />
-                    <ColumnComponent children={<p>{t("Kotlin") + " " + t("with") + " " + t("AndroidStudio")}</p>} className={styles.rowcolumn} />
-                    <ColumnComponent children={<p>{t("Mobile") + " " + t("app") + " " + t("development")}</p>} className={styles.rowcolumn} />
+                <RowComponent >
+                    <div className={styles.row}>
+                        <ColumnComponent children={<p>2</p>} className={styles.rowcolumn} />
+                        <ColumnComponent children={<p>{t("Kotlin") + " " + t("with") + " " + t("AndroidStudio")}</p>} className={styles.rowcolumn} />
+                        <ColumnComponent children={<p>{t("Mobile") + " " + t("app") + " " + t("development")}</p>} className={styles.rowcolumn} />
+                    </div>
                 </RowComponent>
+
             </div>
             <Footer />
-        </div>
+        </div >
     )
 }
 

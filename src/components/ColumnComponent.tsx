@@ -7,7 +7,7 @@ interface ColumnProps {
     lg?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
     xl?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
     xxl?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    children?: JSX.Element[] | JSX.Element;
+    children?: JSX.Element;
     className?: string;
     style?: React.CSSProperties;
 }

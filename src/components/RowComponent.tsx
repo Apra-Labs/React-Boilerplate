@@ -8,7 +8,7 @@ interface RowProps {
     lg?: number | 'auto' | { cols: number | 'auto' };
     xl?: number | 'auto' | { cols: number | 'auto' };
     xxl?: number | 'auto' | { cols: number | 'auto' };
-    children?: JSX.Element[] | JSX.Element;
+    children?: JSX.Element;
     className?: string;
     style?: React.CSSProperties;
 }

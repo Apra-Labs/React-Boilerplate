@@ -95,8 +95,7 @@
 }
 
 .row {
-    margin-left: 0.5rem;
-    margin-right: 1rem;
+    display: flex;
 }
 
 .rowcolumn, .rowcolumnheading {
