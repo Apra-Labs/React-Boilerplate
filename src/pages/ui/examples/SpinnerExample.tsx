@@ -1,12 +1,12 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import Sidebar from "../Sidebar";
-import SpinnerComponent from "../../../components/SpinnerComponent";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-import ButtonComponent from "../../../components/ButtonComponent";
 import { useCallback, useState } from "react";
-
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
+const SpinnerComponent = React.lazy(() => import('../../../components/SpinnerComponent'));
 
 const SpinnerExample: React.FC = () => {
     const [fullPage, setFullPage] = useState<boolean>(false);
@@ -15,11 +15,10 @@ const SpinnerExample: React.FC = () => {
 
     const handleFullPage = useCallback(() => {
         setFullPage(true);
-        setTimeout(closeFullPage, 3000);
-    },[]);
-
-    const closeFullPage = useCallback(() => {
-        setFullPage(false);
+        const closeFullPage = setTimeout(() => {
+            setFullPage(false);
+            clearTimeout(closeFullPage);
+        }, 3000);
     },[]);
 
     return (
@@ -27,7 +26,7 @@ const SpinnerExample: React.FC = () => {
             <Navigation />
             <Sidebar />
             <h1 className={styles.heading}>{t("Spinner")}</h1>
-            <h2 className={styles.heading}>{t("Spinner") + ' ' + t("with") + ' ' + t("border")}</h2>
+            <h2 className={styles.heading}>{t("Spinner") + ' ' + t("With") + ' ' + t("Border")}</h2>
             <div className={styles.commonContainer}>
                 <SpinnerComponent animation="border" className={styles.spinner} />
                 <SpinnerComponent animation="border" className={styles.spinner} variant="secondary" />
@@ -38,7 +37,7 @@ const SpinnerExample: React.FC = () => {
                 <SpinnerComponent animation="border" className={styles.spinner} variant="light" />
                 <SpinnerComponent animation="border" className={styles.spinner} variant="dark" />
             </div>
-            <h2 className={styles.heading}>{t("Spinner") + ' ' + t("with") + ' ' + t("grow")}</h2>
+            <h2 className={styles.heading}>{t("Spinner") + ' ' + t("With") + ' ' + t("Grow")}</h2>
             <div className={styles.commonContainer}>
                 <SpinnerComponent animation="grow" className={styles.spinner} />
                 <SpinnerComponent animation="grow" className={styles.spinner} variant="secondary" />
@@ -49,10 +48,10 @@ const SpinnerExample: React.FC = () => {
                 <SpinnerComponent animation="grow" className={styles.spinner} variant="light" />
                 <SpinnerComponent animation="grow" className={styles.spinner} variant="dark" />
             </div>
-            <h2 className={styles.heading}>{t("fullpage").charAt(0).toUpperCase() + t("fullpage").slice(1) + ' ' + t("Spinner")}</h2>
+            <h2 className={styles.heading}>{t("Fullpage").charAt(0).toUpperCase() + t("Fullpage").slice(1) + ' ' + t("Spinner")}</h2>
             <div className={styles.commonContainer}>
                 <ButtonComponent
-                    label={t("fullpage").charAt(0).toUpperCase() + t("fullpage").slice(1) + ' ' + t("Spinner")}
+                    label={t("fullpage").charAt(0).toUpperCase() + t("Fullpage").slice(1) + ' ' + t("Spinner")}
                     onClick={handleFullPage}
                     style={{ marginBottom: '2rem' }}
                 />

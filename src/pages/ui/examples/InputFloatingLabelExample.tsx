@@ -1,10 +1,11 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import Sidebar from "../Sidebar";
-import InputFloatingLabelComponent from "../../../components/InputFloatingLabelComponent";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import '../styles/styles.css';
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const InputFloatingLabelComponent = React.lazy(() => import('../../../components/InputFloatingLabelComponent'));
 
 const InputFloatingLabelExample: React.FC = () => {
     const { t } = useTranslation();

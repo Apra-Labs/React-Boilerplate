@@ -1,15 +1,16 @@
 import { Card } from "react-bootstrap";
+import { variants } from "../assets/data/customDataType";
 
 interface CardProps {
     title: string;
     message: string;
     style?: React.CSSProperties;
-    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
+    variant?: variants;
     header?: string;
     subtitle?: string;
     imgSrc?: string;
     className?: string;
-    border?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
+    border?: variants;
 }
 
 const defaultProps: CardProps = {

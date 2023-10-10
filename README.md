@@ -21,4 +21,12 @@
 3. You are all set.
 
 
-    
+## Coding standards
+
+📌 Folder's name should be camelCase. Ex: home\
+📌 Component's name should be PascalCase Ex: ButtonComponent.tsx\
+📌 Utility files should be named in camelCase Ex: i18n.ts\
+📌 Formal function and variable should be in camelCase Ex: handleChange\
+📌 Components should have extension tsx Ex: ButtonComponent.tsx\
+📌 Utility files should have extension ts Ex: data.ts\
+📌 Keys in language files should be in PascalCase.

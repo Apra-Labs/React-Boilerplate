@@ -7,7 +7,7 @@ describe('Toast', () => {
         const position = "top-start";
         const arrayOfToasts = [{ header: "Toast"}]
         render(
-            <ToastComponent position={position} toastsArray={arrayOfToasts}/>
+            <ToastComponent position={position} messages={arrayOfToasts}/>
         );
         const element = screen.getByTestId("toast");
         expect(element).toBeInTheDocument();

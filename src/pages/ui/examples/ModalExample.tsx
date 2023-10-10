@@ -1,11 +1,12 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import Sidebar from "../Sidebar";
-import ButtonComponent from "../../../components/ButtonComponent";
-import ModalComponent from "../../../components/ModalComponent";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import { useCallback, useState } from "react";
 import styles from '../styles/Common.module.css';
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
+const ModalComponent = React.lazy(() => import('../../../components/ModalComponent'));
 
 const ModalExample: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
@@ -58,7 +59,7 @@ const ModalExample: React.FC = () => {
                     closeVariant={theme === "dark" ? "white" : "black"}
                 />
             </div>
-            <h2 className={styles.heading}>{t("Modal") + ' ' + t("without") + ' ' + t("animation")}</h2>
+            <h2 className={styles.heading}>{t("Modal") + ' ' + t("Without") + ' ' + t("Animation")}</h2>
             <div className={styles.commonContainer}>
                 <ButtonComponent label={t("Click")} onClick={handleClickNoAnimation} />
                 <ModalComponent
@@ -74,7 +75,7 @@ const ModalExample: React.FC = () => {
                 />
             </div>
             <h2 className={styles.heading}>
-                {t("vertically").charAt(0).toUpperCase() + t("vertically").slice(1) + ' ' + t("centered") + ' ' + t("Modal").charAt(0).toLowerCase() + t("Modal").slice(1)}
+                {t("Vertically").charAt(0).toUpperCase() + t("Vertically").slice(1) + ' ' + t("Centered") + ' ' + t("Modal").charAt(0).toLowerCase() + t("Modal").slice(1)}
             </h2>
             <div className={styles.commonContainer}>
                 <ButtonComponent label={t("Click")} onClick={handleClickVerticalModal} />

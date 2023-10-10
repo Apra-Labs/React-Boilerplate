@@ -2,11 +2,12 @@ import React, { useState, useCallback } from "react";
 import { Dropdown, InputGroup, Form } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { variants } from "../assets/data/customDataType";
 
 interface DropDownProps {
     label: string;
     options: { key: string; value: string; }[];
-    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
+    variant?: variants;
     onSelect?: (e: string | null) => void;
     enableSearch?: boolean;
     dropdownToggleStyle?: React.CSSProperties;

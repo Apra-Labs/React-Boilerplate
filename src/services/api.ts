@@ -4,7 +4,7 @@ interface RequestOptions {
     body?: BodyInit;
 }
 
-export async function makeRequest<T>(url: string, options: RequestOptions = {}): Promise<T> {
+export const makeRequest = async <T>(url: string, options: RequestOptions = {}): Promise<T> => {
     try {
         const response = await fetch(url, {
             method: options.method || 'GET',

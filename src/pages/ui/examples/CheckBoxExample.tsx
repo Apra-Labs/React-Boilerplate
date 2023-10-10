@@ -1,12 +1,13 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import Sidebar from "../Sidebar";
-import CheckBoxComponent from "../../../components/CheckBoxComponent";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import ButtonComponent from "../../../components/ButtonComponent";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
-import ToastComponent from "../../../components/ToastComponent";
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const CheckBoxComponent = React.lazy(() => import('../../../components/CheckBoxComponent'));
+const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 
 const CheckBoxExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -32,9 +33,9 @@ const CheckBoxExample: React.FC = () => {
             <Sidebar />
             <h1 className={styles.heading}>{t("Checkbox")}</h1>
             <div className={styles.commonContainer}>
-                <ToastComponent position="top-end" toastsArray={[
+                <ToastComponent position="top-end" messages={[
                     {
-                        header: t("Checkbox") + ' ' + t("choosed"),
+                        header: t("Checkbox") + ' ' + t("Choosed"),
                         message: option,
                         show: showAlert,
                         onClose: closeAlert,

@@ -1,13 +1,14 @@
 import React from "react";
 import { Row } from "react-bootstrap"
+import { rowTypes } from "../assets/data/customDataType";
 
 interface RowProps {
-    xs?: number | 'auto' | { cols: number | 'auto' };
-    sm?: number | 'auto' | { cols: number | 'auto' };
-    md?: number | 'auto' | { cols: number | 'auto' };
-    lg?: number | 'auto' | { cols: number | 'auto' };
-    xl?: number | 'auto' | { cols: number | 'auto' };
-    xxl?: number | 'auto' | { cols: number | 'auto' };
+    xs?: rowTypes;
+    sm?: rowTypes;
+    md?: rowTypes;
+    lg?: rowTypes;
+    xl?: rowTypes;
+    xxl?: rowTypes;
     children?: JSX.Element;
     className?: string;
     style?: React.CSSProperties;

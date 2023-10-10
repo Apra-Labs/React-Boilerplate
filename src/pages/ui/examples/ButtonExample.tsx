@@ -1,11 +1,12 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import ButtonComponent from "../../../components/ButtonComponent";
-import Sidebar from "../Sidebar";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
-import ToastComponent from "../../../components/ToastComponent";
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
+const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 
 const ButtonExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -26,7 +27,7 @@ const ButtonExample: React.FC = () => {
             <Sidebar />
             <h1 className={styles.heading}>{t("Button")}</h1>
             <div className={styles.commonContainer}>
-                <ToastComponent position="top-end" toastsArray={[
+                <ToastComponent position="top-end" messages={[
                     {
                         header: "Button clicked",
                         message: "Button is clicked",

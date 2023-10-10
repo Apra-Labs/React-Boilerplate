@@ -27,7 +27,7 @@
 
 .titleLink,.navLink,.navDropdown, .loginLink {
     color: var(--navlink-color);
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 500;
     font-family: var(--footer-font);
 }

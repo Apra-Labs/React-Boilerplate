@@ -1,9 +1,10 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import Sidebar from "../Sidebar";
-import InputComponent from "../../../components/InputComponent";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const InputComponent = React.lazy(() => import('../../../components/InputComponent'));
 
 const InputExample: React.FC = () => {
     const { t } = useTranslation();

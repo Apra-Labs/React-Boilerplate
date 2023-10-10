@@ -1,4 +1,4 @@
-.form-floating > .form-control:focus ~ label {
+.form-floating>.form-control:focus~label {
     color: var(--text-color);
 }
 

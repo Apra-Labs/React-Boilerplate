@@ -1,8 +1,9 @@
 import { Spinner } from "react-bootstrap";
+import { spinnerAnimationTypes, variants } from "../assets/data/customDataType";
 
 interface SpinnerProps {
-    animation: "border" | "grow";
-    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
+    animation: spinnerAnimationTypes;
+    variant?: variants;
     size?: "sm" | undefined;
     fullPage?: boolean;
     className?: string;

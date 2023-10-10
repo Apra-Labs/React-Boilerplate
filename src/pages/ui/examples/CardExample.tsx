@@ -1,9 +1,10 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import CardComponent from "../../../components/CardComponent";
-import Sidebar from "../Sidebar";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const CardComponent = React.lazy(() => import('../../../components/CardComponent'));
 
 const CardExample: React.FC = () => {
     const { t } = useTranslation();
@@ -25,7 +26,7 @@ const CardExample: React.FC = () => {
                     <CardComponent className={styles.card} title={t("MyCard")} message={t("Thisisacardexample")} variant="dark" />
                 </div>
             </div>
-            <h2 className={styles.heading}>{t("Card") + " " + t("with") + " " + t("Image")}</h2>
+            <h2 className={styles.heading}>{t("Card") + " " + t("With") + " " + t("Image")}</h2>
             <div className={styles.commonContainer}>
                 <CardComponent
                     style={{width: "12rem"}}

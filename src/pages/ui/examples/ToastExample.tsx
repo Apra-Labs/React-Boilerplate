@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
-import ToastComponent from "../../../components/ToastComponent";
-import Navigation from "../../../containers/Navigation";
-import Sidebar from "../Sidebar";
-import Footer from "../../../containers/Footer";
+import React from "react";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
-import ButtonComponent from "../../../components/ButtonComponent";
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
+const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 
 const ToastExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -27,7 +28,7 @@ const ToastExample: React.FC = () => {
             <div className={styles.commonContainer}>
                 <div className={styles.toastContainer}>
                     <ButtonComponent label={t("Click")} onClick={handleClick} className={styles.toastButton}/>
-                    <ToastComponent position="top-end" toastsArray={[
+                    <ToastComponent position="top-end" messages={[
                         {header: "Toast", message: "This is a toast", variant: "primary", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
                         {header: "Toast", message: "This is a toast", variant: "secondary", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
                         {header: "Toast", message: "This is a toast", variant: "success", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},

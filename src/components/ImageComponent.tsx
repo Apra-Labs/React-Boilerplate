@@ -1,4 +1,5 @@
 import { Image } from "react-bootstrap";
+import { imageShapeTypes } from "../assets/data/customDataType";
 
 interface ImageProps {
     src: string;
@@ -6,7 +7,7 @@ interface ImageProps {
     id?: string;
     style?: React.CSSProperties;
     alt?: string,
-    shape?: "fluid" | "rounded" | "roundedCircle" | "thumbnail" 
+    shape?: imageShapeTypes 
 }
 
 const defaultProps: Partial<ImageProps> = {

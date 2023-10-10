@@ -1,8 +1,9 @@
 import { Alert } from "react-bootstrap";
+import { variants } from "../assets/data/customDataType";
 
 interface AlertProps {
     message: string;
-    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark";
+    variant?: variants;
     show?: boolean;
     onClose?: () => void;
     style?: React.CSSProperties;

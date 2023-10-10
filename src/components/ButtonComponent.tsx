@@ -1,9 +1,9 @@
 import { Button } from "react-bootstrap";
+import { buttonVariants } from "../assets/data/customDataType";
 
 interface ButtonProps {
     label: string;
-    variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark" |
-    "outline-primary" | "outline-secondary" | "outline-danger" | "outline-success" | "outline-warning" | "outline-info" | "outline-light" | "outline-dark";
+    variant?: buttonVariants;
     title?: string;
     style?: React.CSSProperties;
     type?: "button" | "submit" | "reset" | undefined;

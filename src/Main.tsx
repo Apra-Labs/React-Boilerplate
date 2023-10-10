@@ -1,20 +1,22 @@
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
-import Home from './pages/home';
-import AlertExample from './pages/ui/examples/AlertExample';
-import ButtonExample from './pages/ui/examples/ButtonExample';
-import CardExample from './pages/ui/examples/CardExample';
-import CheckBoxExample from './pages/ui/examples/CheckBoxExample';
-import DropDownExample from './pages/ui/examples/DropDownExample';
-import InputFloatingLabelExample from './pages/ui/examples/InputFloatingLabelExample';
-import ImageExample from './pages/ui/examples/ImageExample';
-import InputExample from './pages/ui/examples/InputExample';
-import ModalExample from './pages/ui/examples/ModalExample';
-import RadioExample from './pages/ui/examples/RadioExample';
-import SpinnerExample from './pages/ui/examples/SpinnerExample';
-import ToggleSwitchExample from './pages/ui/examples/ToggleSwitchExample';
-import ToastExample from './pages/ui/examples/ToastExample';
-import TextAreaExample from './pages/ui/examples/TextAreaExample';
-import RowColumnExample from './pages/ui/examples/RowColumnExample';
+const Home = React.lazy(() => import('./pages/home/index'));
+const AlertExample = React.lazy(() => import('./pages/ui/examples/AlertExample'));
+const ButtonExample = React.lazy(() => import('./pages/ui/examples/ButtonExample'));
+const CardExample = React.lazy(() => import('./pages/ui/examples/CardExample'));
+const CheckBoxExample = React.lazy(() => import('./pages/ui/examples/CheckBoxExample'));
+const DropDownExample = React.lazy(() => import('./pages/ui/examples/DropDownExample'));
+const InputFloatingLabelExample = React.lazy(() => import('./pages/ui/examples/InputFloatingLabelExample'));
+const ImageExample = React.lazy(() => import('./pages/ui/examples/ImageExample'));
+const InputExample = React.lazy(() => import('./pages/ui/examples/InputExample'));
+const ModalExample = React.lazy(() => import('./pages/ui/examples/ModalExample'));
+const RadioExample = React.lazy(() => import('./pages/ui/examples/RadioExample'));
+const SpinnerExample = React.lazy(() => import('./pages/ui/examples/SpinnerExample'));
+const ToggleSwitchExample = React.lazy(() => import('./pages/ui/examples/ToggleSwitchExample'));
+const ToastExample = React.lazy(() => import('./pages/ui/examples/ToastExample'));
+const TextAreaExample = React.lazy(() => import('./pages/ui/examples/TextAreaExample'));
+const RowColumnExample = React.lazy(() => import('./pages/ui/examples/RowColumnExample'));
+const PageNotFound = React.lazy(() => import('./pages/404/index'));
 
 const Main: React.FC = () => {
     return (
@@ -36,7 +38,10 @@ const Main: React.FC = () => {
                 <Route path='/uikit/toggleswitch' element={<ToggleSwitchExample />} />
                 <Route path='/uikit/toast' element={<ToastExample />} />
                 <Route path='/uikit/textarea' element={<TextAreaExample />} />
-                <Route path='*' element={<Home />} />
+                <Route path='/layouts/leftcontainerlayout' element={<Home />} />
+                <Route path='/layouts/rightcontainerlayout' element={<Home />} />
+                <Route path='/layouts/leftrightcontainerlayout' element={<Home />} />
+                <Route path='*' element={<PageNotFound />} />
             </Route>
         </Routes>
     )

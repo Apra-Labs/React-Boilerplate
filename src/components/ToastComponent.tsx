@@ -1,13 +1,14 @@
 import { Toast, ToastContainer } from "react-bootstrap";
+import { toastPositionTypes, variants } from "../assets/data/customDataType";
 
 interface ToastProps {
-    position: 'top-start' | 'top-center' | 'top-end' | 'middle-start' | 'middle-center' | 'middle-end' | 'bottom-start' | 'bottom-center' | 'bottom-end',
-    toastsArray: {
+    position: toastPositionTypes,
+    messages: {
         header: string,
         message?: string,
         show?: boolean,
         onClose?: () => void,
-        variant?: "primary" | "secondary" | "danger" | "success" | "warning" | "info" | "light" | "dark",
+        variant?: variants,
         delay?: number,
         containerStyle?: React.CSSProperties,
         headerStyle?: React.CSSProperties,
@@ -18,9 +19,9 @@ interface ToastProps {
     }[]
 }
 
-const ToastComponent: React.FC<ToastProps> = ({ position, toastsArray }) => (
+const ToastComponent: React.FC<ToastProps> = ({ position, messages }) => (
     <ToastContainer position={position} role="myToastContainer">
-        {toastsArray.map((toast) => (
+        {messages.map((toast) => (
             <Toast
                 bg={toast.variant}
                 show={toast.show}

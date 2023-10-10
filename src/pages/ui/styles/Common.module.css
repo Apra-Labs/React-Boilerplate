@@ -98,13 +98,13 @@
     display: flex;
 }
 
-.rowcolumn, .rowcolumnheading {
+.rowColumn, .rowColumnHeading {
     border: 0.1rem solid var(--sidebar-border-color);
     text-align: center;
     padding: 0.5rem;
 }
 
-.rowcolumnheading {
+.rowColumnHeading {
     font-weight: 600;
 }
 .spinner {

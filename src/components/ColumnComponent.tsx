@@ -1,12 +1,13 @@
 import { Col } from "react-bootstrap";
+import { columnTypes } from "../assets/data/customDataType";
 
 interface ColumnProps {
-    xs?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    sm?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    md?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    lg?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    xl?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
-    xxl?: boolean | "auto" | number | { span: boolean | "auto" | number, offset: number, order: "first" | "last" | number };
+    xs?: columnTypes;
+    sm?: columnTypes;
+    md?: columnTypes;
+    lg?: columnTypes;
+    xl?: columnTypes;
+    xxl?: columnTypes;
     children?: JSX.Element;
     className?: string;
     style?: React.CSSProperties;

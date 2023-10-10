@@ -4,18 +4,18 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from 'react-router-dom';
-import { useAppDispatch, useAppSelector } from '../redux/hooks';
-import { logOut, login } from '../redux/reducers/authSlice';
+import { useAppDispatch, useAppSelector } from '../../redux/hooks';
+import { logOut, login } from '../../redux/slices/authSlice';
 import { toast } from 'react-toastify';
 import { Offcanvas } from 'react-bootstrap';
-import InputFloatingLabelComponent from '../components/InputFloatingLabelComponent';
-import ButtonComponent from '../components/ButtonComponent';
 import { faSun, faMoon, faBars, faArrowLeftLong } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import styles from './styles/Navigation.module.css';
-import ModalComponent from '../components/ModalComponent';
-import { changeLanguage } from '../redux/reducers/languageSlice';
-import './styles/styles.css';
+import styles from './Navigation.module.css';
+import { changeLanguage } from '../../redux/slices/languageSlice';
+import '../styles/styles.css';
+const InputFloatingLabelComponent = React.lazy(() => import('../../components/InputFloatingLabelComponent'));
+const ButtonComponent = React.lazy(() => import('../../components/ButtonComponent'));
+const ModalComponent = React.lazy(() => import('../../components/ModalComponent'));
 
 const Navigation: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);
@@ -123,8 +123,8 @@ const Navigation: React.FC = () => {
         <>
             <Navbar expand="lg" className={styles.nav} fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className={styles.titleLink} >
-                    <img src={require('../assets/images/logo1.png')} width={30} height={30} />
-                    {" " + t("MyApplication")}
+                    <img src={require('../../assets/images/logo.png')} width={45} height={45} style={{marginRight: '0.5rem', marginLeft: '0.5rem'}}/>
+                    Apra React Boilerplate
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" className={styles.toggleButton}>
                     <FontAwesomeIcon icon={faBars} />

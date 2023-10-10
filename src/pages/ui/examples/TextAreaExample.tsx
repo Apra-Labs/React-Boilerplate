@@ -1,9 +1,10 @@
-import Navigation from "../../../containers/Navigation";
-import Footer from "../../../containers/Footer";
-import Sidebar from "../Sidebar";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-import TextAreaComponent from "../../../components/TextAreaComponent";
+const Sidebar = React.lazy(() => import('../Sidebar'));
+const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const TextAreaComponent = React.lazy(() => import('../../../components/TextAreaComponent'));
 
 const TextAreaExample: React.FC = () => {
     const { t } = useTranslation();

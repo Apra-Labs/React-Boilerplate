@@ -3,27 +3,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { ToastContainer } from 'react-toastify';
 import { useEffect } from 'react';
-import { useAppDispatch } from './redux/hooks';
 import Main from './Main';
 
-function App() {
-
-	const dispatch = useAppDispatch();
-
+const App = () => {
 	useEffect(() => {
         const isDarkTheme = window.matchMedia("(prefers-color-scheme: dark)");
-        if (isDarkTheme.matches) {
-            document.documentElement.setAttribute('data-theme', 'dark');
-        } else {
-            document.documentElement.setAttribute('data-theme', 'light');
-        }
+		const themeValue = isDarkTheme.matches ? 'dark' : 'light';
+		document.documentElement.setAttribute('data-theme', themeValue);
     }, []);
 
 	return (
-		<div>
+		<>
 			<Main />
 			<ToastContainer />
-		</div>
+		</>
 	);
 }
 

@@ -1,9 +1,10 @@
-import Navigation from "../../containers/Navigation";
-import Footer from "../../containers/Footer";
+import React from 'react';
 import styles from './styles.module.css';
-import ButtonComponent from "../../components/ButtonComponent";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+const Navigation = React.lazy(() => import('../../containers/navigation/Navigation'));
+const Footer = React.lazy(() => import('../../containers/footer/Footer'));
+const ButtonComponent = React.lazy(() => import('../../components/ButtonComponent'));
 
 const Home: React.FC = () => {
     const {t} = useTranslation();
@@ -17,16 +18,10 @@ const Home: React.FC = () => {
         <>
             <Navigation />
             <div className={styles.description}>
-                <p className={styles.mainHeading}>{t("Reduce") + " " + t("development") + " " + t("time")}</p>
+                <p className={styles.mainHeading}>{t("Reduce") + " " + t("Development") + " " + t("Time")}</p>
                 <p className={styles.descSubHeading}>{t("with") + " "} Apra React Boilerplate</p>
                 <p className={styles.featureDesc}>
-                    Apra react boilerplate {t("offers") + " " + t("reuseable") + " " + t("common") + " " + t("components") + " " +
-                    t("such") + " " + t("as") + " " + t("buttons") + "," + " " + t("alerts") + "," + " " + t("inputs") + " " + t("and")
-                    + " " + t("many") + " " + t("more") + "." + " " + t("it").charAt(0).toUpperCase() + t("it").slice(1) + " " +
-                    t("also") + " " + t("comes") + " " + t("with") + " " + t("built") + " " + t("in") + " " + "redux" + " " +
-                    "toolkit" + " " + "setup" + "." + " " + t("The") + " " +  "boilerplate" + " " + t("comes") + " " + t("with")
-                    + " " + t("Internationalization") + " " + t("support") + " " + t("and") + " " + t("also") + " " + t("login")
-                    + " " + t("and") + " " + t("logout") +"."}
+                    Apra react boilerplate {t("About")}
                 </p>
                 <ButtonComponent label={t("Explore") + " " + t("UiKit")} onClick={handleClick} variant="outline-primary"/>
             </div>
