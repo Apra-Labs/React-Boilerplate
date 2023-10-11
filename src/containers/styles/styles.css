@@ -9,3 +9,7 @@
 .form-floating>.form-control:not(:placeholder-shown)~label {
     color: var(--text-color);
 }
+
+#navbarScrollingDropdown {
+    color: var(--text-color);
+}

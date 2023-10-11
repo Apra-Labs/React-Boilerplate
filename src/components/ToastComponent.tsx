@@ -21,7 +21,7 @@ interface ToastProps {
 
 const ToastComponent: React.FC<ToastProps> = ({ position, messages }) => (
     <ToastContainer position={position} role="myToastContainer">
-        {messages.map((toast) => (
+        {messages.map((toast, index) => (
             <Toast
                 bg={toast.variant}
                 show={toast.show}
@@ -31,6 +31,7 @@ const ToastComponent: React.FC<ToastProps> = ({ position, messages }) => (
                 autohide={toast.autohide}
                 className={toast.className}
                 style={toast.containerStyle}
+                key={index}
                 data-testid="toast"
             >
                 <Toast.Header style={toast.headerStyle}>{toast.header}</Toast.Header>

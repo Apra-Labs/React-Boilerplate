@@ -78,7 +78,7 @@ const DropDownComponent: React.FC<DropDownProps> = ({
                         }
                     </InputGroup>
                 }
-                {filteredData?.map(item => <Dropdown.Item className={dropDownItemclassName} eventKey={item.value}>{item.key}</Dropdown.Item>)}
+                {filteredData?.map(item => <Dropdown.Item className={dropDownItemclassName} eventKey={item.value} key={item.value}>{item.key}</Dropdown.Item>)}
             </Dropdown.Menu>
         </Dropdown>
     )

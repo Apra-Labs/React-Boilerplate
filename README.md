@@ -23,7 +23,7 @@
 
 ## Coding standards
 
-📌 Folder's name should be camelCase. Ex: home\
+📌 Folder's name should be camelCase. Ex: userPage\
 📌 Component's name should be PascalCase Ex: ButtonComponent.tsx\
 📌 Utility files should be named in camelCase Ex: i18n.ts\
 📌 Formal function and variable should be in camelCase Ex: handleChange\

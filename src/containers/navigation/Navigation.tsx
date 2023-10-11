@@ -22,7 +22,7 @@ const Navigation: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
     const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
-    const [icon, setIcon] = useState<any>(faSun);
+    const [icon, setIcon] = useState<any>(faMoon);
     const [language, setLanguage] = useState<string>('');
 
     const loggedIn = useAppSelector((state) => state.authReducer.isLoggedIn);
@@ -31,13 +31,14 @@ const Navigation: React.FC = () => {
     const theme = document.documentElement.getAttribute('data-theme');
 
     useEffect(() => {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        if (currentTheme === 'dark') {
+        if (theme === 'dark') {
             setIcon(faMoon);
-        } else if (currentTheme === 'light') {
-            setIcon(faSun);
+            document.documentElement.setAttribute('data-theme', 'dark');
+        } else {
+            setIcon(faSun); 
+            document.documentElement.setAttribute('data-theme', 'light');
         }
-    }, []);
+    }, [theme]);
 
     useEffect(() => {
         setLanguage(currentLanguage);
@@ -84,10 +85,10 @@ const Navigation: React.FC = () => {
     }, []);
 
     const changeIcon = () => {
-        if (icon === faMoon) {
+        if (theme === 'dark') {
             setIcon(faSun);
             document.documentElement.setAttribute('data-theme', 'light');
-        } else if (icon === faSun) {
+        } else {
             setIcon(faMoon);
             document.documentElement.setAttribute('data-theme', 'dark');
         }
@@ -123,7 +124,7 @@ const Navigation: React.FC = () => {
         <>
             <Navbar expand="lg" className={styles.nav} fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className={styles.titleLink} >
-                    <img src={require('../../assets/images/logo.png')} width={45} height={45} style={{marginRight: '0.5rem', marginLeft: '0.5rem'}}/>
+                    <img src={require('../../assets/images/logo.png')} width={45} height={45} className={styles.brandImage}/>
                     Apra React Boilerplate
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" className={styles.toggleButton}>

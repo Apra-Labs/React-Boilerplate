@@ -4,13 +4,16 @@
     border-bottom: 1px solid var(--nav-footer-border);
 }
 
+.brandImage {
+    margin: 0 0.5rem 0 0.5rem;
+}
+
 .navbar-toggler-icon {
     display: none;
 }
 
 .toggleButton{
     font-size: 1.8rem;
-    margin-bottom: 0.5rem;
     color: var(--navlink-color);
 }
 
@@ -32,12 +35,7 @@
     font-family: var(--footer-font);
 }
 
-.navDropdown {
-    padding-top: 0.5rem;
-}
-
 .titleLink {
-    padding-top: 1rem;
     font-weight: 600;
 }
 
@@ -45,9 +43,6 @@
     color: var(--navlink-color);
 }
 
-.loginLink, .navLink {
-    padding-top: 1rem;
-}
 
 .navLink:hover,.navLink:focus, .navLink:active, .loginLink:hover, .loginLink:focus {
     cursor: pointer;
@@ -62,7 +57,7 @@
 .modalInputContainer, .modalInputContainer:focus {
     margin: 1rem;
     width: 29rem;
-    background-color: var(modalInputContainer);
+    background-color: var(--nav-background-color);
     color: var(--text-color);
     font-size: 1rem;
 }
@@ -83,8 +78,9 @@
 }
 
 @media screen and (max-width: 992px) {
-    .titleLink {
-        font-size: 1.5rem;
+    .nav {
+        padding: 0;
+        overflow-x: hidden;
     }
 
     .sideLinks {
@@ -94,20 +90,19 @@
 
     .themeButton {
         display: none;
+    }
+
+    .toggleButton {
+        margin-right: 1rem;
     }
 }
 
 @media screen and (max-width: 480px) {
-    .titleLink {
-        font-size: 1.5rem;
+    .modalInputContainer {
+        width: 23rem;
     }
 
-    .sideLinks {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .themeButton {
-        display: none;
+    .toggleButton {
+        margin-right: 0.5rem;
     }
 }
