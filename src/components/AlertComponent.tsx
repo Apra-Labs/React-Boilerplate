@@ -5,6 +5,7 @@ interface AlertProps {
     message: string;
     variant?: variants;
     show?: boolean;
+    dismissible?: boolean;
     onClose?: () => void;
     style?: React.CSSProperties;
     className?: string;
@@ -19,6 +20,7 @@ const AlertComponent: React.FC<AlertProps> = ({
     show,
     message,
     onClose,
+    dismissible,
     style,
     className
 }) => (
@@ -26,7 +28,7 @@ const AlertComponent: React.FC<AlertProps> = ({
         show={show}
         variant={variant}
         onClose={onClose}
-        dismissible
+        dismissible={dismissible}
         style={style}
         className={className}
         role="myAlert"

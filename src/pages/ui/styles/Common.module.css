@@ -136,6 +136,12 @@
     cursor: pointer;
 }
 
+@media screen and (max-width: 1024px){
+    .imgContainer {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 992px)  {
     .heading {
         padding-left: 3rem;
@@ -146,7 +152,7 @@
         padding: 3rem;
     }
 
-    .buttonContainer, .cardContainer, .imgContainer, .toastContainer {
+    .buttonContainer, .cardContainer, .toastContainer {
         flex-direction: column;
     }
 
@@ -202,12 +208,40 @@
         padding: 1rem 0.5rem 0.5rem 10rem;
     }
 
+    .modalContainer {
+        width: 26rem;
+    }
+
     .spinner {
         height: 8rem;
         width: 8rem;
     }
-
+    
     .toggleSwitch {
         font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .modalContainer {
+        width: 23rem;
+    }
+
+    .textAreaContainer {
+        width: 18rem;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .imageClass {
+        margin-right: 5rem;
+    }
+
+    .modalContainer {
+        width: 20rem;
+    }
+
+    .textAreaContainer {
+        width: 15rem;
     }
 }

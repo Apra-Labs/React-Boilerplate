@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import React from "react";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
+import '../styles/styles.css';
 const Sidebar = React.lazy(() => import('../Sidebar'));
 const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
 const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
@@ -29,14 +30,14 @@ const ToastExample: React.FC = () => {
                 <div className={styles.toastContainer}>
                     <ButtonComponent label={t("Click")} onClick={handleClick} className={styles.toastButton}/>
                     <ToastComponent position="top-end" messages={[
-                        {header: "Toast", message: "This is a toast", variant: "primary", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "secondary", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "success", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "danger", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "warning", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "info", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
-                        {header: "Toast", message: "This is a toast", variant: "light", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}, messageStyle:{color: 'black'}},
-                        {header: "Toast", message: "This is a toast", variant: "dark", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}, messageStyle: {color: 'white'}}
+                        {header: "Toast", message: "This is a toast", variant: "primary", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "secondary", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "success", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "danger", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "warning", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "info", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}},
+                        {header: "Toast", message: "This is a toast", variant: "light", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}, messageStyle:{color: 'black'}},
+                        {header: "Toast", message: "This is a toast", variant: "dark", className: "toast", show: showAlert, onClose: closeAlert, headerStyle: {justifyContent: "space-between"}, messageStyle: {color: 'white'}}
                     ]}/>
                 </div>
             </div>

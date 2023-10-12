@@ -53,6 +53,7 @@ const ModalExample: React.FC = () => {
                     onHide={handleHide}
                     title={t("MyModal")}
                     body={t("Thisisamodal")}
+                    modalContainerClass={styles.modalContainer}
                     modalHeaderClass={styles.modalClass}
                     modalBodyClass={styles.modalClass}
                     modalFooterClass={styles.modalClass}
@@ -67,6 +68,7 @@ const ModalExample: React.FC = () => {
                     onHide={handleHideNoAnimation}
                     title={t("MyModal")}
                     body={t("Thisisamodal")}
+                    modalContainerClass={styles.modalContainer}
                     modalHeaderClass={styles.modalClass}
                     modalBodyClass={styles.modalClass}
                     modalFooterClass={styles.modalClass}
@@ -84,6 +86,7 @@ const ModalExample: React.FC = () => {
                     onHide={handleHideVerticalModal}
                     title={t("MyModal")}
                     body={t("Thisisamodal")}
+                    modalContainerClass={styles.modalContainer}
                     modalHeaderClass={styles.modalClass}
                     modalBodyClass={styles.modalClass}
                     modalFooterClass={styles.modalClass}

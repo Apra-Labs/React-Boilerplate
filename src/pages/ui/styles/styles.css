@@ -5,3 +5,9 @@
 .form-floating > .form-control:focus ~ label::after {
     background-color: var(--input-background-color);
 }
+
+@media screen and (max-width: 480px) {
+    .toast {
+        width: 15rem;
+    }
+}

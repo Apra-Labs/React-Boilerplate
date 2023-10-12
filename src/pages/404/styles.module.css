@@ -9,3 +9,15 @@
 .errorMessage {
     font-size: 7rem;
 }
+
+@media screen and (max-width: 992px) {
+    .errorMessage {
+        font-size: 6rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .errorMessage {
+        font-size: 4rem;
+    }
+}

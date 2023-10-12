@@ -6,6 +6,7 @@ interface ModalProps {
     title: string;
     body: JSX.Element | string;
     footer?: JSX.Element;
+    modalContainerClass?: string;
     modalHeaderClass?: string;
     modalBodyClass?: string;
     modalFooterClass?: string;
@@ -26,6 +27,7 @@ const ModalComponent: React.FC<ModalProps> = ({
     title,
     body,
     footer,
+    modalContainerClass,
     modalHeaderClass,
     modalBodyClass,
     modalFooterClass,
@@ -42,6 +44,7 @@ const ModalComponent: React.FC<ModalProps> = ({
         style={style}
         fullscreen={fullScreen}
         animation={animation}
+        className={modalContainerClass}
     >
         <Modal.Header closeButton closeVariant={closeVariant} className={modalHeaderClass}>
             <Modal.Title>{title}</Modal.Title>

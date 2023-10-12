@@ -7,7 +7,7 @@ const Footer = React.lazy(() => import('../../containers/footer/Footer'));
 const ButtonComponent = React.lazy(() => import('../../components/ButtonComponent'));
 
 const Home: React.FC = () => {
-    const {t} = useTranslation();
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -23,7 +23,7 @@ const Home: React.FC = () => {
                 <p className={styles.featureDesc}>
                     Apra react boilerplate {t("About")}
                 </p>
-                <ButtonComponent label={t("Explore") + " " + t("UiKit")} onClick={handleClick} variant="outline-primary"/>
+                <ButtonComponent label={t("Explore") + " " + t("UiKit")} onClick={handleClick} variant="outline-primary" />
             </div>
             <Footer />
         </>

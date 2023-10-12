@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import ButtonComponent from "../../../components/ButtonComponent";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
+import '../styles/styles.css';
 const Sidebar = React.lazy(() => import('../Sidebar'));
 const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
 const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
@@ -40,6 +41,7 @@ const CheckBoxExample: React.FC = () => {
                         show: showAlert,
                         onClose: closeAlert,
                         variant: "primary",
+                        className: "toast",
                         headerStyle: { justifyContent: 'space-between' },
                         messageStyle: { color: 'white' }
                     }

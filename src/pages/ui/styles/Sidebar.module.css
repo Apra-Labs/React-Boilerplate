@@ -1,5 +1,5 @@
 .sideNav {
-    height: calc(100% - 6rem);
+    height: calc(100% - 6.5rem);
     width: 15rem;
     position: fixed;
     top: 0;
@@ -11,8 +11,23 @@
     margin-top: 3.3rem;
 }
 
+.toggleButton {
+    width: 100%;
+    background-color: var(--sidebar-background);
+    color: var(--text-color);
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+    border: 0;
+    font-size: 1.2rem;
+}
+
+.toggleButton:hover {
+    background-color: var(--sidebar-link-hover);
+} 
+
 .links {
-    margin: 0.1rem;
+    margin: 0.2rem 0 0.2rem 0.5rem;
     color: var(--text-color);
     display: block;
     text-decoration: none;
@@ -26,7 +41,7 @@
 }
 
 .activeLink {
-    margin: 0.1rem;
+    margin: 0.1rem 0 0.1rem 0.5rem;
     color: var(--text-color);
     display: block;
     text-decoration: none;
@@ -34,6 +49,11 @@
     font-size: 1rem;
     padding: 0.5rem;
     background-color: var(--sidebar-link-hover);
+}
+@media screen and (max-width: 1024px) and (min-width: 992px){
+    .sideNav {
+        overflow-y: scroll;
+    }
 }
 
 @media screen and (max-width: 992px) {

@@ -4,7 +4,7 @@
     "Profile": "Perfil",
     "ChangeLanguage": "Cambiar idioma",
     "UiKit": "Kit de interfaz de usuario",
-    "English": "inglés",
+    "English": "English",
     "Spanish": "español",
     "Email": "Correo electrónico",
     "Password": "Contraseña",
@@ -68,5 +68,6 @@
     "Mobile": "Mobile",
     "App": "app",
     "About": "Ofrece componentes comunes reutilizables como botones, alertas, entradas y muchos más. También incluye una configuración integrada de Redux Toolkit. La plantilla viene con soporte de internacionalización y también inicio de sesión y cierre de sesión.",
-    "Layouts": "Diseños"
+    "Layouts": "Diseños",
+    "Explore": "Explorar"
 }

@@ -28,7 +28,7 @@
     display: none;
 }
 
-.titleLink,.navLink,.navDropdown, .loginLink {
+.titleLink, .navLink, .navDropdown, .loginLink {
     color: var(--navlink-color);
     font-size: 1.4rem;
     font-weight: 500;
@@ -98,11 +98,57 @@
 }
 
 @media screen and (max-width: 480px) {
-    .modalInputContainer {
-        width: 23rem;
+    .titleLink, .navLink, .navDropdown {
+        font-size: 1.2rem;
     }
 
     .toggleButton {
-        margin-right: 0.5rem;
+        font-size: 1.2rem;
+        margin-right: 0.7rem;
+    }
+    
+    .modalContainer {
+        width: 23rem;
+    }
+
+    .modalInputContainer {
+        width: 21.5rem;
+    }
+}
+
+/* large mobile screen */
+@media screen and (max-width: 425px) {
+    .modalContainer {
+        width: 25rem;
+    }
+
+    .modalInputContainer {
+        width: 22rem;
+    }
+}
+
+/* medium mobile screen */
+@media screen and (max-width: 375px) {
+    .modalContainer {
+        width: 22rem;
+    }
+
+    .modalInputContainer {
+        width: 20rem;
+    }
+}
+
+/* small mobile screen */
+@media screen and (max-width: 320px) {
+    .titleLink, .navLink, .navDropdown {
+        font-size: 1rem;
+    }
+    
+    .modalContainer {
+        width: 20rem;
+    }
+
+    .modalInputContainer {
+        width: 18rem;
     }
 }

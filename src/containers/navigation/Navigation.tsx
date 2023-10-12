@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import styles from './Navigation.module.css';
 import { changeLanguage } from '../../redux/slices/languageSlice';
 import '../styles/styles.css';
+import { changeTheme } from '../../redux/slices/themeSlice';
 const InputFloatingLabelComponent = React.lazy(() => import('../../components/InputFloatingLabelComponent'));
 const ButtonComponent = React.lazy(() => import('../../components/ButtonComponent'));
 const ModalComponent = React.lazy(() => import('../../components/ModalComponent'));
@@ -28,15 +29,15 @@ const Navigation: React.FC = () => {
     const loggedIn = useAppSelector((state) => state.authReducer.isLoggedIn);
     const currentLanguage = useAppSelector((state) => state.langReducer.language);
     const location = useLocation();
-    const theme = document.documentElement.getAttribute('data-theme');
+    const theme = useAppSelector(state => state.themeReducer.theme);
 
     useEffect(() => {
         if (theme === 'dark') {
             setIcon(faMoon);
-            document.documentElement.setAttribute('data-theme', 'dark');
+            dispatch(changeTheme("dark"));
         } else {
             setIcon(faSun); 
-            document.documentElement.setAttribute('data-theme', 'light');
+            dispatch(changeTheme("light"));
         }
     }, [theme]);
 
@@ -84,20 +85,19 @@ const Navigation: React.FC = () => {
         setShow(true);
     }, []);
 
-    const changeIcon = () => {
+    const changeIcon = useCallback(() => {
         if (theme === 'dark') {
             setIcon(faSun);
-            document.documentElement.setAttribute('data-theme', 'light');
+            dispatch(changeTheme("light"));
         } else {
             setIcon(faMoon);
-            document.documentElement.setAttribute('data-theme', 'dark');
+            dispatch(changeTheme("dark"));
         }
-    };
+    },[theme]);
 
-    const handleSubmit = useCallback((e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         if (email === user.email && password === user.password) {
-            console.log("Successfully logged in");
             const { name, email, phoneNumber } = user;
             dispatch(login({ name, email, phoneNumber }));
             toast.success('Success!', {
@@ -105,12 +105,11 @@ const Navigation: React.FC = () => {
             });
             setShow(false);
         } else {
-            console.log("Error");
             toast.error('Error!', {
                 position: toast.POSITION.TOP_RIGHT
             });
         }
-    }, []);
+    };
 
     const user = {
         id: 1,
@@ -212,6 +211,7 @@ const Navigation: React.FC = () => {
                         <ButtonComponent label={t("Login")} type='submit' />
                     </form>
                 }
+                modalContainerClass={styles.modalContainer}
                 modalHeaderClass={styles.loginHeader}
                 modalBodyClass={styles.loginBody}
                 modalFooterClass={styles.loginBody}

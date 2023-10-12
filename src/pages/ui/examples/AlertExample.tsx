@@ -15,14 +15,14 @@ const AlertExample: React.FC = () => {
             <Sidebar />
             <h1 className={styles.heading}>{t("Alert")}</h1>
             <div className={styles.commonContainer}>
-                <AlertComponent message={t("Thisisanalertexample")} /> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="secondary"/> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="danger"/> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="success"/> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="warning"/> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="info"/> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="light"/> 
-                <AlertComponent message={t("Thisisanalertexample")} variant="dark"/> 
+                <AlertComponent message={t("Thisisanalertexample")} dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="secondary" dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="danger" dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="success" dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="warning" dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="info" dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="light" dismissible={false}/>
+                <AlertComponent message={t("Thisisanalertexample")} variant="dark" dismissible={false}/>
             </div>
             <Footer />
         </div>
