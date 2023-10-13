@@ -2,9 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { items } from "../../../assets/data/data";
 import styles from '../styles/Common.module.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+import HeaderComponent from "../../../components/HeaderComponent";
 const DropDownComponent = React.lazy(() => import('../../../components/DropDownComponent'));
 
 const DropDownExample: React.FC = () => {
@@ -12,9 +10,7 @@ const DropDownExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Dropdown")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Dropdown")} />
             <div className={styles.commonContainer}>
                 <DropDownComponent
                     label={t("MyDropDown")}
@@ -23,7 +19,6 @@ const DropDownExample: React.FC = () => {
                     dropDownItemclassName={styles.dropDownItem}
                 />
             </div>
-            <Footer />
         </div>
     )
 }

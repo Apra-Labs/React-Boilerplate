@@ -4,9 +4,7 @@ import ButtonComponent from "../../../components/ButtonComponent";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const CheckBoxComponent = React.lazy(() => import('../../../components/CheckBoxComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 
@@ -30,9 +28,7 @@ const CheckBoxExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Checkbox")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Checkbox")} />
             <div className={styles.commonContainer}>
                 <ToastComponent position="top-end" messages={[
                     {
@@ -52,7 +48,6 @@ const CheckBoxExample: React.FC = () => {
                 <CheckBoxComponent label={t("Option3")} onChange={handleOnChange} className={styles.checkbox} value="option 3" />
                 <ButtonComponent label="Submit" onClick={handleOnClick} />
             </div>
-            <Footer />
         </div>
     )
 }

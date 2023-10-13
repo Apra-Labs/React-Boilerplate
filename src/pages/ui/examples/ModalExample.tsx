@@ -2,11 +2,9 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import { useCallback, useState } from "react";
 import styles from '../styles/Common.module.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ModalComponent = React.lazy(() => import('../../../components/ModalComponent'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 
 const ModalExample: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
@@ -17,35 +15,33 @@ const ModalExample: React.FC = () => {
 
     const handleClick = useCallback(() => {
         setShow(true);
-    },[]);
+    }, []);
 
     const handleHide = useCallback(() => {
         setShow(false);
-    },[]);
+    }, []);
 
     const handleClickNoAnimation = useCallback(() => {
         setShowNoAnimation(true);
-    },[]);
+    }, []);
 
     const handleHideNoAnimation = useCallback(() => {
         setShowNoAnimation(false);
-    },[]);
+    }, []);
 
     const handleClickVerticalModal = useCallback(() => {
         setShowVerticalModal(true);
-    },[]);
+    }, []);
 
     const handleHideVerticalModal = useCallback(() => {
         setShowVerticalModal(false);
-    },[]);
-    
+    }, []);
+
     const theme = document.documentElement.getAttribute('data-theme');
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Modal")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Modal")} />
             <div className={styles.commonContainer}>
                 <ButtonComponent label={t("Click")} onClick={handleClick} />
                 <ModalComponent
@@ -60,7 +56,7 @@ const ModalExample: React.FC = () => {
                     closeVariant={theme === "dark" ? "white" : "black"}
                 />
             </div>
-            <h2 className={styles.heading}>{t("Modal") + ' ' + t("Without") + ' ' + t("Animation")}</h2>
+            <HeaderComponent className={styles.subHeading} title={t("Modal") + ' ' + t("Without") + ' ' + t("Animation")} />
             <div className={styles.commonContainer}>
                 <ButtonComponent label={t("Click")} onClick={handleClickNoAnimation} />
                 <ModalComponent
@@ -76,9 +72,10 @@ const ModalExample: React.FC = () => {
                     closeVariant={theme === "dark" ? "white" : "black"}
                 />
             </div>
-            <h2 className={styles.heading}>
-                {t("Vertically").charAt(0).toUpperCase() + t("Vertically").slice(1) + ' ' + t("Centered") + ' ' + t("Modal").charAt(0).toLowerCase() + t("Modal").slice(1)}
-            </h2>
+            <HeaderComponent
+                className={styles.subHeading}
+                title={t("Vertically").charAt(0).toUpperCase() + t("Vertically").slice(1) + ' ' + t("Centered") + ' ' + t("Modal").charAt(0).toLowerCase() + t("Modal").slice(1)}
+            />
             <div className={styles.commonContainer}>
                 <ButtonComponent label={t("Click")} onClick={handleClickVerticalModal} />
                 <ModalComponent
@@ -94,7 +91,6 @@ const ModalExample: React.FC = () => {
                     centered
                 />
             </div>
-            <Footer />
         </div>
     )
 }

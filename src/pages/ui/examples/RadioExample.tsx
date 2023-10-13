@@ -3,12 +3,10 @@ import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 const RadioComponent = React.lazy(() => import('../../../components/RadioComponent'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 
 const RadioExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -30,9 +28,7 @@ const RadioExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Radio")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Radio")} />
             <div className={styles.commonContainer}>
                 <ToastComponent position="top-end" messages={[
                     {
@@ -52,7 +48,6 @@ const RadioExample: React.FC = () => {
                 <RadioComponent name="myoption" label={t("Option3")} onChange={handleOnChange} className={styles.checkbox} value="option 3" />
                 <ButtonComponent label="Submit" onClick={handleOnClick} />
             </div>
-            <Footer />
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import React from 'react';
 import styles from './styles.module.css';
-import { useNavigate } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 const Navigation = React.lazy(() => import('../../containers/navigation/Navigation'));
 const Footer = React.lazy(() => import('../../containers/footer/Footer'));
@@ -26,6 +26,7 @@ const Home: React.FC = () => {
                 <ButtonComponent label={t("Explore") + " " + t("UiKit")} onClick={handleClick} variant="outline-primary" />
             </div>
             <Footer />
+            <Outlet />
         </>
     )
 }

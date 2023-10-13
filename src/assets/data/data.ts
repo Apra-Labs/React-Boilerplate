@@ -17,6 +17,7 @@ export const sideBarElements = [
     "Card",
     "Checkbox",
     "Dropdown",
+    "Header",
     "Image",
     "Input",
     "Input floating label ",

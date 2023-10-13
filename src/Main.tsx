@@ -1,5 +1,7 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+import UiKit from './pages/ui';
+import HeaderExample from './pages/ui/examples/HeaderExample';
 const Home = React.lazy(() => import('./pages/home/index'));
 const AlertExample = React.lazy(() => import('./pages/ui/examples/AlertExample'));
 const ButtonExample = React.lazy(() => import('./pages/ui/examples/ButtonExample'));
@@ -21,28 +23,26 @@ const PageNotFound = React.lazy(() => import('./pages/404/index'));
 const Main: React.FC = () => {
     return (
         <Routes>
-            <Route>
-                <Route path='/' element={<Home />} />
-                <Route path='/uikit/alert' element={<AlertExample />} />
-                <Route path='/uikit/button' element={<ButtonExample />} />
-                <Route path='/uikit/card' element={<CardExample />} />
-                <Route path='/uikit/checkbox' element={<CheckBoxExample />} />
-                <Route path='/uikit/dropdown' element={<DropDownExample />} />
-                <Route path='/uikit/image' element={<ImageExample />} />
-                <Route path='/uikit/input' element={<InputExample />} />
-                <Route path='/uikit/inputfloatinglabel' element={<InputFloatingLabelExample />} />
-                <Route path='/uikit/modal' element={<ModalExample />} />
-                <Route path='/uikit/radio' element={<RadioExample />} />
-                <Route path='/uikit/rowcolumn' element={<RowColumnExample />} />
-                <Route path='/uikit/spinner' element={<SpinnerExample />} />
-                <Route path='/uikit/toggleswitch' element={<ToggleSwitchExample />} />
-                <Route path='/uikit/toast' element={<ToastExample />} />
-                <Route path='/uikit/textarea' element={<TextAreaExample />} />
-                <Route path='/layouts/leftcontainerlayout' element={<Home />} />
-                <Route path='/layouts/rightcontainerlayout' element={<Home />} />
-                <Route path='/layouts/leftrightcontainerlayout' element={<Home />} />
-                <Route path='*' element={<PageNotFound />} />
+            <Route path='/' element={<Home />} />
+            <Route path='uikit' element={<UiKit />} >
+                <Route path='alert' element={<AlertExample />} />
+                <Route path='button' element={<ButtonExample />} />
+                <Route path='card' element={<CardExample />} />
+                <Route path='checkbox' element={<CheckBoxExample />} />
+                <Route path='dropdown' element={<DropDownExample />} />
+                <Route path='header' element={<HeaderExample />} />
+                <Route path='image' element={<ImageExample />} />
+                <Route path='input' element={<InputExample />} />
+                <Route path='inputfloatinglabel' element={<InputFloatingLabelExample />} />
+                <Route path='modal' element={<ModalExample />} />
+                <Route path='radio' element={<RadioExample />} />
+                <Route path='rowcolumn' element={<RowColumnExample />} />
+                <Route path='spinner' element={<SpinnerExample />} />
+                <Route path='toggleswitch' element={<ToggleSwitchExample />} />
+                <Route path='toast' element={<ToastExample />} />
+                <Route path='textarea' element={<TextAreaExample />} />
             </Route>
+            <Route path='*' element={<PageNotFound />} />
         </Routes>
     )
 }

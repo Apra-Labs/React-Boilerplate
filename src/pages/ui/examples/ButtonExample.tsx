@@ -3,12 +3,9 @@ import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
-
 
 const ButtonExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -25,9 +22,7 @@ const ButtonExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Button")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Button")} />
             <div className={styles.commonContainer}>
                 <ToastComponent position="top-end" messages={[
                     {
@@ -65,7 +60,6 @@ const ButtonExample: React.FC = () => {
                     <ButtonComponent className={styles.button} label={t("Click")} onClick={handleClick} variant="outline-dark" style={{ border: '0.1rem', borderStyle: 'solid', borderColor: 'white', color: 'gray' }} />
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

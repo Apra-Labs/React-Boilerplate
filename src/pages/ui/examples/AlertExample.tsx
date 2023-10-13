@@ -1,9 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const AlertComponent = React.lazy(() => import('../../../components/AlertComponent'));
 
 const AlertExample: React.FC = () => {
@@ -11,9 +9,7 @@ const AlertExample: React.FC = () => {
     
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Alert")}</h1>
+            <HeaderComponent title={t("Alert")} className={styles.heading} />
             <div className={styles.commonContainer}>
                 <AlertComponent message={t("Thisisanalertexample")} dismissible={false}/>
                 <AlertComponent message={t("Thisisanalertexample")} variant="secondary" dismissible={false}/>
@@ -24,7 +20,6 @@ const AlertExample: React.FC = () => {
                 <AlertComponent message={t("Thisisanalertexample")} variant="light" dismissible={false}/>
                 <AlertComponent message={t("Thisisanalertexample")} variant="dark" dismissible={false}/>
             </div>
-            <Footer />
         </div>
     )
 }

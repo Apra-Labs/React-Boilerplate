@@ -3,11 +3,9 @@ import React from "react";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 
 const ToastExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -23,9 +21,7 @@ const ToastExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Toast")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Toast")} />
             <div className={styles.commonContainer}>
                 <div className={styles.toastContainer}>
                     <ButtonComponent label={t("Click")} onClick={handleClick} className={styles.toastButton}/>
@@ -41,7 +37,6 @@ const ToastExample: React.FC = () => {
                     ]}/>
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

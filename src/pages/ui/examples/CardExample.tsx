@@ -1,9 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const CardComponent = React.lazy(() => import('../../../components/CardComponent'));
 
 const CardExample: React.FC = () => {
@@ -11,9 +9,7 @@ const CardExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
-            <Navigation />
-            <Sidebar />
-            <h1 className={styles.heading}>{t("Card")}</h1>
+            <HeaderComponent className={styles.heading} title={t("Card")} />
             <div className={styles.commonContainer}>
                 <div className={styles.cardContainer}>
                     <CardComponent className={styles.card} title={t("MyCard")} message={t("Thisisacardexample")} />
@@ -36,7 +32,6 @@ const CardExample: React.FC = () => {
                     variant="primary"
                 />
             </div>
-            <Footer />
         </div>
     )
 }

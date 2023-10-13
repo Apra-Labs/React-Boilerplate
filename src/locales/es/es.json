@@ -69,5 +69,6 @@
     "App": "app",
     "About": "Ofrece componentes comunes reutilizables como botones, alertas, entradas y muchos más. También incluye una configuración integrada de Redux Toolkit. La plantilla viene con soporte de internacionalización y también inicio de sesión y cierre de sesión.",
     "Layouts": "Diseños",
-    "Explore": "Explorar"
+    "Explore": "Explorar",
+    "Myheader": "mi encabezado"
 }

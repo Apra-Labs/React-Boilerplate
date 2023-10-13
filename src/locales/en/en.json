@@ -69,5 +69,6 @@
     "App": "app",
     "About": "offers reuseable common components such as buttons, alerts, inputs and many more. It also comes with built in redux toolkit setup. The boilerplate comes with Internationalization support and also login and logout.",
     "Layouts": "Layouts",
-    "Explore": "Explore"
+    "Explore": "Explore",
+    "Myheader": "My header"
 }
