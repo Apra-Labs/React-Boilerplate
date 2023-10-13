@@ -5,7 +5,7 @@ interface HeaderProps {
 }
 
 const HeaderComponent: React.FC<HeaderProps> = ({ title, style, className }) => (
-    <h1 className={className} style={style}>
+    <h1 className={className} style={style} role="myHeader">
         {title}
     </h1>
 )

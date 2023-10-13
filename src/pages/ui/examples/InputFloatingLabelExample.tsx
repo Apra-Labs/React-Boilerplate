@@ -4,12 +4,17 @@ import styles from '../styles/Common.module.css';
 import '../styles/styles.css';
 const InputFloatingLabelComponent = React.lazy(() => import('../../../components/InputFloatingLabelComponent'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 
 const InputFloatingLabelExample: React.FC = () => {
     const { t } = useTranslation();
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("InputFloatingLabel")}
+            />
             <HeaderComponent className={styles.heading} title={t("InputFloatingLabel")} />
             <div className={styles.commonContainer}>
                 <InputFloatingLabelComponent

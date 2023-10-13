@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const AlertComponent = React.lazy(() => import('../../../components/AlertComponent'));
 
@@ -9,6 +10,10 @@ const AlertExample: React.FC = () => {
     
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Alert")}
+            />
             <HeaderComponent title={t("Alert")} className={styles.heading} />
             <div className={styles.commonContainer}>
                 <AlertComponent message={t("Thisisanalertexample")} dismissible={false}/>

@@ -5,6 +5,7 @@ import styles from '../styles/Common.module.css';
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ModalComponent = React.lazy(() => import('../../../components/ModalComponent'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 
 const ModalExample: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);
@@ -41,6 +42,10 @@ const ModalExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Modal")}
+            />
             <HeaderComponent className={styles.heading} title={t("Modal")} />
             <div className={styles.commonContainer}>
                 <ButtonComponent label={t("Click")} onClick={handleClick} />

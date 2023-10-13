@@ -1,6 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 const ToggleSwitchComponent = React.lazy(() => import('../../../components/ToggleSwitchComponent'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 
@@ -9,6 +10,10 @@ const ToggleSwitchExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("ToggleSwitch")}
+            />
             <HeaderComponent className={styles.heading} title={t("ToggleSwitch")} />
             <div className={styles.commonContainer}>
                 <ToggleSwitchComponent

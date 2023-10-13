@@ -1,11 +1,9 @@
 {
-    "MyApplication": "My Application",
     "Login": "Login",
     "Profile": "Profile",
-    "ChangeLanguage": "Change Language",
     "UiKit": "UI Kit",
     "English": "English",
-    "Spanish": "Spanish",
+    "Spanish": "español",
     "Email": "Email",
     "Password": "Password",
     "PersonalInformation": "Personal Information",
@@ -70,5 +68,7 @@
     "About": "offers reuseable common components such as buttons, alerts, inputs and many more. It also comes with built in redux toolkit setup. The boilerplate comes with Internationalization support and also login and logout.",
     "Layouts": "Layouts",
     "Explore": "Explore",
-    "Myheader": "My header"
+    "Myheader": "My header",
+    "Arabic": "عربي",
+    "German": "Deutsch"
 }

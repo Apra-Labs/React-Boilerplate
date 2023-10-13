@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
@@ -22,6 +23,10 @@ const ButtonExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Button")}
+            />
             <HeaderComponent className={styles.heading} title={t("Button")} />
             <div className={styles.commonContainer}>
                 <ToastComponent position="top-end" messages={[

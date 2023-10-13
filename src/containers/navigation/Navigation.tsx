@@ -36,7 +36,7 @@ const Navigation: React.FC = () => {
             setIcon(faMoon);
             dispatch(changeTheme("dark"));
         } else {
-            setIcon(faSun); 
+            setIcon(faSun);
             dispatch(changeTheme("light"));
         }
     }, [theme]);
@@ -56,8 +56,16 @@ const Navigation: React.FC = () => {
         const lang_code = e || undefined;
         if (lang_code === "en") {
             dispatch(changeLanguage("English"));
+            document.body.setAttribute('dir', 'ltr');
+        } else if (lang_code === "ar") {
+            dispatch(changeLanguage("عربي"));
+            document.body.setAttribute('dir', 'rtl');
+        } else if (lang_code === "de") {
+            dispatch(changeLanguage("Deutsch"));
+            document.body.setAttribute('dir', 'ltr');
         } else {
             dispatch(changeLanguage("español"));
+            document.body.setAttribute('dir', 'ltr');
         }
         i18n.changeLanguage(lang_code);
     };
@@ -93,7 +101,7 @@ const Navigation: React.FC = () => {
             setIcon(faMoon);
             dispatch(changeTheme("dark"));
         }
-    },[theme]);
+    }, [theme]);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -123,7 +131,7 @@ const Navigation: React.FC = () => {
         <>
             <Navbar expand="lg" className={styles.nav} fixed='top' role='myNavbar'>
                 <Navbar.Brand as={Link} to={"/"} className={styles.titleLink} >
-                    <img src={require('../../assets/images/logo.png')} width={45} height={45} className={styles.brandImage}/>
+                    <img src={require('../../assets/images/logo.png')} width={45} height={45} className={styles.brandImage} />
                     Apra React Boilerplate
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="navbar-offcanvas" className={styles.toggleButton}>
@@ -151,6 +159,8 @@ const Navigation: React.FC = () => {
                                         onSelect={onSelectLang}
                                         className={styles.navDropdown}
                                     >
+                                        <NavDropdown.Item eventKey={"ar"} className={styles.navDropdownMenu}>{t("Arabic")}</NavDropdown.Item>
+                                        <NavDropdown.Item eventKey={"de"} className={styles.navDropdownMenu}>{t("German")}</NavDropdown.Item>
                                         <NavDropdown.Item eventKey={"en"} className={styles.navDropdownMenu}>{t("English")}</NavDropdown.Item>
                                         <NavDropdown.Item eventKey={"es"} className={styles.navDropdownMenu}>{t("Spanish")}</NavDropdown.Item>
                                     </NavDropdown>

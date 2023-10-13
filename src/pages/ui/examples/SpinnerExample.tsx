@@ -5,6 +5,7 @@ import { useCallback, useState } from "react";
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const SpinnerComponent = React.lazy(() => import('../../../components/SpinnerComponent'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 
 const SpinnerExample: React.FC = () => {
     const [fullPage, setFullPage] = useState<boolean>(false);
@@ -21,6 +22,10 @@ const SpinnerExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Spinner")}
+            />
             <HeaderComponent className={styles.heading} title={t("Spinner")} />
             <HeaderComponent className={styles.subHeading} title={t("Spinner") + ' ' + t("With") + ' ' + t("Border")} />
             <div className={styles.commonContainer}>

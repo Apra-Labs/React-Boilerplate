@@ -2,9 +2,7 @@ import React from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import HeaderComponent from "../../../components/HeaderComponent";
-const Sidebar = React.lazy(() => import('../Sidebar'));
-const Navigation = React.lazy(() => import('../../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../../containers/footer/Footer'));
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 const ImageComponent = React.lazy(() => import('../../../components/ImageComponent'));
 
 const ImageExample: React.FC = () => {
@@ -12,6 +10,10 @@ const ImageExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Image")}
+            />
             <HeaderComponent className={styles.heading} title={t("Image")} />
             <div className={styles.imgContainer}>
                 <div className={styles.imgElement}>

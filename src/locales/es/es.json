@@ -1,8 +1,6 @@
 {
-    "MyApplication": "Mi aplicación",
     "Login": "Acceso",
     "Profile": "Perfil",
-    "ChangeLanguage": "Cambiar idioma",
     "UiKit": "Kit de interfaz de usuario",
     "English": "English",
     "Spanish": "español",
@@ -70,5 +68,7 @@
     "About": "Ofrece componentes comunes reutilizables como botones, alertas, entradas y muchos más. También incluye una configuración integrada de Redux Toolkit. La plantilla viene con soporte de internacionalización y también inicio de sesión y cierre de sesión.",
     "Layouts": "Diseños",
     "Explore": "Explorar",
-    "Myheader": "mi encabezado"
+    "Myheader": "mi encabezado",
+    "Arabic": "عربي",
+    "German": "Deutsch"
 }

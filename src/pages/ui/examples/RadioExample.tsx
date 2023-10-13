@@ -7,6 +7,7 @@ const ButtonComponent = React.lazy(() => import('../../../components/ButtonCompo
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 const RadioComponent = React.lazy(() => import('../../../components/RadioComponent'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 
 const RadioExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -28,6 +29,10 @@ const RadioExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Radio")}
+            />
             <HeaderComponent className={styles.heading} title={t("Radio")} />
             <div className={styles.commonContainer}>
                 <ToastComponent position="top-end" messages={[

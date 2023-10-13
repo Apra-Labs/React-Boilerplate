@@ -4,6 +4,7 @@ import ButtonComponent from "../../../components/ButtonComponent";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
 const CheckBoxComponent = React.lazy(() => import('../../../components/CheckBoxComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
@@ -28,6 +29,10 @@ const CheckBoxExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Card")}
+            />
             <HeaderComponent className={styles.heading} title={t("Checkbox")} />
             <div className={styles.commonContainer}>
                 <ToastComponent position="top-end" messages={[

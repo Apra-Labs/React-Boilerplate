@@ -4,7 +4,7 @@
 }
 
 .heading, .subHeading {
-    padding-top: 5rem;
+    padding-top: 1rem;
     padding-left: 16rem;
 }
 
@@ -148,9 +148,8 @@
 }
 
 @media screen and (max-width: 992px)  {
-    .heading {
+    .heading, .subHeading {
         padding-left: 3rem;
-        padding-top: 5rem;
     }
     
     .commonContainer {

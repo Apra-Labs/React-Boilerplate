@@ -1,0 +1,17 @@
+.status {
+    display: flex;
+    padding-top: 5rem;
+    padding-left: 15rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.statusElements {
+    margin: 1rem;
+}
+
+@media screen and (max-width: 992px){
+    .status {
+        padding-left: 2rem;
+    }
+}

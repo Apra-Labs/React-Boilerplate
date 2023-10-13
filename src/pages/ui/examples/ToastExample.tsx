@@ -3,6 +3,7 @@ import React from "react";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
+const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
 const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
 const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
 const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
@@ -21,6 +22,10 @@ const ToastExample: React.FC = () => {
 
     return (
         <div className={styles.exampleContainer}>
+            <NavigationStatus
+                route={t("UiKit")}
+                subRoute={t("Toast")}
+            />
             <HeaderComponent className={styles.heading} title={t("Toast")} />
             <div className={styles.commonContainer}>
                 <div className={styles.toastContainer}>
