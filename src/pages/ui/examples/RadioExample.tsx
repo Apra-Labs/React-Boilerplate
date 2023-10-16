@@ -31,7 +31,8 @@ const RadioExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Radio")}
+                subRoute={t("Components")}
+                childRoute={t("Radio")}
             />
             <HeaderComponent className={styles.heading} title={t("Radio")} />
             <div className={styles.commonContainer}>

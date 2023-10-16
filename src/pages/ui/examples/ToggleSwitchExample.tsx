@@ -12,7 +12,8 @@ const ToggleSwitchExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("ToggleSwitch")}
+                subRoute={t("Components")}
+                childRoute={t("ToggleSwitch")}
             />
             <HeaderComponent className={styles.heading} title={t("ToggleSwitch")} />
             <div className={styles.commonContainer}>

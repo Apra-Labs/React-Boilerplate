@@ -24,7 +24,8 @@ const ToastExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Toast")}
+                subRoute={t("Components")}
+                childRoute={t("Toast")}
             />
             <HeaderComponent className={styles.heading} title={t("Toast")} />
             <div className={styles.commonContainer}>

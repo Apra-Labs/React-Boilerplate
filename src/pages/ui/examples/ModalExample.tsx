@@ -44,7 +44,8 @@ const ModalExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Modal")}
+                subRoute={t("Components")}
+                childRoute={t("Modal")}
             />
             <HeaderComponent className={styles.heading} title={t("Modal")} />
             <div className={styles.commonContainer}>

@@ -24,7 +24,8 @@ const SpinnerExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Spinner")}
+                subRoute={t("Components")}
+                childRoute={t("Spinner")}
             />
             <HeaderComponent className={styles.heading} title={t("Spinner")} />
             <HeaderComponent className={styles.subHeading} title={t("Spinner") + ' ' + t("With") + ' ' + t("Border")} />

@@ -11,13 +11,12 @@ export const items = [
     { key: "Ethan Robinson", value: "10" }
 ];
 
-export const sideBarElements = [
+export const componentsElements = [
     "Alert",
     "Button",
     "Card",
     "Checkbox",
     "Dropdown",
-    "Header",
     "Image",
     "Input",
     "Input floating label ",

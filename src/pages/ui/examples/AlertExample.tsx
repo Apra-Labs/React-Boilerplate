@@ -12,7 +12,8 @@ const AlertExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Alert")}
+                subRoute={t("Components")}
+                childRoute={t("Alert")}
             />
             <HeaderComponent title={t("Alert")} className={styles.heading} />
             <div className={styles.commonContainer}>

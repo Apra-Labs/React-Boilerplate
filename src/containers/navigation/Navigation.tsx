@@ -148,7 +148,7 @@ const Navigation: React.FC = () => {
                         <Nav className='ms-auto'>
                             {location.pathname === "/" ?
                                 <>
-                                    <Nav.Link as={Link} to={"/uikit/alert"} className={styles.navLink}>{t("UiKit")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/alert"} className={styles.navLink}>{t("UiKit")}</Nav.Link>
                                     {!isLogin ?
                                         <Nav.Link className={styles.loginLink} onClick={handleShow}>{t("Login")}</Nav.Link> :
                                         <Nav.Link className={styles.loginLink} onClick={handleLogOut}>{t("Logout")}</Nav.Link>
@@ -173,21 +173,21 @@ const Navigation: React.FC = () => {
                                         </span>
                                         {' ' + t("Backtomainmenu")}
                                     </Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/alert"} className={styles.navLink}>{t("Alert")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/button"} className={styles.navLink}>{t("Button")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/card"} className={styles.navLink}>{t("Card")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/checkbox"} className={styles.navLink}>{t("Checkbox")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/dropdown"} className={styles.navLink}>{t("Dropdown")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/image"} className={styles.navLink}>{t("Image")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/input"} className={styles.navLink}>{t("Input")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/inputfloatinglabel"} className={styles.navLink}>{t("InputFloatingLabel")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/modal"} className={styles.navLink}>{t("Modal")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/radio"} className={styles.navLink}>{t("Radio")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/rowcolumn"} className={styles.navLink}>{t("RowColumn")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/spinner"} className={styles.navLink}>{t("Spinner")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/textarea"} className={styles.navLink}>{t("Textarea")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/toast"} className={styles.navLink}>{t("Toast")}</Nav.Link>
-                                    <Nav.Link as={Link} to={"/uikit/toggleswitch"} className={styles.navLink}>{t("ToggleSwitch")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/alert"} className={styles.navLink}>{t("Alert")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/button"} className={styles.navLink}>{t("Button")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/card"} className={styles.navLink}>{t("Card")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/checkbox"} className={styles.navLink}>{t("Checkbox")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/dropdown"} className={styles.navLink}>{t("Dropdown")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/image"} className={styles.navLink}>{t("Image")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/input"} className={styles.navLink}>{t("Input")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/inputfloatinglabel"} className={styles.navLink}>{t("InputFloatingLabel")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/modal"} className={styles.navLink}>{t("Modal")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/radio"} className={styles.navLink}>{t("Radio")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/rowcolumn"} className={styles.navLink}>{t("RowColumn")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/spinner"} className={styles.navLink}>{t("Spinner")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/textarea"} className={styles.navLink}>{t("Textarea")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/toast"} className={styles.navLink}>{t("Toast")}</Nav.Link>
+                                    <Nav.Link as={Link} to={"/uikit/components/toggleswitch"} className={styles.navLink}>{t("ToggleSwitch")}</Nav.Link>
                                 </div>
                             }
                         </Nav>
@@ -225,7 +225,7 @@ const Navigation: React.FC = () => {
                 modalHeaderClass={styles.loginHeader}
                 modalBodyClass={styles.loginBody}
                 modalFooterClass={styles.loginBody}
-                closeVariant={theme === "dark" ? "white" : ""}
+                closeVariant={theme === "dark" ? "white" : undefined }
                 centered
             />
         </>

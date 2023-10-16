@@ -10,6 +10,15 @@
     margin: 1rem;
 }
 
+.homeBtn {
+    color: var(--text-color);
+}
+
+.homeBtn:hover {
+    cursor: pointer;
+    color: var(--description-heading);
+}
+
 @media screen and (max-width: 992px){
     .status {
         padding-left: 2rem;

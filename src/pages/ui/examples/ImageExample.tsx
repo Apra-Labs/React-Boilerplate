@@ -12,7 +12,8 @@ const ImageExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Image")}
+                subRoute={t("Components")}
+                childRoute={t("Image")}
             />
             <HeaderComponent className={styles.heading} title={t("Image")} />
             <div className={styles.imgContainer}>

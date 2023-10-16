@@ -11,7 +11,7 @@ const Home: React.FC = () => {
     const navigate = useNavigate();
 
     const handleClick = () => {
-        navigate("/uikit/alert");
+        navigate("/uikit/components/alert");
     }
 
     return (

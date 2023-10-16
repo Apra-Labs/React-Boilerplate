@@ -66,9 +66,10 @@
     "Mobile": "Mobile",
     "App": "app",
     "About": "bietet wiederverwendbare gemeinsame Komponenten wie Schaltflächen, Warnungen, Eingaben und vieles mehr. Es verfügt außerdem über ein integriertes Redux-Toolkit-Setup. Das Standardpaket bietet Internationalisierungsunterstützung sowie An- und Abmeldung.",
-    "Layouts": "Layouts",
+    "Layout": "Indeling",
     "Explore": "Erkunden",
     "Myheader": "Mein Header",
     "Arabic": "عربي",
-    "German": "Deutsch"
+    "German": "Deutsch",
+    "Components": "Componenten"
 }

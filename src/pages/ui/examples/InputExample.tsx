@@ -12,7 +12,8 @@ const InputExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Input")}
+                subRoute={t("Components")}
+                childRoute={t("Input")}
             />
             <HeaderComponent className={styles.heading} title={t("Input")} />
             <div className={styles.commonContainer}>

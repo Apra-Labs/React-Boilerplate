@@ -25,7 +25,8 @@ const ButtonExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Button")}
+                subRoute={t("Components")}
+                childRoute={t("Button")}
             />
             <HeaderComponent className={styles.heading} title={t("Button")} />
             <div className={styles.commonContainer}>

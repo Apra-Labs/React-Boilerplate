@@ -11,7 +11,8 @@ const HeaderExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Myheader")}
+                subRoute={t("Components")}
+                childRoute={t("Myheader")}
             />
             <HeaderComponent className={styles.heading} title={t("Myheader")}/>
         </div>

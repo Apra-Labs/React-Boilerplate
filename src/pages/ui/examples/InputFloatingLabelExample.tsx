@@ -13,7 +13,8 @@ const InputFloatingLabelExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("InputFloatingLabel")}
+                subRoute={t("Components")}
+                childRoute={t("InputFloatingLabel")}
             />
             <HeaderComponent className={styles.heading} title={t("InputFloatingLabel")} />
             <div className={styles.commonContainer}>

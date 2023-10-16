@@ -116,6 +116,7 @@
     height: 12rem;
     width: 12rem;
     margin: 0.5rem;
+    z-index: 1;
 }
 
 .form-switch .form-check-input:not(:checked):not(:focus) {

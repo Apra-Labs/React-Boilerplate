@@ -1,0 +1,29 @@
+.sideColumnLeft, .sideColumnRight {
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 15rem;
+    background-color: var(--sidebar-background);
+    border-right: 0.01rem solid;
+    border-color: var(--sidebar-border-color);
+}
+
+.sideColumnLeft {
+    left: 0;
+}
+
+.sideColumnRight {
+    right: 0;
+}
+
+@media screen and (max-width:1024px) {
+    .sideColumnRight {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .sideColumnLeft {
+        display: none;
+    }
+}

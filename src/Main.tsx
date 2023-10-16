@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import UiKit from './pages/ui';
-import HeaderExample from './pages/ui/examples/HeaderExample';
 const Home = React.lazy(() => import('./pages/home/index'));
 const AlertExample = React.lazy(() => import('./pages/ui/examples/AlertExample'));
 const ButtonExample = React.lazy(() => import('./pages/ui/examples/ButtonExample'));
@@ -25,22 +24,23 @@ const Main: React.FC = () => {
         <Routes>
             <Route path='/' element={<Home />} />
             <Route path='uikit' element={<UiKit />} >
-                <Route path='alert' element={<AlertExample />} />
-                <Route path='button' element={<ButtonExample />} />
-                <Route path='card' element={<CardExample />} />
-                <Route path='checkbox' element={<CheckBoxExample />} />
-                <Route path='dropdown' element={<DropDownExample />} />
-                <Route path='header' element={<HeaderExample />} />
-                <Route path='image' element={<ImageExample />} />
-                <Route path='input' element={<InputExample />} />
-                <Route path='inputfloatinglabel' element={<InputFloatingLabelExample />} />
-                <Route path='modal' element={<ModalExample />} />
-                <Route path='radio' element={<RadioExample />} />
-                <Route path='rowcolumn' element={<RowColumnExample />} />
-                <Route path='spinner' element={<SpinnerExample />} />
-                <Route path='toggleswitch' element={<ToggleSwitchExample />} />
-                <Route path='toast' element={<ToastExample />} />
-                <Route path='textarea' element={<TextAreaExample />} />
+                <Route path='components' element={<UiKit />}>
+                    <Route path='alert' element={<AlertExample />} />
+                    <Route path='button' element={<ButtonExample />} />
+                    <Route path='card' element={<CardExample />} />
+                    <Route path='checkbox' element={<CheckBoxExample />} />
+                    <Route path='dropdown' element={<DropDownExample />} />
+                    <Route path='image' element={<ImageExample />} />
+                    <Route path='input' element={<InputExample />} />
+                    <Route path='inputfloatinglabel' element={<InputFloatingLabelExample />} />
+                    <Route path='modal' element={<ModalExample />} />
+                    <Route path='radio' element={<RadioExample />} />
+                    <Route path='rowcolumn' element={<RowColumnExample />} />
+                    <Route path='spinner' element={<SpinnerExample />} />
+                    <Route path='toggleswitch' element={<ToggleSwitchExample />} />
+                    <Route path='toast' element={<ToastExample />} />
+                    <Route path='textarea' element={<TextAreaExample />} />
+                </Route>
             </Route>
             <Route path='*' element={<PageNotFound />} />
         </Routes>

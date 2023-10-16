@@ -1,13 +1,11 @@
 import { Outlet } from "react-router-dom";
-import Footer from "../../containers/footer/Footer";
-import Navigation from "../../containers/navigation/Navigation";
-import Sidebar from "./Sidebar";
+import React from "react";
+const LeftContainerLayout = React.lazy(() => import('../../layouts/LeftContainerLayout'));
+const Sidebar = React.lazy(() => import('./Sidebar'));
 
 const UiKit: React.FC = () => (
     <>
-        <Navigation />
-        <Sidebar />
-        <Footer />
+        <LeftContainerLayout sideElement={<Sidebar />}/>
         <Outlet />
     </>
 )

@@ -12,7 +12,8 @@ const TextAreaExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Textarea")}
+                subRoute={t("Components")}
+                childRoute={t("Textarea")}
             />
             <HeaderComponent className={styles.heading} title={t("Textarea")} />
             <div className={styles.commonContainer}>

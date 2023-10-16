@@ -13,7 +13,8 @@ const DropDownExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Dropdown")}
+                subRoute={t("Components")}
+                childRoute={t("Dropdown")}
             />
             <HeaderComponent className={styles.heading} title={t("Dropdown")} />
             <div className={styles.commonContainer}>

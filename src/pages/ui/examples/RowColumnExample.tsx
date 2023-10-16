@@ -13,7 +13,8 @@ const RowColumnExample: React.FC = () => {
         <div className={styles.exampleContainer}>
             <NavigationStatus
                 route={t("UiKit")}
-                subRoute={t("Card")}
+                subRoute={t("Components")}
+                childRoute={t("Card")}
             />
             <HeaderComponent className={styles.heading} title={t("RowColumn")} />
             <div className={styles.commonContainer}>
