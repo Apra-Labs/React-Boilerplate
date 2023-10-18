@@ -1,13 +1,15 @@
 .status {
     display: flex;
+    justify-content: start;
+    flex-wrap: wrap;
     padding-top: 5rem;
-    padding-left: 15rem;
+    padding-left: 15.5rem;
     color: var(--text-color);
     font-size: 1.2rem;
 }
 
 .statusElements {
-    margin: 1rem;
+    margin: 0.5rem;
 }
 
 .homeBtn {
@@ -22,5 +24,13 @@
 @media screen and (max-width: 992px){
     .status {
         padding-left: 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 320px){
+    .status {
+        padding-left: 1rem;
+        font-size: 0.7rem;
     }
 }

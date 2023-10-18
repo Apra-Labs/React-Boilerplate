@@ -3,14 +3,16 @@ import styles from './styles/SideContainer.module.css';
 interface SideContainerProps {
     alignRight: boolean;
     children: JSX.Element;
+    className?: string;
 }
 
 const SideContainer: React.FC<SideContainerProps> = ({
     alignRight,
-    children
+    children,
+    className
 }) => {
     return (
-        <div className={alignRight ? styles.sideColumnRight : styles.sideColumnLeft}>
+        <div className={`${(alignRight ? styles.sideColumnRight : styles.sideColumnLeft)} ${className}`}>
             {children}
         </div>
     )

@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './styles/Sidebar.module.css';
 import { componentsElements } from '../../assets/data/data';
 import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
@@ -10,9 +10,14 @@ const Sidebar: React.FC = () => {
     const [showComponentsElements, setShowComponentsElements] = useState<boolean>(true);
 
     const { t } = useTranslation();
+    const navigate = useNavigate();
 
     const handleComponents = () => {
         setShowComponentsElements(!showComponentsElements);
+    }
+
+    const handleForm = () => {
+        navigate("/uikit/form");
     }
 
     return (
@@ -30,6 +35,9 @@ const Sidebar: React.FC = () => {
                     {element}
                 </NavLink>
             )}
+            <div className={styles.toggleBtn} onClick={handleForm}>
+                <p>{t("Form")}</p>
+            </div>
         </div>
     )
 }

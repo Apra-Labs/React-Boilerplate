@@ -1,7 +1,5 @@
 import React from 'react';
-import SideContainer from './SideContainer';
-import Navigation from '../containers/navigation/Navigation';
-import Footer from '../containers/footer/Footer';
+const SideContainer = React.lazy(() => import('./SideContainer'));
 
 interface LeftAndRightContainerLayoutProps {
     leftSideElement: JSX.Element;
@@ -16,13 +14,9 @@ const LeftAndRightContainerLayout: React.FC<LeftAndRightContainerLayoutProps> = 
 }) => {
     return (
         <div>
-            <Navigation />
-            <SideContainer alignRight={false} children={leftSideElement}/>
-            <SideContainer alignRight={true} children={rightSideElement}/>
-            <div>
-                {body}
-            </div>
-            <Footer />
+            <SideContainer alignRight={false} children={leftSideElement} />
+            {body}
+            <SideContainer alignRight={true} children={rightSideElement} />
         </div>
     )
 }
