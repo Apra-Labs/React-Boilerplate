@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
-import React from "react";
-import PageBody from "../../containers/pageBody";
-const LeftContainerLayout = React.lazy(() => import('../../layouts/LeftContainerLayout'));
-const Sidebar = React.lazy(() => import('./Sidebar'));
-const Navigation = React.lazy(() => import('../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../containers/footer/Footer'));
+import {lazy} from "react";
+const PageBody = lazy(() => import('../../containers/pageBody'));
+const LeftContainerLayout = lazy(() => import('../../layouts/LeftContainerLayout'));
+const Sidebar = lazy(() => import('./Sidebar'));
+const Navigation = lazy(() => import('../../containers/navigation/Navigation'));
+const Footer = lazy(() => import('../../containers/footer/Footer'));
 
 const UiKit: React.FC = () => (
     <div>

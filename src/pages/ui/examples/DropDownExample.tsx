@@ -1,10 +1,10 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { items } from "../../../assets/data/data";
 import styles from '../styles/Common.module.css';
-import HeaderComponent from "../../../components/HeaderComponent";
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
-const DropDownComponent = React.lazy(() => import('../../../components/DropDownComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
+const DropDownComponent = lazy(() => import('../../../components/DropDownComponent'));
 
 const DropDownExample: React.FC = () => {
     const { t } = useTranslation();

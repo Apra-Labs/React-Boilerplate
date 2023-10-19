@@ -1,13 +1,13 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
-import ButtonComponent from "../../../components/ButtonComponent";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
-const CheckBoxComponent = React.lazy(() => import('../../../components/CheckBoxComponent'));
-const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
+const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const CheckBoxComponent = lazy(() => import('../../../components/CheckBoxComponent'));
+const ToastComponent = lazy(() => import('../../../components/ToastComponent'));
 
 const CheckBoxExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -17,15 +17,15 @@ const CheckBoxExample: React.FC = () => {
 
     const closeAlert = useCallback(() => {
         setShowAlert(false);
-    },[]);
+    }, []);
 
     const handleOnChange = useCallback((e: any) => {
         setOption(e.target.value);
-    },[]);
+    }, []);
 
     const handleOnClick = useCallback(() => {
         setShowAlert(true);
-    },[]);
+    }, []);
 
     return (
         <div className={styles.exampleContainer}>
