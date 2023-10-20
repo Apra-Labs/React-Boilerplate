@@ -1,5 +1,5 @@
-import React from 'react';
-const SideContainer = React.lazy(() => import('./SideContainer'));
+import { lazy } from 'react';
+const SideContainer = lazy(() => import('./SideContainer'));
 
 interface RightContainerLayoutProps {
     sideElement: JSX.Element;

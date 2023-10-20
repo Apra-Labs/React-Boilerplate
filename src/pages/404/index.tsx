@@ -1,7 +1,7 @@
-import React from 'react';
+import { lazy } from 'react';
 import styles from './styles.module.css';
-const Navigation = React.lazy(() => import('../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../containers/footer/Footer'));
+const Navigation = lazy(() => import('../../containers/navigation/Navigation'));
+const Footer = lazy(() => import('../../containers/footer/Footer'));
 
 const PageNotFound: React.FC = () => (
     <div>

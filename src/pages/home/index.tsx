@@ -1,10 +1,10 @@
-import React from 'react';
+import { lazy } from 'react';
 import styles from './styles.module.css';
 import { Outlet, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-const Navigation = React.lazy(() => import('../../containers/navigation/Navigation'));
-const Footer = React.lazy(() => import('../../containers/footer/Footer'));
-const ButtonComponent = React.lazy(() => import('../../components/ButtonComponent'));
+const Navigation = lazy(() => import('../../containers/navigation/Navigation'));
+const Footer = lazy(() => import('../../containers/footer/Footer'));
+const ButtonComponent = lazy(() => import('../../components/ButtonComponent'));
 
 const Home: React.FC = () => {
     const { t } = useTranslation();

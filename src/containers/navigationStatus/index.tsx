@@ -10,7 +10,6 @@ interface NavigationStatusProps {
 }
 
 const NavigationStatus: React.FC<NavigationStatusProps> = ({ route, subRoute, childRoute }) => {
-
     const navigate = useNavigate();
 
     const redirectToHome = () => {

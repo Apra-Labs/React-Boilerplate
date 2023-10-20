@@ -1,11 +1,11 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { useCallback, useState } from "react";
 import styles from '../styles/Common.module.css';
-const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
-const ModalComponent = React.lazy(() => import('../../../components/ModalComponent'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
+const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
+const ModalComponent = lazy(() => import('../../../components/ModalComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
 
 const ModalExample: React.FC = () => {
     const [show, setShow] = useState<boolean>(false);

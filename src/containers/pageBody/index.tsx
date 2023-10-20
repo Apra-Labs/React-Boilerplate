@@ -1,4 +1,3 @@
-
 interface PageBodyProps {
     body: JSX.Element
 }

@@ -62,7 +62,10 @@
     font-size: 1rem;
 }
 
-.loginHeader, .modalInput, .modalInput:focus, .loginBody {
+.loginHeader, 
+.modalInput, 
+.modalInput:focus,  
+.loginBody {
     background-color: var(--nav-background-color);
     color: var(--text-color);
 }

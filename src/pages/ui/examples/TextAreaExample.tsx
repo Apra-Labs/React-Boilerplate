@@ -1,9 +1,9 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
-const TextAreaComponent = React.lazy(() => import('../../../components/TextAreaComponent'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
+const TextAreaComponent = lazy(() => import('../../../components/TextAreaComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
 
 const TextAreaExample: React.FC = () => {
     const { t } = useTranslation();

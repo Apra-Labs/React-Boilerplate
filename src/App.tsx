@@ -1,12 +1,14 @@
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+// import './theme.scss';
 import { ToastContainer } from 'react-toastify';
-import { useEffect } from 'react';
+import { useEffect, lazy } from 'react';
 import { useAppDispatch, useAppSelector } from './redux/hooks';
 import { changeTheme } from './redux/slices/themeSlice';
-import { RouterProvider } from 'react-router-dom';
-import Routes from './routes/Router';
+import {  Outlet } from 'react-router-dom';
+const Navigation = lazy(() => import('./containers/navigation/Navigation'));
+const Footer = lazy(() => import('./containers/footer/Footer'));
 
 const App = () => {
 	const currentTheme = useAppSelector(state => state.themeReducer.theme);
@@ -23,10 +25,12 @@ const App = () => {
 	}, [currentTheme]);
 
 	return (
-		<>
-			<RouterProvider router={Routes} />
+		<div>
+			<Navigation />
+			<Footer />
+			<Outlet />
 			<ToastContainer />
-		</>
+		</div>
 	);
 }
 

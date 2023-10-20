@@ -1,12 +1,12 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
-const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
-const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
+const ToastComponent = lazy(() => import('../../../components/ToastComponent'));
 
 const ButtonExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -15,11 +15,11 @@ const ButtonExample: React.FC = () => {
 
     const closeAlert = useCallback(() => {
         setShowAlert(false);
-    },[]);
+    }, []);
 
     const handleClick = useCallback(() => {
         setShowAlert(true);
-    },[]);
+    }, []);
 
     return (
         <div className={styles.exampleContainer}>

@@ -1,9 +1,9 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
-const ToggleSwitchComponent = React.lazy(() => import('../../../components/ToggleSwitchComponent'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
+const ToggleSwitchComponent = lazy(() => import('../../../components/ToggleSwitchComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
 
 const ToggleSwitchExample: React.FC = () => {
     const { t } = useTranslation();
@@ -19,7 +19,7 @@ const ToggleSwitchExample: React.FC = () => {
             <div className={styles.commonContainer}>
                 <ToggleSwitchComponent
                     label={t("MySwitch")}
-                    onChange={() => {}}
+                    onChange={() => { }}
                     className={styles.toggleSwitch}
                 />
             </div>

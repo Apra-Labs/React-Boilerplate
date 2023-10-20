@@ -1,8 +1,8 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
 
 const HeaderExample: React.FC = () => {
     const { t } = useTranslation();
@@ -14,7 +14,7 @@ const HeaderExample: React.FC = () => {
                 subRoute={t("Components")}
                 childRoute={t("Myheader")}
             />
-            <HeaderComponent className={styles.heading} title={t("Myheader")}/>
+            <HeaderComponent className={styles.heading} title={t("Myheader")} />
         </div>
     )
 }

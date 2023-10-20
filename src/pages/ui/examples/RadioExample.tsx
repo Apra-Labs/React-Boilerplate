@@ -1,13 +1,13 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
-const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
-const ToastComponent = React.lazy(() => import('../../../components/ToastComponent'));
-const RadioComponent = React.lazy(() => import('../../../components/RadioComponent'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
+const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
+const ToastComponent = lazy(() => import('../../../components/ToastComponent'));
+const RadioComponent = lazy(() => import('../../../components/RadioComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
 
 const RadioExample: React.FC = () => {
     const [showAlert, setShowAlert] = useState<boolean>(false);
@@ -17,15 +17,15 @@ const RadioExample: React.FC = () => {
 
     const closeAlert = useCallback(() => {
         setShowAlert(false);
-    },[]);
+    }, []);
 
     const handleOnChange = useCallback((e: any) => {
         setOption(e.target.value);
-    },[]);
+    }, []);
 
     const handleOnClick = useCallback(() => {
         setShowAlert(true);
-    },[]);
+    }, []);
 
     return (
         <div className={styles.exampleContainer}>

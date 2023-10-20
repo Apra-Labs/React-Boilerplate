@@ -1,9 +1,9 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
-const InputComponent = React.lazy(() => import('../../../components/InputComponent'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
+const InputComponent = lazy(() => import('../../../components/InputComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
 
 const InputExample: React.FC = () => {
     const { t } = useTranslation();

@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect, useState, lazy } from 'react';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
@@ -14,9 +14,9 @@ import styles from './Navigation.module.css';
 import { changeLanguage } from '../../redux/slices/languageSlice';
 import '../styles/styles.css';
 import { changeTheme } from '../../redux/slices/themeSlice';
-const InputFloatingLabelComponent = React.lazy(() => import('../../components/InputFloatingLabelComponent'));
-const ButtonComponent = React.lazy(() => import('../../components/ButtonComponent'));
-const ModalComponent = React.lazy(() => import('../../components/ModalComponent'));
+const InputFloatingLabelComponent = lazy(() => import('../../components/InputFloatingLabelComponent'));
+const ButtonComponent = lazy(() => import('../../components/ButtonComponent'));
+const ModalComponent = lazy(() => import('../../components/ModalComponent'));
 
 const Navigation: React.FC = () => {
     const [isLogin, setIsLogin] = useState<boolean>(false);

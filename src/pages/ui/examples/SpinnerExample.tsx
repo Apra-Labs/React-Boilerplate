@@ -1,11 +1,11 @@
-import React from "react";
+import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
-const ButtonComponent = React.lazy(() => import('../../../components/ButtonComponent'));
-const SpinnerComponent = React.lazy(() => import('../../../components/SpinnerComponent'));
-const HeaderComponent = React.lazy(() => import('../../../components/HeaderComponent'));
-const NavigationStatus =  React.lazy(() => import('../../../containers/navigationStatus'));
+const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
+const SpinnerComponent = lazy(() => import('../../../components/SpinnerComponent'));
+const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
+const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
 
 const SpinnerExample: React.FC = () => {
     const [fullPage, setFullPage] = useState<boolean>(false);
