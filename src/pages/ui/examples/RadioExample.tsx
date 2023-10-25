@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
+import { useAppSelector } from "../../../redux/hooks";
 const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
 const ToastComponent = lazy(() => import('../../../components/ToastComponent'));
 const RadioComponent = lazy(() => import('../../../components/RadioComponent'));
@@ -27,6 +28,8 @@ const RadioExample: React.FC = () => {
         setShowAlert(true);
     }, []);
 
+    const currentLanguage = useAppSelector(state => state.langReducer.language);
+
     return (
         <div className={styles.exampleContainer}>
             <NavigationStatus
@@ -36,7 +39,7 @@ const RadioExample: React.FC = () => {
             />
             <HeaderComponent className={styles.heading} title={t("Radio")} />
             <div className={styles.commonContainer}>
-                <ToastComponent position="top-end" messages={[
+                <ToastComponent position={currentLanguage === 'عربي' ? 'top-start' : 'top-end'} messages={[
                     {
                         header: t("Radio") + ' ' + t("Choosed"),
                         message: option,
@@ -49,9 +52,30 @@ const RadioExample: React.FC = () => {
                     }
                 ]} />
                 <h3>{t("SelectOptions")}</h3>
-                <RadioComponent name="myoption" label={t("Option1")} onChange={handleOnChange} className={styles.checkbox} value="option 1" />
-                <RadioComponent name="myoption" label={t("Option2")} onChange={handleOnChange} className={styles.checkbox} value="option 2" />
-                <RadioComponent name="myoption" label={t("Option3")} onChange={handleOnChange} className={styles.checkbox} value="option 3" />
+                <RadioComponent
+                    name="myoption"
+                    label={t("Option1")}
+                    onChange={handleOnChange}
+                    className={currentLanguage === 'عربي' ? "form-check-reverse" : styles.checkbox}
+                    value="option 1"
+                    style={{ marginTop: '1rem', marginBottom: '1rem' }}
+                />
+                <RadioComponent
+                    name="myoption"
+                    label={t("Option2")}
+                    onChange={handleOnChange}
+                    className={currentLanguage === 'عربي' ? "form-check-reverse" : styles.checkbox}
+                    value="option 2"
+                    style={{ marginTop: '1rem', marginBottom: '1rem' }}
+                />
+                <RadioComponent
+                    name="myoption"
+                    label={t("Option3")}
+                    onChange={handleOnChange}
+                    className={currentLanguage === 'عربي' ? "form-check-reverse" : styles.checkbox}
+                    value="option 3"
+                    style={{ marginTop: '1rem', marginBottom: '1rem' }}
+                />
                 <ButtonComponent label="Submit" onClick={handleOnClick} />
             </div>
         </div>

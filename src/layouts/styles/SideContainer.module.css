@@ -3,9 +3,6 @@
     position: fixed;
     top: 0;
     width: 15rem;
-    background-color: var(--sidebar-background);
-    border-right: 0.01rem solid;
-    border-color: var(--sidebar-border-color);
 }
 
 .sideColumnLeft {

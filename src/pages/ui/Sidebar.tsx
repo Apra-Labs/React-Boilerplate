@@ -1,10 +1,11 @@
 import { NavLink, useNavigate } from 'react-router-dom';
 import styles from './styles/Sidebar.module.css';
 import { componentsElements } from '../../assets/data/data';
-import { faAngleDown, faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleDown, faAngleRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAppSelector } from '../../redux/hooks';
 
 const Sidebar: React.FC = () => {
     const [showComponentsElements, setShowComponentsElements] = useState<boolean>(true);
@@ -20,11 +21,16 @@ const Sidebar: React.FC = () => {
         navigate("/uikit/form");
     }
 
+    const currentLanguage = useAppSelector(state => state.langReducer.language);
+
     return (
         <div className={styles.sideNav}>
             <div className={styles.toggleBtn} onClick={handleComponents}>
                 <p>{t("Components")}</p>
-                <p><FontAwesomeIcon icon={!showComponentsElements ? faAngleRight : faAngleDown} /></p>
+                <p><FontAwesomeIcon icon={!showComponentsElements ?
+                    (currentLanguage === 'عربي' ? faAngleLeft : faAngleRight) :
+                    faAngleDown} />
+                </p>
             </div>
             {!showComponentsElements || componentsElements?.map((element, index) =>
                 <NavLink

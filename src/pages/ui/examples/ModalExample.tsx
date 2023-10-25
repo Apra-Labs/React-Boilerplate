@@ -2,6 +2,7 @@ import { lazy } from "react";
 import { useTranslation } from "react-i18next";
 import { useCallback, useState } from "react";
 import styles from '../styles/Common.module.css';
+import { useAppSelector } from "../../../redux/hooks";
 const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
 const ModalComponent = lazy(() => import('../../../components/ModalComponent'));
 const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
@@ -38,7 +39,7 @@ const ModalExample: React.FC = () => {
         setShowVerticalModal(false);
     }, []);
 
-    const theme = document.documentElement.getAttribute('data-theme');
+    const theme = useAppSelector(state => state.themeReducer.theme);
 
     return (
         <div className={styles.exampleContainer}>
@@ -59,7 +60,7 @@ const ModalExample: React.FC = () => {
                     modalHeaderClass={styles.modalClass}
                     modalBodyClass={styles.modalClass}
                     modalFooterClass={styles.modalClass}
-                    closeVariant={theme === "dark" ? "white" : "black"}
+                    closeVariant={theme === "dark" ? "white" : ""}
                 />
             </div>
             <HeaderComponent className={styles.subHeading} title={t("Modal") + ' ' + t("Without") + ' ' + t("Animation")} />
@@ -75,7 +76,7 @@ const ModalExample: React.FC = () => {
                     modalBodyClass={styles.modalClass}
                     modalFooterClass={styles.modalClass}
                     animation={false}
-                    closeVariant={theme === "dark" ? "white" : "black"}
+                    closeVariant={theme === "dark" ? "white" : ""}
                 />
             </div>
             <HeaderComponent
@@ -93,7 +94,7 @@ const ModalExample: React.FC = () => {
                     modalHeaderClass={styles.modalClass}
                     modalBodyClass={styles.modalClass}
                     modalFooterClass={styles.modalClass}
-                    closeVariant={theme === "dark" ? "white" : "black"}
+                    closeVariant={theme === "dark" ? "white" : undefined}
                     centered
                 />
             </div>

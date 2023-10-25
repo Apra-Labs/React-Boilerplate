@@ -21,10 +21,18 @@
     color: var(--description-heading);
 }
 
+[dir=rtl] .status {
+    padding: 5rem 15.5rem 0 0;
+}
+
 @media screen and (max-width: 992px){
     .status {
         padding-left: 2rem;
         font-size: 1rem;
+    }
+
+    [dir=rtl] .status {
+        padding: 5rem 3rem 0 0;
     }
 }
 

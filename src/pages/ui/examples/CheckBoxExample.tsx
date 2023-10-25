@@ -3,6 +3,7 @@ import { useTranslation } from "react-i18next";
 import styles from '../styles/Common.module.css';
 import { useCallback, useState } from "react";
 import '../styles/styles.css';
+import { useAppSelector } from "../../../redux/hooks";
 const ButtonComponent = lazy(() => import('../../../components/ButtonComponent'));
 const NavigationStatus = lazy(() => import('../../../containers/navigationStatus'));
 const HeaderComponent = lazy(() => import('../../../components/HeaderComponent'));
@@ -27,6 +28,8 @@ const CheckBoxExample: React.FC = () => {
         setShowAlert(true);
     }, []);
 
+    const currentLanguage = useAppSelector(state => state.langReducer.language);
+
     return (
         <div className={styles.exampleContainer}>
             <NavigationStatus
@@ -36,7 +39,7 @@ const CheckBoxExample: React.FC = () => {
             />
             <HeaderComponent className={styles.heading} title={t("Checkbox")} />
             <div className={styles.commonContainer}>
-                <ToastComponent position="top-end" messages={[
+                <ToastComponent position={currentLanguage === 'عربي' ? 'top-start' : 'top-end'} messages={[
                     {
                         header: t("Checkbox") + ' ' + t("Choosed"),
                         message: option,
@@ -49,9 +52,27 @@ const CheckBoxExample: React.FC = () => {
                     }
                 ]} />
                 <h3>{t("SelectOptions")}</h3>
-                <CheckBoxComponent label={t("Option1")} onChange={handleOnChange} className={styles.checkbox} value="option 1" />
-                <CheckBoxComponent label={t("Option2")} onChange={handleOnChange} className={styles.checkbox} value="option 2" />
-                <CheckBoxComponent label={t("Option3")} onChange={handleOnChange} className={styles.checkbox} value="option 3" />
+                <CheckBoxComponent
+                    label={t("Option1")}
+                    onChange={handleOnChange}
+                    className={currentLanguage === 'عربي' ? "form-check-reverse" : styles.checkbox}
+                    value="option 1"
+                    style={{ marginTop: '1rem', marginBottom: '1rem' }}
+                />
+                <CheckBoxComponent
+                    label={t("Option2")}
+                    onChange={handleOnChange}
+                    className={currentLanguage === 'عربي' ? "form-check-reverse" : styles.checkbox}
+                    value="option 2"
+                    style={{ marginTop: '1rem', marginBottom: '1rem' }}
+                />
+                <CheckBoxComponent
+                    label={t("Option3")}
+                    onChange={handleOnChange}
+                    className={currentLanguage === 'عربي' ? "form-check-reverse" : styles.checkbox}
+                    value="option 3"
+                    style={{ marginTop: '1rem', marginBottom: '1rem' }}
+                />
                 <ButtonComponent label="Submit" onClick={handleOnClick} />
             </div>
         </div>

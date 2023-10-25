@@ -31,8 +31,6 @@
 }
 
 .checkbox {
-    margin-top: 1rem;
-    margin-bottom: 1rem;
     cursor: pointer;
     color: var(--text-color);
 }
@@ -66,6 +64,10 @@
 
 .dropDownItem, .dropDownMenu::placeholder, .inputElement::placeholder, .textAreaInput::placeholder {
     color: var(--text-color);
+}
+
+.formRow {
+    margin: 1rem 0.5rem;
 }
 
 .imageClass {
@@ -137,9 +139,23 @@
     margin: 1rem;
 }
 
-.toggleSwitch {
-    font-size: 2rem;
-    cursor: pointer;
+/* rtl */
+[dir=rtl] {
+    .heading, .subHeading {
+        padding: 1rem 16rem 0 0;
+    }
+
+    .commonContainer {
+        padding: 2rem 16rem 0 1rem;
+    }
+
+    .imageClass {
+        margin: 1rem 20rem 0 0;
+    }
+
+    .imgSubHeading {
+        padding: 1rem 25rem 0 0;
+    }
 }
 
 @media screen and (max-width: 1024px){
@@ -192,6 +208,16 @@
     .toastButton {
         width: 5rem;
     }
+
+    [dir=rtl] {
+        .heading, .subHeading {
+            padding: 1rem 3rem 0 0;
+        }
+
+        .commonContainer {
+            padding: 2rem 3rem 0 1rem;
+        }
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -216,10 +242,6 @@
     .spinner {
         height: 8rem;
         width: 8rem;
-    }
-    
-    .toggleSwitch {
-        font-size: 1.5rem;
     }
 }
 

@@ -145,7 +145,7 @@ const Navigation: React.FC = () => {
                         </Offcanvas.Title>
                     </Offcanvas.Header>
                     <Offcanvas.Body className={styles.offcanvasNav}>
-                        <Nav className='ms-auto'>
+                        <Nav className={styles.navLinks}>
                             {location.pathname === "/" ?
                                 <>
                                     <Nav.Link as={Link} to={"/uikit/components/alert"} className={styles.navLink}>{t("UiKit")}</Nav.Link>

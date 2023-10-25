@@ -71,5 +71,14 @@
     "Myheader": "My header",
     "Arabic": "عربي",
     "German": "Deutsch",
-    "Components": "Components"
+    "Components": "Components",
+    "Form": "Form",
+    "Firstname": "First name",
+    "Lastname": "Last name",
+    "Phonenumber": "Phone number",
+    "Selectcity": "Select city",
+    "Submit": "Submit",
+    "Rounded": "Rounded",
+    "Circle": "Circle",
+    "Thumbnail": "Thumbnail"
 }

@@ -19,15 +19,15 @@ const ImageExample: React.FC = () => {
             <div className={styles.imgContainer}>
                 <div className={styles.imgElement}>
                     <ImageComponent src={require("../../../assets/images/person_image.webp")} className={styles.imageClass} shape="rounded" />
-                    <p className={styles.imgSubHeading}>Rounded</p>
+                    <p className={styles.imgSubHeading}>{t("Rounded")}</p>
                 </div>
                 <div className={styles.imgElement}>
                     <ImageComponent src={require("../../../assets/images/person_image.webp")} className={styles.imageClass} shape="roundedCircle" />
-                    <p className={styles.imgSubHeading}>Rounded Circle</p>
+                    <p className={styles.imgSubHeading}>{t("Rounded") + ' ' +  t("Circle")}</p>
                 </div>
                 <div className={styles.imgElement} style={{ marginBottom: '3rem' }}>
                     <ImageComponent src={require("../../../assets/images/person_image.webp")} className={styles.imageClass} shape="thumbnail" />
-                    <p className={styles.imgSubHeading}>Thumbnail</p>
+                    <p className={styles.imgSubHeading}>{t("Thumbnail")}</p>
                 </div>
             </div>
         </div>

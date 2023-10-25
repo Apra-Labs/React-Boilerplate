@@ -25,7 +25,7 @@ const defaultProps: Partial<DropDownProps> = {
     variant: "primary",
     enableSearch: true,
     placeholder: "Search...",
-    dropdownMenuStyle: { padding: 10, maxHeight: '20rem', overflowY: 'auto' },
+    dropdownMenuStyle: { padding: 10, maxHeight: '20rem', overflowY: 'auto', width: '14rem' },
     searchInputStyle: { outline: "none", boxShadow: "none" }
 };
 

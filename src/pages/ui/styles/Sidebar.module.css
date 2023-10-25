@@ -1,7 +1,6 @@
 .sideNav {
-    height: calc(100% - 6.5rem);
+    height: calc(100% - 3.5rem);
     width: 15rem;
-    /* position: fixed; */
     top: 0;
     left: 0;
     background-color: var(--sidebar-background);
@@ -69,6 +68,15 @@
     padding: 0.5rem;
     background-color: var(--sidebar-link-hover);
 }
+
+/* rtl */
+[dir=rtl] {
+    .sideNav {
+        border-left: 0.1rem solid var(--sidebar-border-color);
+        border-right: none;
+    }
+}
+
 @media screen and (max-width: 1024px) and (min-width: 992px){
     .sideNav {
         overflow-y: scroll;
